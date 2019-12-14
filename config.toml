@@ -4,7 +4,7 @@ publishDir = "docs"
 hasCJKLanguage = true
 languageCode = "ja-jp"
 title = "tomokoba website"
-
+theme = "hugo-lithium"
 googleAnalytics = ""
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
