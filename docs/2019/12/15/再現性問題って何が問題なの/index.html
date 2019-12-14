@@ -1,150 +1,147 @@
 <!DOCTYPE html>
-<html lang="ja-jp">
-  <head>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.61.0" />
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="author" content="Tomoyuki Kobayashi" />
+
+<meta name="date" content="2019-12-15" />
+
+<title>再現性問題って何が問題なの？</title>
+
+<script src="2019-12-14-_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="2019-12-14-_files/bootstrap-3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+<script src="2019-12-14-_files/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+<script src="2019-12-14-_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="2019-12-14-_files/navigation-1.1/tabsets.js"></script>
+<script src="2019-12-14-_files/navigation-1.1/codefolding.js"></script>
+<link href="2019-12-14-_files/magnific-popup-1.1.0/magnific-popup.css" rel="stylesheet" />
+<script src="2019-12-14-_files/magnific-popup-1.1.0/jquery.magnific-popup.min.js"></script>
+<link href="2019-12-14-_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
+<script src="2019-12-14-_files/readthedown-0.1/readthedown.js"></script>
 
 
-<title>再現性問題って何が問題なの？ - tomokoba website</title>
-<meta property="og:title" content="再現性問題って何が問題なの？ - tomokoba website">
+
+<link rel="stylesheet" href="styles_customized.css" type="text/css" />
+
+</head>
+
+<body>
 
 
-  <link href='../../../../favicon.ico' rel='icon' type='image/x-icon'/>
+<div id="content" data-toggle="wy-nav-shift">
 
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
 
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
-  
-
-
-
-
-
-
-
-<link rel="stylesheet" href="../../../../css/fonts.css" media="all">
-<link rel="stylesheet" href="../../../../css/main.css" media="all">
-
-
-
-  </head>
-  <body>
-    <div class="wrapper">
-      <header class="header">
-        <nav class="nav">
-  <a href="../../../../" class="nav-logo">
-    <img src="../../../../images/logo.png"
-         width="50"
-         height="50"
-         alt="Logo">
-  </a>
-
-  <ul class="nav-links">
-    
-    <li><a href="https://tobayash.github.io/hp2/index.html">Main page</a></li>
-    
-    <li><a href="https://twitter.com/tomokoba10">Twitter</a></li>
-    
-  </ul>
+<nav id="nav-top" role="navigation" aria-label="top navigation">
+    <a role="button" href="#" data-toggle="wy-nav-top"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
 </nav>
 
-      </header>
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="text-muted">Code</span> <span class="text-muted caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All</a></li>
+</ul>
+</div>
+
+<div id="header">
+<h1 class="title">再現性問題って何が問題なの？</h1>
+</div>
 
 
-<main class="content" role="main">
+<div id="table-of-contents">
+    <h2><a href="#content">再現性問題って何が問題なの？</a></h2>
+    <div id="text-table-of-contents">
+      
+    </div>
+</div>
 
-  <article class="article">
-    
-    <span class="article-duration">9 min read</span>
-    
-
-    <h1 class="article-title">再現性問題って何が問題なの？</h1>
-
-    
-    <span class="article-date">2019-12-15</span>
-    
-
-    <div class="article-content">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>この記事は、Open and Reproducible Science Advent Calendar 2019の15日目の記事です。<!-- raw HTML omitted -->
-担当は、福島県立医科大学で学振PDをしている小林智之です。<!-- raw HTML omitted -->
-再現性の問題について思うことを論文紹介しつつ書きます。</p>
-<p>私は専門が社会心理学で、集団間コンフリクトにおける人々の認知に関心があります。博士課程では実験室実験が大好きで、メタステレオタイプについて研究をしてきました。<!-- raw HTML omitted -->
-卒業した後は福島県で、地域の現場で働く方々と一緒に、東日本大震災の避難者をめぐる集団間コンフリクトについて研究しています。博士課程まではただ理論がおもしろくて研究してきたんですが、今は集団間コンフリクトを実際に目の当たりにしながら、この人たちのために社会心理学は何ができるんだろうと悶々する毎日です。<!-- raw HTML omitted --></p>
-<p>再現性の問題は学術知見を社会問題の現場に活かすうえでも重要なポイントだと思います。たまたま出ただけかもしれない結果を現場で使うわけにはいかないからです。しかし、現場への応用を考えると、再現性（あるいは頑健性）の証明された知見が必ずしも役に立つわけではないかもしれません。現場にとっては、そのとき、その場で効果を見せてくれれば、他の文脈で効果が再現されなくともどうでも良いです。社会科学の知見は、参加者や場面、時間などの要因によって影響を受け、再現されないこともあります。社会科学では結果が再現されなかったことを研究の質の悪さに直結するのは少し違うかも？では再現性の問題とは？<!-- raw HTML omitted --></p>
-<p>というわけで面白そうな論文があったので読んでみました。<!-- raw HTML omitted --></p>
-<h3 id="medin-ojalehto-marin--bang-systems-of-non--diversity-nature-human-behavior-2017-httpswwwnaturecomarticless41562-017-0088">Medin, Ojalehto, Marin, &amp; Bang. <strong>Systems of (non-) diversity</strong>, <em><strong>Nature Human Behavior</strong></em> (2017) <a href="https://www.nature.com/articles/s41562-017-0088">https://www.nature.com/articles/s41562-017-0088</a></h3>
-<p>Medinらは、現行の学術システムが社会科学や行動科学の本来の貢献を阻害しているとして、その要因に次の3つをあげた。</p>
-<ol>
-<li>研究対象（Sample non-diversity）</li>
-<li>理論や方法（methodological non-diversity）</li>
-<li>研究者（researcher non-diversity）</li>
-</ol>
-<h4 id="1-sample-non-diversity">1. Sample non-diversity</h4>
+<div id="main">
+<style>
+  @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+</style>
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Lato:400,900);
+</style>
+<p>この記事は、Open and Reproducible Science Advent Calendar 2019の15日目の記事です。<br> 担当は、福島県立医科大学で学振PDをしている小林智之です。<br> 再現性の問題について思うことを論文紹介しつつ書きます。</p>
+<p>私は専門が社会心理学で、集団間コンフリクトにおける人々の認知に関心があります。博士課程では実験室実験が大好きで、メタステレオタイプについて研究をしてきました。<br> 卒業した後は福島県で、地域の現場で働く方々と一緒に、東日本大震災の避難者をめぐる集団間コンフリクトについて研究しています。博士課程まではただ理論がおもしろくて研究してきたんですが、今は集団間コンフリクトを実際に目の当たりにしながら、この人たちのために社会心理学は何ができるんだろうと悶々する毎日です。<br></p>
+<p>再現性の問題は学術知見を社会問題の現場に活かすうえでも重要なポイントだと思います。たまたま出ただけかもしれない結果を現場で使うわけにはいかないからです。しかし、現場への応用を考えると、再現性（あるいは頑健性）の証明された知見が必ずしも役に立つわけではないかもしれません。現場にとっては、そのとき、その場で効果を見せてくれれば、他の文脈で効果が再現されなくともどうでも良いです。社会科学の知見は、参加者や場面、時間などの要因によって影響を受け、再現されないこともあります。社会科学では結果が再現されなかったことを研究の質の悪さに直結するのは少し違うかも？では再現性の問題とは？<br></p>
+<p>というわけで面白そうな論文があったので読んでみました。<br></p>
+<div id="medin-ojalehto-marin-bang.-systems-of-non--diversity-nature-human-behavior-2017-httpswww.nature.comarticless41562-017-0088" class="section level3">
+<h3>Medin, Ojalehto, Marin, &amp; Bang. <strong>Systems of (non-) diversity</strong>, <strong><em>Nature Human Behavior</em></strong> (2017) <a href="https://www.nature.com/articles/s41562-017-0088" class="uri">https://www.nature.com/articles/s41562-017-0088</a></h3>
+<p>Medinらは、現行の学術システムが社会科学や行動科学の本来の貢献を阻害しているとして、その要因に次の3つをあげた。 1. 研究対象（Sample non-diversity） 2. 理論や方法（methodological non-diversity） 3. 研究者（researcher non-diversity）</p>
+<div id="sample-non-diversity" class="section level4">
+<h4>1. Sample non-diversity</h4>
 <p>研究参加者の極端な偏りや文化的背景の無視は、人間の思考や行動についての知識の一般化可能性にとって脅威となる。</p>
 <blockquote>
-<p><strong>WEIRD samples</strong> (Western, Educated, Industrialized, Rich and Democratic)：
-Henrich, Heine &amp; Norenzayan (2010)によって呼ばれた心理学研究の90％以上を占めるとされる参加者たちのこと。</p>
+<p><strong>WEIRD samples</strong> (Western, Educated, Industrialized, Rich and Democratic)： Henrich, Heine &amp; Norenzayan (2010)によって呼ばれた心理学研究の90％以上を占めるとされる参加者たちのこと。</p>
 </blockquote>
-<p>WEIRDサンプルは世の中の大半を占めるタイプの人間というわけではない。Henrichらの論文はすでに多くの文献で引用されているが、研究サンプリングの実際や研究者教育の現場での変化はあまりない。どうも研究に伴う時間やコストの都合が利便性重視のサンプリングをデフォルトにしてしまっている。<!-- raw HTML omitted -->
-こうした実態が危険なのは、とくに理論構築を試みるときなんかで、中流階級のヨーロッパ系アメリカ人が世界の標準のように扱われていることである。WEIRDサンプルじゃない人々のデータを報告するとき、WEIRD母集団の結果と比較してその違いを説明することになる。<!-- raw HTML omitted -->
-インターネット研究（Amazon Mechanical Turk使うやつとか）はサンプルの多様性問題を緩和する可能性があるが、あくまで便利だから使われているのでサンプルのばらつきが気にされないというのなら希望は薄い。<!-- raw HTML omitted -->
-ナローサンプリングは医学研究では非道徳的で許しがたいものとされるのに、心理学はちがうの？</p>
-<h5 id="sample-diversity">Sample diversityのケース</h5>
-<p>学習や発達の領域では文化や経験の機能的役割に着目した研究が増えている。<!-- raw HTML omitted -->
-たとえば、認知発達の領域では、存在論的なものに関して少なくとも３つ（意図的なエージェント、動物や植物、無生物）に分けるのが良いとされる。小さな子どもについての生物学は単純な心理学（人間性をプロトタイプとする心理学）で検討されてきたが、最近ではこれらの認知の発達には文化差があることが報告されている。最近の報告では、この３つの分割それ自体が西洋文化に合わせた捉え方であり、他の文化で知識構造を調べるには向いていないことが報告されている（レビューはOjalehto &amp; Medin, 2015を参照）。<!-- raw HTML omitted -->
-他の例として、意思決定に関する最近の研究は、相対的な判断における相対的な節約の傾向がしばしば経済状況により一般化されないことを示している。相対的な節約とは、たとえば40ドルの買い物で20ドルの節約をするためなら努力を惜しまないが、120ドルの買い物で20ドルを節約するために努力する人は少ないというものである。これは、かなり頑健な結果だったが、貧困層の人々には一般化されない（Mullainathan &amp; Shafir, 2013; Shah, Shafir, &amp; Mullainathan, 2015）。<!-- raw HTML omitted --></p>
-<h4 id="2-researcher-non-diversity">2. Researcher non-diversity</h4>
-<p>これまで、研究者の多様性は、典型的には公平性や平等な代表性の枠組みで扱われてきた。たとえば、National Research Councilはマイノリティ学者が科学の世界で代表になりにくいことを指摘している（たとえば、National Academies Press, 2011）。しかし、研究者の多様性の危機は、そのような機会の平等に関する問題だけではない。研究者の多様性が失われることは科学の発展にも悪い影響を与える可能性がある。<!-- raw HTML omitted -->
-科学の妥当性には、どんな問題を研究するのか、どんな人々を研究するか、どの手続きや測定を使うか、という選択が重要となる。それらには、研究者の視点や価値、あるいは距離の近さが関わってくる。実際、社会科学者と研究の対象者には強い関連があると考えられる。<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-多様な研究者の視点は、多様な研究関心や新しい発見にもつながる。実際、女性の科学者が霊長類の社会行動の研究を始めたとき、メスとオスの両方行動に新しい見解が生まれたことや（Small &amp; Hrdy, 1986）、マイノリティ学者が従来のアイデンティティ発達、モチベーション、レジリエンスの因果関係仮説を発展させたこと（Graham &amp; Hudley, 2005; Spencer, 2006）もある。<!-- raw HTML omitted -->
-また、モラル認知の発達研究の例もある。Lawrence Kohlbergはピアジェのモデルの後、モラルジレンマを使って発達段階を識別した（Kohlberg, 1973）。この段階理論は発達段階の強力な指標であったが、Carol Gilliganは彼のモデルを男性志向だと指摘した（Gilligan, 1982）。さらに、Snareyはコールバーグのモデルに対して文化的な批判を行い、27個の文化でレビューを行った。その結果、インドの研究では、生活の共同や動植物と人間との関係など、コールバーグのモデルでは触れられていなかったモラルがより重要視されていることが確認された。研究者の多様性が、サンプルや理論の多様性を生んだのだった。<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-研究者の多様性は、研究への取り組み方にも多様性を生むことがある（たとえば、Slow scholarship movement；Duarte et al., 2015を参照）。<!-- raw HTML omitted --></p>
-<h4 id="3-methodological-non-diversity">3. Methodological non-diversity</h4>
-<p>社会科学で検討されることの実際は文化的なものであり、その実際的なものを反映する基準は、多様な現場や多様な参加者、多様な問題設定の中で浮かび上がる。これは、理論、材料、方法、尺度、環境、研究文脈も含む。方法論の多様性は、研究者の多様性がもたらす様々な視点を後押しする。<!-- raw HTML omitted -->
-心理学の中でも定期的に、研究の問題や方法、測定、設定、理論構築の選択について多様性のなさが批判されている。人の認知を理解するうえでは、これらの多様性は重要であるはずだ。文脈のある理論を検討したいなら、関連する集団の独自の歴史や人口統計的側面を説明する指標が求められる。<!-- raw HTML omitted -->
-社会科学者の多元性はCampbellとStanleyのExperimental and Quasi-experimental Designs for Researchでも触れられている。洗練された学問は単一化した尺度を使用すべきとされる。皮肉なことに、近年のいわゆる再現性危機は、頑健性の類よりも正確な再現性を優先し、それは収束的な測定によってのみ確かなものに出来るとする。さらに皮肉なことに、これはmany labsの再現性プロジェクトを生んだ。Many labsは研究の場所の多様性を促すものであるが、効果は研究の場所が違っても維持されるという仮定のもとで行われている。<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-コンピュータの発展により、材料や刺激呈示の方法はかなり広がった。しかし、一方で、“社会文脈”のモデルとして小さなブースにパソコンと一緒に参加者を閉じ込める方法が流行った。Baumeister, Vohs, &amp; Funder (2007)は社会科学のひとつである心理学が自己報告かキーボードの上で指を動かしているだけでいいのか懸念している。<!-- raw HTML omitted -->
-技術の発展の良い例はHofmann, Wisneski, Brandt, &amp; Skitka (2014)である。この研究は、スマホを使って１日のうち５度、道徳的または非道徳的な経験について問うもので、実験室研究の結果を再現し、知見の頑健性を示した。<!-- raw HTML omitted -->
-意思決定の領域では、方法や手続きの寛容さと狭量さの両方の例がある。よくある意思決定課題は確率の異なるベットとペイオフにおける意思決定を見るものである。Baruch Fischhoff (1996) は、現実世界の状況を実験室に単純化する際の“内部破壊”のリスクを指摘している。単純化することによって現実世界の状況を壊し、課題設定に適合しない状況を排除しているように思える。顕著な例としてはシナリオを用いた実験である。Fischhoffはさらに、ナローな課題から現実世界に知見を返すには、かなりの外的要因を含む必要があり、他の重要な現象を見れていない可能性があることも指摘している。<!-- raw HTML omitted --></p>
-<h4 id="a-systems-levels-perspective-and-niche-construction">A systems-levels perspective and niche construction</h4>
-<p>行動科学や社会科学は複雑なシステムを構成するものであり、それらの学問は現場と共に発展してきた。しかし、これらのニッチ構造プロセスは、一部の集団（WEIRDサンプルとか）に特権が与えられたまま、ナローな感覚、ナローな価値、ナローな研究実践を強化するように働いている。<!-- raw HTML omitted -->
-このニッチ構造プロセスは若者が大学に入学した際にも生じているかもしれない。<!-- raw HTML omitted -->
-たとえば、白人制度の優勢なところに入ったマイノリティまたは女性の院生（とくに多様な背景がリクルート理由のとき）は、自身の研究を行うにあたって、認識論的挑戦（多様なアプローチや母集団に費やす意味を学部から問われる）、文脈的挑戦（文化的な大学の地理や人間関係）、実践的挑戦（研究関係を発展させる時間）に直面するかもしれない。<!-- raw HTML omitted -->
-サンプルの多様性、方法の多様性、研究者の多様を推奨し、支持していくためには、コミットメントとエネルギーが必要である。おそらく研究母集団の多様化と方法の拡張におけるもっともはやい道筋は、研究者の多様性を通ることである。女性やマイノリティが自身の適応や実際を見て科学の実践に関係づけられれば、科学の領域はより彼らにとって魅力的になるだろう。そして、我々の科学は、多様な学者が知見をもたらし、より公平な形の知識生産とより頑健な知識を得ていく、すべてにとってより良いものになっていくだろう。</p>
-<!-- raw HTML omitted -->
-
-    </div>
-  </article>
-
-  
+<p>WEIRDサンプルは世の中の大半を占めるタイプの人間というわけではない。Henrichらの論文はすでに多くの文献で引用されているが、研究サンプリングの実際や研究者教育の現場での変化はあまりない。どうも研究に伴う時間やコストの都合が利便性重視のサンプリングをデフォルトにしてしまっている。<br> こうした実態が危険なのは、とくに理論構築を試みるときなんかで、中流階級のヨーロッパ系アメリカ人が世界の標準のように扱われていることである。WEIRDサンプルじゃない人々のデータを報告するとき、WEIRD母集団の結果と比較してその違いを説明することになる。<br> インターネット研究（Amazon Mechanical Turk使うやつとか）はサンプルの多様性問題を緩和する可能性があるが、あくまで便利だから使われているのでサンプルのばらつきが気にされないというのなら希望は薄い。<br> ナローサンプリングは医学研究では非道徳的で許しがたいものとされるのに、心理学はちがうの？</p>
+<div id="sample-diversityのケース" class="section level5">
+<h5>Sample diversityのケース</h5>
+<p>学習や発達の領域では文化や経験の機能的役割に着目した研究が増えている。<br> たとえば、認知発達の領域では、存在論的なものに関して少なくとも３つ（意図的なエージェント、動物や植物、無生物）に分けるのが良いとされる。小さな子どもについての生物学は単純な心理学（人間性をプロトタイプとする心理学）で検討されてきたが、最近ではこれらの認知の発達には文化差があることが報告されている。最近の報告では、この３つの分割それ自体が西洋文化に合わせた捉え方であり、他の文化で知識構造を調べるには向いていないことが報告されている（レビューはOjalehto &amp; Medin, 2015を参照）。<br> 他の例として、意思決定に関する最近の研究は、相対的な判断における相対的な節約の傾向がしばしば経済状況により一般化されないことを示している。相対的な節約とは、たとえば40ドルの買い物で20ドルの節約をするためなら努力を惜しまないが、120ドルの買い物で20ドルを節約するために努力する人は少ないというものである。これは、かなり頑健な結果だったが、貧困層の人々には一般化されない（Mullainathan &amp; Shafir, 2013; Shah, Shafir, &amp; Mullainathan, 2015）。<br></p>
+</div>
+</div>
+<div id="researcher-non-diversity" class="section level4">
+<h4>2. Researcher non-diversity</h4>
+<p>これまで、研究者の多様性は、典型的には公平性や平等な代表性の枠組みで扱われてきた。たとえば、National Research Councilはマイノリティ学者が科学の世界で代表になりにくいことを指摘している（たとえば、National Academies Press, 2011）。しかし、研究者の多様性の危機は、そのような機会の平等に関する問題だけではない。研究者の多様性が失われることは科学の発展にも悪い影響を与える可能性がある。<br> 科学の妥当性には、どんな問題を研究するのか、どんな人々を研究するか、どの手続きや測定を使うか、という選択が重要となる。それらには、研究者の視点や価値、あるいは距離の近さが関わってくる。実際、社会科学者と研究の対象者には強い関連があると考えられる。<br> <br> 多様な研究者の視点は、多様な研究関心や新しい発見にもつながる。実際、女性の科学者が霊長類の社会行動の研究を始めたとき、メスとオスの両方行動に新しい見解が生まれたことや（Small &amp; Hrdy, 1986）、マイノリティ学者が従来のアイデンティティ発達、モチベーション、レジリエンスの因果関係仮説を発展させたこと（Graham &amp; Hudley, 2005; Spencer, 2006）もある。<br> また、モラル認知の発達研究の例もある。Lawrence Kohlbergはピアジェのモデルの後、モラルジレンマを使って発達段階を識別した（Kohlberg, 1973）。この段階理論は発達段階の強力な指標であったが、Carol Gilliganは彼のモデルを男性志向だと指摘した（Gilligan, 1982）。さらに、Snareyはコールバーグのモデルに対して文化的な批判を行い、27個の文化でレビューを行った。その結果、インドの研究では、生活の共同や動植物と人間との関係など、コールバーグのモデルでは触れられていなかったモラルがより重要視されていることが確認された。研究者の多様性が、サンプルや理論の多様性を生んだのだった。<br> <br> 研究者の多様性は、研究への取り組み方にも多様性を生むことがある（たとえば、Slow scholarship movement；Duarte et al., 2015を参照）。<br></p>
+</div>
+<div id="methodological-non-diversity" class="section level4">
+<h4>3. Methodological non-diversity</h4>
+<p>社会科学で検討されることの実際は文化的なものであり、その実際的なものを反映する基準は、多様な現場や多様な参加者、多様な問題設定の中で浮かび上がる。これは、理論、材料、方法、尺度、環境、研究文脈も含む。方法論の多様性は、研究者の多様性がもたらす様々な視点を後押しする。<br> 心理学の中でも定期的に、研究の問題や方法、測定、設定、理論構築の選択について多様性のなさが批判されている。人の認知を理解するうえでは、これらの多様性は重要であるはずだ。文脈のある理論を検討したいなら、関連する集団の独自の歴史や人口統計的側面を説明する指標が求められる。<br> 社会科学者の多元性はCampbellとStanleyのExperimental and Quasi-experimental Designs for Researchでも触れられている。洗練された学問は単一化した尺度を使用すべきとされる。皮肉なことに、近年のいわゆる再現性危機は、頑健性の類よりも正確な再現性を優先し、それは収束的な測定によってのみ確かなものに出来るとする。さらに皮肉なことに、これはmany labsの再現性プロジェクトを生んだ。Many labsは研究の場所の多様性を促すものであるが、効果は研究の場所が違っても維持されるという仮定のもとで行われている。<br> <br> コンピュータの発展により、材料や刺激呈示の方法はかなり広がった。しかし、一方で、“社会文脈”のモデルとして小さなブースにパソコンと一緒に参加者を閉じ込める方法が流行った。Baumeister, Vohs, &amp; Funder (2007)は社会科学のひとつである心理学が自己報告かキーボードの上で指を動かしているだけでいいのか懸念している。<br> 技術の発展の良い例はHofmann, Wisneski, Brandt, &amp; Skitka (2014)である。この研究は、スマホを使って１日のうち５度、道徳的または非道徳的な経験について問うもので、実験室研究の結果を再現し、知見の頑健性を示した。<br> 意思決定の領域では、方法や手続きの寛容さと狭量さの両方の例がある。よくある意思決定課題は確率の異なるベットとペイオフにおける意思決定を見るものである。Baruch Fischhoff (1996) は、現実世界の状況を実験室に単純化する際の“内部破壊”のリスクを指摘している。単純化することによって現実世界の状況を壊し、課題設定に適合しない状況を排除しているように思える。顕著な例としてはシナリオを用いた実験である。Fischhoffはさらに、ナローな課題から現実世界に知見を返すには、かなりの外的要因を含む必要があり、他の重要な現象を見れていない可能性があることも指摘している。<br></p>
+</div>
+<div id="a-systems-levels-perspective-and-niche-construction" class="section level4">
+<h4>A systems-levels perspective and niche construction</h4>
+<p>行動科学や社会科学は複雑なシステムを構成するものであり、それらの学問は現場と共に発展してきた。しかし、これらのニッチ構造プロセスは、一部の集団（WEIRDサンプルとか）に特権が与えられたまま、ナローな感覚、ナローな価値、ナローな研究実践を強化するように働いている。<br> このニッチ構造プロセスは若者が大学に入学した際にも生じているかもしれない。<br> たとえば、白人制度の優勢なところに入ったマイノリティまたは女性の院生（とくに多様な背景がリクルート理由のとき）は、自身の研究を行うにあたって、認識論的挑戦（多様なアプローチや母集団に費やす意味を学部から問われる）、文脈的挑戦（文化的な大学の地理や人間関係）、実践的挑戦（研究関係を発展させる時間）に直面するかもしれない。<br> サンプルの多様性、方法の多様性、研究者の多様を推奨し、支持していくためには、コミットメントとエネルギーが必要である。おそらく研究母集団の多様化と方法の拡張におけるもっともはやい道筋は、研究者の多様性を通ることである。女性やマイノリティが自身の適応や実際を見て科学の実践に関係づけられれば、科学の領域はより彼らにとって魅力的になるだろう。そして、我々の科学は、多様な学者が知見をもたらし、より公平な形の知識生産とより頑健な知識を得ていく、すべてにとってより良いものになっていくだろう。</p>
+<p><br> Medinらは、社会科学において多様性を無視することの危険性について指摘しました。社会科学をする意味が社会をより良くするためであるとするならば、研究知見は現場で活かされないといけません。しかし、現実場面は実験室ほどクリーンではなく、統計ソフトの中ほど取捨選択が自由ではありません。そんな現場に研究知見を活かそうと思うと、知見の頑健性か柔軟性が必要に思います。すなわち、知見はあらゆる文脈においても変わらず言えるのか、あるいは、文脈によって変わるならその変化に影響する要因は何なのかに答えられるということです。<br> 頑健な結果だとか、違う結果になったがここの要因が違ったからだとかを言おうと思うと、その基準になっているオリジナルの知見が確かなものでなければなりません。すなわち、同じ人間に同じ文脈で研究したら必ず同じ結果になるという前提があるから、この文脈でも同じ結果だったので頑健だとか、ここが違ったから変わったんだとか言うことができます。ここに再現性の問題は関わっているのだと思います。<br> ただ、「これは再現性のない研究です」って言われると、まるで質の悪い研究なんだと思っちゃうけど、もしも社会科学が多様性をも関心の一つとするならば、追試において結果が再現されなかったことそれ自体を問題の中心とするのは少し違うのかも。社会科学において再現されなかったときに問題なのは、むしろその原因を判別できないことなのかも。同じ結果になるはずだと思ってやった研究が全然違う結果になったとき、その原因がわからなかったら結果をどう解釈していいかわかりませんしね。だとすると、再現性の問題への対応としては後々の研究者が自分の研究と比較できるように、実験設定を（関係ないかもしれないことも）事細かに記しておくことが重要なのかもしれません。<br> あ、だからオープンサイエンスが推奨されたり、Methodsの文字制限が無くなったりしているのかな？<br></p>
+<p>なんかぐだぐだな道中記にみたいになってしまった。<br></p>
+</div>
+</div>
+</div>
 
 
-</main>
+</div>
 
-      <footer class="footer">
-        <ul class="footer-links">
-          <li>
-            <a href="../../../../index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
-          </li>
-          <li>
-            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="../../../../images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
-          </li>
-        </ul>
-      </footer>
+<div id="postamble" data-toggle="wy-nav-shift" class="status">
+<p class="author"><span class="glyphicon glyphicon-user"></span> Tomoyuki Kobayashi</p>
+<p class="date"><span class="glyphicon glyphicon-calendar"></span> 2019-12-15</p>
+</div>
 
-    </div>
-    
 
-    
+<script>
+$(document).ready(function () {
+ 	  });
+</script>
 
-    
-  </body>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
 </html>
-
