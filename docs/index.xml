@@ -5,7 +5,7 @@
     <link>/</link>
     <description>Recent content on tomokoba website</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>ja-jp</language>
     <lastBuildDate>Sun, 15 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
@@ -17,14 +17,7 @@
       <pubDate>Sun, 15 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/12/15/%E5%86%8D%E7%8F%BE%E6%80%A7%E5%95%8F%E9%A1%8C%E3%81%A3%E3%81%A6%E4%BD%95%E3%81%8C%E5%95%8F%E9%A1%8C%E3%81%AA%E3%81%AE/</guid>
-      <description>この記事は、Open and Reproducible Science Advent Calendar 2019の15日目の記事です。担当は、福島県立医科大学で学振PDをしている小林智之です。
-私は専門が社会心理学で、集団間コンフリクトにおける人々の認知に関心があります。博士課程では実験室実験大好き人間で、メタステレオタイプの研究をしてきました。 卒業後は福島県に移り、東日本大震災の避難者をめぐる集団間コンフリクトについて、がっつり現場に入りつつ研究しています。博士課程まではただ理論がおもしろくて研究してきたんですが、今は集団間コンフリクトを実際に目の当たりにしながら、この人たちのために社会心理学は何ができるんだろうと悶々する毎日です。
-再現性の問題は学術知見を社会問題の現場に活かすうえでも重要なポイントだと思います。実験室で出た良い結果が現場で再現されないなら意味ないからです。ただ、ここでの再現性には同時に頑健性の問題もかかわってきます。再現性と頑健性の議論は相補的にも思いますが、しばしば頑健性がおいてけぼりをくらい再現性問題のひとり歩きする可能性があります。
-というわけで面白そうな論文があったので読んでみました。
-Medin, Ojalehto, Marin, &amp;amp; Bang. Systems of (non-) diversity, Nature Human Behavior (2017) https://www.nature.com/articles/s41562-017-0088 Medinらは、現行の学術システムが社会科学や行動科学の本来の貢献を阻害しているとして、その要因に次の3つをあげた。これらは互いに関連する。
- 研究対象（Sample non-diversity） 理論や方法（methodological non-diversity） 研究者（researcher non-diversity）  1. Sample non-diversity 研究参加者の極端な偏りや文化的背景の無視は、人間の思考や行動についての知識の一般化可能性にとって脅威となる。 WEIRD samples (Western, Educated, Industrialized, Rich and Democratic)： Henrich, Heine &amp;amp; Norenzayan (2010)によって呼ばれた心理学研究の90％以上を占めるとされる参加者たちのこと。
-WEIRDサンプルは世の中の大半を占めるタイプの人間というわけではない。Henrichらの論文はすでに多くの文献で引用されているが、研究サンプリングの実際や研究者教育の現場での変化はあまりない。どうも研究に伴う時間やコストの都合が利便性重視のサンプリングをデフォルトにしてしまっている。 こうした実態が危険なのは、とくに理論構築を試みるときなんかで、中流階級のヨーロッパ系アメリカ人が社会の標準のように扱われていることである。WEIRDサンプルじゃない人々のデータを報告するとき、WEIRD母集団の結果と比較してその違いを説明することになる。インターネット研究（Amazon Mechanical Turk使うやつとか）はサンプルの多様性問題を緩和する可能性があるが、あくまで便利だから使われているのでサンプルのばらつきが気にされないというのなら希望は薄い。ナローサンプリングは医学研究では非道徳的で許しがたいものとされるのに、心理学はちがうの？
-Sample diversityのケース 学習や発達の領域では文化や経験の機能的役割に着目した研究が増えている。 たとえば、認知発達の領域では、存在論的なものに関して少なくとも３つ（意図的なエージェント、動物や植物、無生物）に分けるのが良いとされる。小さな子どもについての生物学は単純な心理学（人間性をプロトタイプとする心理学）で構成されてきたが、最近ではこれらの認知の発達について文化差があると報告されている。最近の報告では、この３つの分割それ自体が西洋文化に合わせた捉え方であり、他の文化で知識構造を調べるには向いていないことが報告されている（レビューはOjalehto &amp;amp; Medin, 2015を参照）。 他の例として、意思決定に関する最近の研究は、相対的な判断における相対的な節約の傾向がしばしば経済状況により一般化されないことを示している。相対的な節約とは、たとえば40ドルの買い物で20ドルの節約をするためなら努力を惜しまないが、120ドルの買い物で20ドルを節約するために努力する人は少ないというものである。これは、かなり頑健な結果だったが、貧困層の人々には一般化されない（Mullainathan &amp;amp; Shafir, 2013; Shah, Shafir, &amp;amp; Mullainathan, 2015）。</description>
+      <description>この記事は、Open and Reproducible Science Advent Calendar 2019の15日目の記事です。担当は、福島県立医科大学で学振PDをしている小林智之です。 私は専門が社会心理学で</description>
     </item>
     
     <item>

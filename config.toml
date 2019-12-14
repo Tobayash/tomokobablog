@@ -1,5 +1,8 @@
-baseurl = "/"
-languageCode = "en-us"
+baseurl = "**Your site is ready to be published at https://tobayash.github.io/tomokobablog/**"
+relativeurls = true
+publishDir = "docs"
+hasCJKLanguage = true
+languageCode = "ja-jp"
 title = "tomokoba website"
 theme = "hugo-lithium"
 googleAnalytics = ""
