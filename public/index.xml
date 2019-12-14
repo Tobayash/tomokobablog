@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tomokoba website</title>
+    <link>/</link>
+    <description>Recent content on tomokoba website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>再現性問題って何が問題なの？</title>
+      <link>/2019/12/15/%E5%86%8D%E7%8F%BE%E6%80%A7%E5%95%8F%E9%A1%8C%E3%81%A3%E3%81%A6%E4%BD%95%E3%81%8C%E5%95%8F%E9%A1%8C%E3%81%AA%E3%81%AE/</link>
+      <pubDate>Sun, 15 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/12/15/%E5%86%8D%E7%8F%BE%E6%80%A7%E5%95%8F%E9%A1%8C%E3%81%A3%E3%81%A6%E4%BD%95%E3%81%8C%E5%95%8F%E9%A1%8C%E3%81%AA%E3%81%AE/</guid>
+      <description>この記事は、Open and Reproducible Science Advent Calendar 2019の15日目の記事です。担当は、福島県立医科大学で学振PDをしている小林智之です。
+私は専門が社会心理学で、集団間コンフリクトにおける人々の認知に関心があります。博士課程では実験室実験大好き人間で、メタステレオタイプの研究をしてきました。 卒業後は福島県に移り、東日本大震災の避難者をめぐる集団間コンフリクトについて、がっつり現場に入りつつ研究しています。博士課程まではただ理論がおもしろくて研究してきたんですが、今は集団間コンフリクトを実際に目の当たりにしながら、この人たちのために社会心理学は何ができるんだろうと悶々する毎日です。
+再現性の問題は学術知見を社会問題の現場に活かすうえでも重要なポイントだと思います。実験室で出た良い結果が現場で再現されないなら意味ないからです。ただ、ここでの再現性には同時に頑健性の問題もかかわってきます。再現性と頑健性の議論は相補的にも思いますが、しばしば頑健性がおいてけぼりをくらい再現性問題のひとり歩きする可能性があります。
+というわけで面白そうな論文があったので読んでみました。
+Medin, Ojalehto, Marin, &amp;amp; Bang. Systems of (non-) diversity, Nature Human Behavior (2017) https://www.nature.com/articles/s41562-017-0088 Medinらは、現行の学術システムが社会科学や行動科学の本来の貢献を阻害しているとして、その要因に次の3つをあげた。これらは互いに関連する。
+ 研究対象（Sample non-diversity） 理論や方法（methodological non-diversity） 研究者（researcher non-diversity）  1. Sample non-diversity 研究参加者の極端な偏りや文化的背景の無視は、人間の思考や行動についての知識の一般化可能性にとって脅威となる。 WEIRD samples (Western, Educated, Industrialized, Rich and Democratic)： Henrich, Heine &amp;amp; Norenzayan (2010)によって呼ばれた心理学研究の90％以上を占めるとされる参加者たちのこと。
+WEIRDサンプルは世の中の大半を占めるタイプの人間というわけではない。Henrichらの論文はすでに多くの文献で引用されているが、研究サンプリングの実際や研究者教育の現場での変化はあまりない。どうも研究に伴う時間やコストの都合が利便性重視のサンプリングをデフォルトにしてしまっている。 こうした実態が危険なのは、とくに理論構築を試みるときなんかで、中流階級のヨーロッパ系アメリカ人が社会の標準のように扱われていることである。WEIRDサンプルじゃない人々のデータを報告するとき、WEIRD母集団の結果と比較してその違いを説明することになる。インターネット研究（Amazon Mechanical Turk使うやつとか）はサンプルの多様性問題を緩和する可能性があるが、あくまで便利だから使われているのでサンプルのばらつきが気にされないというのなら希望は薄い。ナローサンプリングは医学研究では非道徳的で許しがたいものとされるのに、心理学はちがうの？
+Sample diversityのケース 学習や発達の領域では文化や経験の機能的役割に着目した研究が増えている。 たとえば、認知発達の領域では、存在論的なものに関して少なくとも３つ（意図的なエージェント、動物や植物、無生物）に分けるのが良いとされる。小さな子どもについての生物学は単純な心理学（人間性をプロトタイプとする心理学）で構成されてきたが、最近ではこれらの認知の発達について文化差があると報告されている。最近の報告では、この３つの分割それ自体が西洋文化に合わせた捉え方であり、他の文化で知識構造を調べるには向いていないことが報告されている（レビューはOjalehto &amp;amp; Medin, 2015を参照）。 他の例として、意思決定に関する最近の研究は、相対的な判断における相対的な節約の傾向がしばしば経済状況により一般化されないことを示している。相対的な節約とは、たとえば40ドルの買い物で20ドルの節約をするためなら努力を惜しまないが、120ドルの買い物で20ドルを節約するために努力する人は少ないというものである。これは、かなり頑健な結果だったが、貧困層の人々には一般化されない（Mullainathan &amp;amp; Shafir, 2013; Shah, Shafir, &amp;amp; Mullainathan, 2015）。</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
+      
+      <guid>/about/</guid>
+      <description>This is a &amp;ldquo;hello world&amp;rdquo; example website for the blogdown package. The theme was forked from @jrutheiser/hugo-lithium-theme and modified by Yihui Xie.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/1/01/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/01/</guid>
+      <description>再現性問題って何が問題なの？/*! jQuery v1.11.3 | (c) 2005, 2015 jQuery Foundation, Inc. | jquery.org/license */!function(a,b){&#34;object&#34;==typeof module&amp;&amp;&#34;object&#34;==typeof module.exports?module.exports=a.document?b(a,!0):function(a){if(!a.document)throw new Error(&#34;jQuery requires a window with a document&#34;);return b(a)}:b(a)}(&#34;undefined&#34;!=typeof window?window:this,function(a,b){var c=[],d=c.slice,e=c.concat,f=c.push,g=c.indexOf,h={},i=h.toString,j=h.hasOwnProperty,k={},l=&#34;1.11.3&#34;,m=function(a,b){return new m.fn.init(a,b)},n=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,o=/^-ms-/,p=/-([\da-z])/gi,q=function(a,b){return b.toUpperCase()};m.fn=m.prototype={jquery:l,constructor:m,selector:&#34;&#34;,length:0,toArray:function(){return d.call(this)},get:function(a){return null!=a?0a?this[a+this.length]:this[a]:d.call(this)},pushStack:function(a){var b=m.merge(this.constructor(),a);return b.prevObject=this,b.context=this.context,b},each:function(a,b){return m.each(this,a,b)},map:function(a){return this.pushStack(m.map(this,function(b,c){return a.call(b,c,b)}))},slice:function(){return this.pushStack(d.apply(this,arguments))},first:function(){return this.eq(0)},last:function(){return this.eq(-1)},eq:function(a){var b=this.length,c=+a+(0a?b:0);return this.pushStack(c=0&amp;&amp;bc?[this[c]]:[])},end:function(){return this.prevObject||this.constructor(null)},push:f,sort:c.sort,splice:c.splice},m.extend=m.fn.extend=function(){var a,b,c,d,e,f,g=arguments[0]||{},h=1,i=arguments.length,j=!1;for(&#34;boolean&#34;==typeof g&amp;&amp;(j=g,g=arguments[h]||{},h++),&#34;object&#34;==typeof g||m.isFunction(g)||(g={}),h===i&amp;&amp;(g=this,h--);ih;h++)if(null!=(e=arguments[h]))for(d in e)a=g[d],c=e[d],g!==c&amp;&amp;(j&amp;&amp;c&amp;&amp;(m.isPlainObject(c)||(b=m.isArray(c)))?(b?(b=!1,f=a&amp;&amp;m.isArray(a)?a:[]):f=a&amp;&amp;m.isPlainObject(a)?a:{},g[d]=m.extend(j,f,c)):void 0!==c&amp;&amp;(g[d]=c));return g},m.extend({expando:&#34;jQuery&#34;+(l+Math.random()).replace(/\D/g,&#34;&#34;),isReady:!0,error:function(a){throw new Error(a)},noop:function(){},isFunction:function(a){return&#34;function&#34;===m.type(a)},isArray:Array.isArray||function(a){return&#34;array&#34;===m.type(a)},isWindow:function(a){return null!=a&amp;&amp;a==a.window},isNumeric:function(a){return!m.isArray(a)&amp;&amp;a-parseFloat(a)+1=0},isEmptyObject:function(a){var b;for(b in a)return!1;return!0},isPlainObject:function(a){var b;if(!a||&#34;object&#34;!==m.type(a)||a.nodeType||m.isWindow(a))return!1;try{if(a.constructor&amp;&amp;!j.call(a,&#34;constructor&#34;)&amp;&amp;!j.call(a.constructor.prototype,&#34;isPrototypeOf&#34;))return!1}catch(c){return!1}if(k.ownLast)for(b in a)return j.call(a,b);for(b in a);return void 0===b||j.call(a,b)},type:function(a){return null==a?a+&#34;&#34;:&#34;object&#34;==typeof a||&#34;function&#34;==typeof a?h[i.call(a)]||&#34;object&#34;:typeof a},globalEval:function(b){b&amp;&amp;m.</description>
+    </item>
+    
+  </channel>
+</rss>
