@@ -3,15 +3,7 @@ title: 再現性問題って何が問題なの？
 author: Tomoyuki Kobayashi
 date: '2019-12-15'
 categories: ["Advent Calendar"]
-tags: ["再現性", "Advent Calendar"]
-output:
-  rmdformats::readthedown:
-    code_folding: hide
-    self_contained: true
-    thumbnails: false
-    lightbox: false
-    md_extensions: -ascii_identifiers
-    css: styles_customized.css
+tags: ["Reproducibility", "Advent Calendar"]
 ---
 
 <style>

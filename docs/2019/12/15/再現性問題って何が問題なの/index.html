@@ -1,71 +1,96 @@
 <!DOCTYPE html>
-<html lang="ja-jp">
-  <head>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.61.0" />
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.61.0" />
 
-
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="" />
+  <meta property="og:url" content="/2019/12/15/%E5%86%8D%E7%8F%BE%E6%80%A7%E5%95%8F%E9%A1%8C%E3%81%A3%E3%81%A6%E4%BD%95%E3%81%8C%E5%95%8F%E9%A1%8C%E3%81%AA%E3%81%AE/" />
+  <link rel="canonical" href="../../../../2019/12/15/%E5%86%8D%E7%8F%BE%E6%80%A7%E5%95%8F%E9%A1%8C%E3%81%A3%E3%81%A6%E4%BD%95%E3%81%8C%E5%95%8F%E9%A1%8C%E3%81%AA%E3%81%AE/" /><link rel="shortcut icon" href="favicon.ico" type="image/x-png" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "\/"
+      },
+      "articleSection" : "post",
+      "name" : "再現性問題って何が問題なの？",
+      "headline" : "再現性問題って何が問題なの？",
+      "description" : "@import url(https:\/\/fonts.googleapis.com\/earlyaccess\/notosansjapanese.css); @import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,900); この記事は、Open and Reproducible Science Advent Calendar 2019の15日目の記事です。 担当は、福島県立医科大学で学振PDをしている小林智之です。 再現性の問題に",
+      "inLanguage" : "en-US",
+      "author" : "",
+      "creator" : "",
+      "publisher": "",
+      "accountablePerson" : "",
+      "copyrightHolder" : "",
+      "copyrightYear" : "2019",
+      "datePublished": "2019-12-15 00:00:00 \x2b0000 UTC",
+      "dateModified" : "2019-12-15 00:00:00 \x2b0000 UTC",
+      "url" : "\/2019\/12\/15\/%E5%86%8D%E7%8F%BE%E6%80%A7%E5%95%8F%E9%A1%8C%E3%81%A3%E3%81%A6%E4%BD%95%E3%81%8C%E5%95%8F%E9%A1%8C%E3%81%AA%E3%81%AE\/",
+      "keywords" : [ "Reproducibility","Advent Calendar", ]
+  }
+</script>
 <title>再現性問題って何が問題なの？ - tomokoba website</title>
-<meta property="og:title" content="再現性問題って何が問題なの？ - tomokoba website">
+  <meta property="og:title" content="再現性問題って何が問題なの？ - tomokoba website" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); この記事は、Open and Reproducible Science Advent Calendar 2019の15日目の記事です。 担当は、福島県立医科大学で学振PDをしている小林智之です。 再現性の問題に" />
 
-
-  <link href='../../../../favicon.ico' rel='icon' type='image/x-icon'/>
-
-
-
+  <link rel="stylesheet" href="../../../../css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet"
+    href="../../../../css/github-markdown.min.css" />
+  <link rel="stylesheet" href="../../../../css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="../../../../css/index.css">
+  <link href="../../../../index.xml" rel="alternate" type="application/rss+xml" title="tomokoba website">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+  
   
 
+  
+</head>
 
 
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="../../../../"></a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
 
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">再現性問題って何が問題なの？</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2019-12-15 00:00:00 UTC">
+                15 Dec 2019
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+            </div>
+          </div>
+          
+        </header>
 
-
-
-<link rel="stylesheet" href="../../../../css/fonts.css" media="all">
-<link rel="stylesheet" href="../../../../css/main.css" media="all">
-
-
-
-  </head>
-  <body>
-    <div class="wrapper">
-      <header class="header">
-        <nav class="nav">
-  <a href="../../../../" class="nav-logo">
-    <img src="../../../../images/logo.png"
-         width="50"
-         height="50"
-         alt="Logo">
-  </a>
-
-  <ul class="nav-links">
-    
-    <li><a href="https://tobayash.github.io/hp2/index.html">Main page</a></li>
-    
-    <li><a href="https://twitter.com/tomokoba10">Twitter</a></li>
-    
-  </ul>
-</nav>
-
-      </header>
-
-
-<main class="content" role="main">
-
-  <article class="article">
-    
-    <span class="article-duration">11 min read</span>
-    
-
-    <h1 class="article-title">再現性問題って何が問題なの？</h1>
-
-    
-    <span class="article-date">2019-12-15</span>
-    
-
-    <div class="article-content">
-      
+        <div class="post-content markdown-body">
+          
 
 
 <style>
@@ -140,31 +165,53 @@ Henrich, Heine &amp; Norenzayan (2010)によって呼ばれた心理学研究の
 </div>
 </div>
 
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="../../../../categories/advent%20calendar/">
+                Advent Calendar
+              </a>
+            </div>
+            
+          </div>
+        </div>
+
+        
+        
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  
+</div>
+
+      </div>
     </div>
   </article>
 
+  <script src="../../../../js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
   
 
+</body>
 
-</main>
-
-      <footer class="footer">
-        <ul class="footer-links">
-          <li>
-            <a href="../../../../index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
-          </li>
-          <li>
-            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="../../../../images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
-          </li>
-        </ul>
-      </footer>
-
-    </div>
-    
-
-    
-
-    
-  </body>
 </html>
-
