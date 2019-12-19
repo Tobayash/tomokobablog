@@ -12,12 +12,6 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 [permalinks]
     post = "/:year/:month/:day/:slug/"
 
-[[menu.main]]
-    name = "Main page"
-    url = "https://tobayash.github.io/hp2/index.html"
-[[menu.main]]
-    name = "Twitter"
-    url = "https://twitter.com/tomokoba10"
 
 [params]
     description = "A website built through Hugo and blogdown."
@@ -39,4 +33,11 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     width = 50
     height = 50
     alt = "Logo"
+
+[[params.socials]]
+name = "Main page"
+link = "https://tobayash.github.io/hp2/index.html"
+[[params.socials]]
+name = "Twitter"
+link = "https://twitter.com/tomokoba10"
 
