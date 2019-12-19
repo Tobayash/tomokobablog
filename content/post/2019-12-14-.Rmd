@@ -28,6 +28,7 @@ tags: ["Reproducibility", "Advent Calendar"]
 ***
 ### Medin, Ojalehto, Marin, & Bang. **Systems of (non-) diversity**, ***Nature Human Behavior*** (2017) https://www.nature.com/articles/s41562-017-0088
 Medinらは、現行の学術システムが社会科学や行動科学の本来の貢献を阻害しているとして、その要因に次の3つをあげた。
+
 1. 研究対象（Sample non-diversity）
 2. 理論や方法（methodological non-diversity）
 3. 研究者（researcher non-diversity）
