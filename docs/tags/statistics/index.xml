@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on tomokoba website</title>
-    <link>/post/</link>
-    <description>Recent content in Posts on tomokoba website</description>
+    <title>Statistics on tomokoba website</title>
+    <link>/tags/statistics/</link>
+    <description>Recent content in Statistics on tomokoba website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/statistics/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>yamlヘッダ</title>
-      <link>/2020/01/01/yaml%E3%83%98%E3%83%83%E3%83%80/</link>
-      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/2020/01/01/yaml%E3%83%98%E3%83%83%E3%83%80/</guid>
-      <description>@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); Rmarkdownでドキュメントを作るときの全体設定 改行やスペースが重要になるので注意 たとえば・・・ --- title: &amp;quot;Memo&amp;quot; output: html_document: toc: true toc_float: true --- これだとエラ</description>
-    </item>
     
     <item>
       <title>クラスター分析</title>
@@ -27,15 +18,6 @@
       
       <guid>/2020/01/01/%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC%E5%88%86%E6%9E%90/</guid>
       <description>@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); 以下のコードを使う。 clust &amp;lt;- XXX #&amp;lt;U+5206&amp;gt;&amp;lt;U+6790&amp;gt;&amp;lt;U+3057&amp;gt;&amp;lt;U+305F&amp;gt;&amp;lt;U+3044&amp;gt;&amp;lt;U+30C7&amp;gt;&amp;lt;U+30FC&amp;gt;&amp;lt;U+30BF&amp;gt;&amp;lt;U+3092&amp;gt;&amp;lt;U+5165&amp;gt;&amp;lt;U+308C&amp;gt;&amp;lt;U+308B&amp;gt; # &amp;lt;U+8DDD&amp;gt;&amp;lt;U+96E2&amp;gt;&amp;lt;U+306E&amp;gt;&amp;lt;U+8A08&amp;gt;&amp;lt;U+7B97&amp;gt; uclust &amp;lt;- dist(clust)^2 #&amp;lt;U+30E6&amp;gt;&amp;lt;U+30FC&amp;gt;&amp;lt;U+30AF&amp;gt;&amp;lt;U+30EA&amp;gt;&amp;lt;U+30C3&amp;gt;&amp;lt;U+30C9&amp;gt;&amp;lt;U+8DDD&amp;gt;&amp;lt;U+96E2&amp;gt;&amp;lt;U+306E&amp;gt;&amp;lt;U+5E73&amp;gt;&amp;lt;U+65B9&amp;gt; result &amp;lt;- hclust(uclust, method = &amp;quot;ward.D2&amp;quot;) #Ward&amp;lt;U+6CD5&amp;gt; groups &amp;lt;- cutree(result, k = 4) #&amp;lt;U+30AF&amp;gt;&amp;lt;U+30E9&amp;gt;&amp;lt;U+30B9&amp;gt;&amp;lt;U+30BF&amp;gt;&amp;lt;U+6570&amp;gt;&amp;lt;U+3092&amp;gt;4&amp;lt;U+3064&amp;gt;&amp;lt;U+3068&amp;gt;&amp;lt;U+3059&amp;gt;&amp;lt;U+308B&amp;gt; groups &amp;lt;- factor(groups) # &amp;lt;U+30AF&amp;gt;&amp;lt;U+30E9&amp;gt;&amp;lt;U+30B9&amp;gt;&amp;lt;U+30BF&amp;gt;&amp;lt;U+306B&amp;gt;&amp;lt;U+540D&amp;gt;&amp;lt;U+524D&amp;gt;&amp;lt;U+3092&amp;gt;&amp;lt;U+4ED8&amp;gt;&amp;lt;U+3051&amp;gt;&amp;lt;U+308B&amp;gt; levels(groups)[1] &amp;lt;- &amp;quot;Group1&amp;quot; levels(groups)[2] &amp;lt;- &amp;quot;Group2&amp;quot; levels(groups)[3] &amp;lt;- &amp;quot;Group3&amp;quot; levels(groups)[3] &amp;lt;- &amp;quot;Group4&amp;quot; table(groups) clust$groups &amp;lt;- groups aggregate(. ~ groups, data = clust, FUN = mean) クラ</description>
-    </item>
-    
-    <item>
-      <title>ロジスティック回帰分析のグラフ</title>
-      <link>/2020/01/01/%E3%83%AD%E3%82%B8%E3%82%B9%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E5%9B%9E%E5%B8%B0%E5%88%86%E6%9E%90%E3%81%AE%E3%82%B0%E3%83%A9%E3%83%95/</link>
-      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/2020/01/01/%E3%83%AD%E3%82%B8%E3%82%B9%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E5%9B%9E%E5%B8%B0%E5%88%86%E6%9E%90%E3%81%AE%E3%82%B0%E3%83%A9%E3%83%95/</guid>
-      <description>@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); なんかいい感じのグラフ描きたいなって思いますよね。 ローデータがぶわーってプロットされてて、回帰直線・曲線がシューン！なってるやつ。 下</description>
     </item>
     
     <item>
@@ -48,30 +30,12 @@
     </item>
     
     <item>
-      <title>軸の設定１</title>
-      <link>/2020/01/01/%E8%BB%B8%E3%81%AE%E8%A8%AD%E5%AE%9A%EF%BC%91/</link>
-      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/2020/01/01/%E8%BB%B8%E3%81%AE%E8%A8%AD%E5%AE%9A%EF%BC%91/</guid>
-      <description>@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); ggplotでグラフを作成すると、x軸から棒グラフなんかが浮いてしまう（ラピュタ）。ラピュタを無くすならscale_y_contin</description>
-    </item>
-    
-    <item>
       <title>階層的重回帰分析</title>
       <link>/2020/01/01/%E9%9A%8E%E5%B1%A4%E7%9A%84%E9%87%8D%E5%9B%9E%E5%B8%B0%E5%88%86%E6%9E%90/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/01/01/%E9%9A%8E%E5%B1%A4%E7%9A%84%E9%87%8D%E5%9B%9E%E5%B8%B0%E5%88%86%E6%9E%90/</guid>
       <description>@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); 階層的重回帰分析は、ステップ１からステップ２へとステップごとに関心のある変数を投入していき、分散説明率が統計的に有意に増加することを</description>
-    </item>
-    
-    <item>
-      <title>再現性問題って何が問題なの？</title>
-      <link>/2019/12/15/%E5%86%8D%E7%8F%BE%E6%80%A7%E5%95%8F%E9%A1%8C%E3%81%A3%E3%81%A6%E4%BD%95%E3%81%8C%E5%95%8F%E9%A1%8C%E3%81%AA%E3%81%AE/</link>
-      <pubDate>Sun, 15 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/2019/12/15/%E5%86%8D%E7%8F%BE%E6%80%A7%E5%95%8F%E9%A1%8C%E3%81%A3%E3%81%A6%E4%BD%95%E3%81%8C%E5%95%8F%E9%A1%8C%E3%81%AA%E3%81%AE/</guid>
-      <description>@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); この記事は、Open and Reproducible Science Advent Calendar 2019の15日目の記事です。 担当は、福島県立医科大学で学振PDをしている小林智之です。 再現性の問題に</description>
     </item>
     
   </channel>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.61.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="" />
+  <meta property="og:url" content="/2020/01/01/%E9%9A%8E%E5%B1%A4%E7%9A%84%E9%87%8D%E5%9B%9E%E5%B8%B0%E5%88%86%E6%9E%90/" />
+  <link rel="canonical" href="../../../../2020/01/01/%E9%9A%8E%E5%B1%A4%E7%9A%84%E9%87%8D%E5%9B%9E%E5%B8%B0%E5%88%86%E6%9E%90/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "\/"
+      },
+      "articleSection" : "post",
+      "name" : "階層的重回帰分析",
+      "headline" : "階層的重回帰分析",
+      "description" : "@import url(https:\/\/fonts.googleapis.com\/earlyaccess\/notosansjapanese.css); @import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,900); 階層的重回帰分析は、ステップ１からステップ２へとステップごとに関心のある変数を投入していき、分散説明率が統計的に有意に増加することを",
+      "inLanguage" : "en-US",
+      "author" : "",
+      "creator" : "",
+      "publisher": "",
+      "accountablePerson" : "",
+      "copyrightHolder" : "",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-01-01 00:00:00 \x2b0000 UTC",
+      "dateModified" : "2020-01-01 00:00:00 \x2b0000 UTC",
+      "url" : "\/2020\/01\/01\/%E9%9A%8E%E5%B1%A4%E7%9A%84%E9%87%8D%E5%9B%9E%E5%B8%B0%E5%88%86%E6%9E%90\/",
+      "keywords" : [ "Statistics","Analysis","Hierarchical Regression Analysis", ]
+  }
+</script>
+<title>階層的重回帰分析 - tomokoba website</title>
+  <meta property="og:title" content="階層的重回帰分析 - tomokoba website" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); 階層的重回帰分析は、ステップ１からステップ２へとステップごとに関心のある変数を投入していき、分散説明率が統計的に有意に増加することを" />
+
+  <link rel="stylesheet" href="../../../../css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet"
+    href="../../../../css/github-markdown.min.css" />
+  <link rel="stylesheet" href="../../../../css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="../../../../css/index.css">
+  <link href="../../../../index.xml" rel="alternate" type="application/rss+xml" title="tomokoba website">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="../../../../">Tomokoba blog</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">階層的重回帰分析</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-01-01 00:00:00 UTC">
+                01 Jan 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+
+
+<style>
+  @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+</style>
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Lato:400,900);
+</style>
+<p>　階層的重回帰分析は、ステップ１からステップ２へとステップごとに関心のある変数を投入していき、分散説明率が統計的に有意に増加することを検定することで、その変数の重要性を分析する手法である。<br>
+　たとえば、大事な人に会うときや人前で話をするとき、誰しも不安を感じやすい（状態不安という）。そのときの不安の程度は、協調性や誠実さといったパーソナリティ特性によることが考えられるが、研究として関心があるのはこれらの交互作用効果だとする（“誠実さが高く協調性が高い人は周囲に合わせようとするため、不安を感じやすい”とか）。その場合は、ステップ１では説明変数として“協調性”と“誠実さ”を入れ、ステップ２ではさらに“協調性”と“誠実さ”の交互作用項を入れて分析する。ただし、各変数と交互作用項の相関による多重共線性の問題が考えられるので中心化処理（平均値を引く）を忘れずに行う。<br></p>
+<div id="分析" class="section level3">
+<h3>分析</h3>
+<p>　Rで分析する場合には以下のコードを用いる。<br></p>
+<pre class="r"><code>data &lt;- XXX  #&lt;U+5206&gt;&lt;U+6790&gt;&lt;U+3057&gt;&lt;U+305F&gt;&lt;U+3044&gt;&lt;U+30C7&gt;&lt;U+30FC&gt;&lt;U+30BF&gt;&lt;U+3092&gt;&lt;U+5165&gt;&lt;U+308C&gt;&lt;U+308B&gt;
+y &lt;- data$v1  #&lt;U+5FDC&gt;&lt;U+7B54&gt;&lt;U+5909&gt;&lt;U+6570&gt;: &lt;U+72B6&gt;&lt;U+614B&gt;&lt;U+4E0D&gt;&lt;U+5B89&gt;
+x1 &lt;- data$v2 - mean(data$v2)  #&lt;U+8AAC&gt;&lt;U+660E&gt;&lt;U+5909&gt;&lt;U+6570&gt;(&lt;U+4E2D&gt;&lt;U+5FC3&gt;&lt;U+5316&gt;): &lt;U+5354&gt;&lt;U+8ABF&gt;&lt;U+6027&gt;
+x2 &lt;- data$v3 - mean(data$v3)  #&lt;U+8AAC&gt;&lt;U+660E&gt;&lt;U+5909&gt;&lt;U+6570&gt;(&lt;U+4E2D&gt;&lt;U+5FC3&gt;&lt;U+5316&gt;): &lt;U+8AA0&gt;&lt;U+5B9F&gt;&lt;U+3055&gt;
+c1 &lt;- data$v4 - mean(data$v4)  #&lt;U+5171&gt;&lt;U+5909&gt;&lt;U+91CF&gt;(&lt;U+4E2D&gt;&lt;U+5FC3&gt;&lt;U+5316&gt;): &lt;U+795E&gt;&lt;U+7D4C&gt;&lt;U+75C7&gt;&lt;U+50BE&gt;&lt;U+5411&gt;
+
+# &lt;U+7B2C&gt;1&lt;U+30B9&gt;&lt;U+30C6&gt;&lt;U+30C3&gt;&lt;U+30D7&gt;
+step1 &lt;- lm(y ~ x1 + x2 + c1)
+summary(step1)
+
+# &lt;U+7B2C&gt;2&lt;U+30B9&gt;&lt;U+30C6&gt;&lt;U+30C3&gt;&lt;U+30D7&gt;
+step2 &lt;- lm(y ~ x1 + x2 + x1:x2 + c1)
+summary(step2)
+
+# &lt;U+5E73&gt;&lt;U+65B9&gt;&lt;U+548C&gt;&lt;U+306E&gt;&lt;U+5909&gt;&lt;U+5316&gt;&lt;U+91CF&gt;&lt;U+306E&gt;&lt;U+691C&gt;&lt;U+5B9A&gt;
+anova(step1, step2)</code></pre>
+<p>　
+　今回は、データセットとしてpsychパッケージに入っている“epi.bfi”を使用する。このデータセットにはアイゼンク性格検査（EPI）とBig 5尺度、ベック抑うつ性尺度、特性‐状態不安の得点が231人分入っている。<br>
+　
+　実際に分析を行う際には、説明変数の数や共変量の有無は適宜調整する。</p>
+<pre class="r"><code>library(psych)
+data &lt;- epi.bfi  #&lt;U+5206&gt;&lt;U+6790&gt;&lt;U+3057&gt;&lt;U+305F&gt;&lt;U+3044&gt;&lt;U+30C7&gt;&lt;U+30FC&gt;&lt;U+30BF&gt;&lt;U+3092&gt;&lt;U+5165&gt;&lt;U+308C&gt;&lt;U+308B&gt;
+y &lt;- data$stateanx  #&lt;U+5FDC&gt;&lt;U+7B54&gt;&lt;U+5909&gt;&lt;U+6570&gt;: &lt;U+72B6&gt;&lt;U+614B&gt;&lt;U+4E0D&gt;&lt;U+5B89&gt;
+x1 &lt;- data$bfcon - mean(data$bfcon)  #&lt;U+8AAC&gt;&lt;U+660E&gt;&lt;U+5909&gt;&lt;U+6570&gt;(&lt;U+4E2D&gt;&lt;U+5FC3&gt;&lt;U+5316&gt;): &lt;U+5354&gt;&lt;U+8ABF&gt;&lt;U+6027&gt;
+x2 &lt;- data$bfagree - mean(data$bfagree)  #&lt;U+8AAC&gt;&lt;U+660E&gt;&lt;U+5909&gt;&lt;U+6570&gt;(&lt;U+4E2D&gt;&lt;U+5FC3&gt;&lt;U+5316&gt;): &lt;U+8AA0&gt;&lt;U+5B9F&gt;&lt;U+3055&gt;
+c1 &lt;- data$bfneur - mean(data$bfneur)  #&lt;U+5171&gt;&lt;U+5909&gt;&lt;U+91CF&gt;(&lt;U+4E2D&gt;&lt;U+5FC3&gt;&lt;U+5316&gt;): &lt;U+795E&gt;&lt;U+7D4C&gt;&lt;U+75C7&gt;&lt;U+50BE&gt;&lt;U+5411&gt;</code></pre>
+<ul>
+<li>第1ステップ</li>
+</ul>
+<pre class="r"><code>step1 &lt;- lm(y ~ x1 + x2 + c1)
+summary(step1)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = y ~ x1 + x2 + c1)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -20.622  -6.996  -1.325   5.394  28.091 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 39.84848    0.64525  61.757  &lt; 2e-16 ***
+## x1          -0.05379    0.03318  -1.621   0.1064    
+## x2          -0.08006    0.04001  -2.001   0.0466 *  
+## c1           0.24162    0.02781   8.688  7.4e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 9.807 on 227 degrees of freedom
+## Multiple R-squared:  0.2803, Adjusted R-squared:  0.2708 
+## F-statistic: 29.47 on 3 and 227 DF,  p-value: 3.963e-16</code></pre>
+<ul>
+<li>第2ステップ</li>
+</ul>
+<pre class="r"><code>step2 &lt;- lm(y ~ x1 + x2 + x1:x2 + c1)
+summary(step2)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = y ~ x1 + x2 + x1:x2 + c1)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -20.660  -6.979  -1.415   5.140  28.356 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 39.330808   0.690941  56.924  &lt; 2e-16 ***
+## x1          -0.056617   0.032994  -1.716   0.0875 .  
+## x2          -0.083492   0.039784  -2.099   0.0370 *  
+## c1           0.234168   0.027875   8.401 4.94e-15 ***
+## x1:x2        0.002911   0.001451   2.007   0.0460 *  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 9.742 on 226 degrees of freedom
+## Multiple R-squared:  0.2929, Adjusted R-squared:  0.2804 
+## F-statistic:  23.4 on 4 and 226 DF,  p-value: 3.352e-16</code></pre>
+<ul>
+<li>平方和の変化量の検定</li>
+</ul>
+<pre class="r"><code>anova(step1, step2)</code></pre>
+<pre><code>## Analysis of Variance Table
+## 
+## Model 1: y ~ x1 + x2 + c1
+## Model 2: y ~ x1 + x2 + x1:x2 + c1
+##   Res.Df   RSS Df Sum of Sq      F  Pr(&gt;F)  
+## 1    227 21832                              
+## 2    226 21450  1    382.26 4.0277 0.04595 *
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p><strong>結果の書き方の例</strong><br></p>
+<p>　状態不安得点を応答変数とした階層的重回帰分析を行った。その結果、ステップ1（<em>R<sup>2</sup>adj</em> = .27, <em>F</em> (3,227) = 29.47, <em>p</em> &lt; .05）から交互作用項を含んだステップ2（<em>R<sup>2</sup>adj</em> = .28, <em>F</em> (4,226) = 23.40, <em>p</em> &lt; .05）で分散説明率の有意な増加が見られた（<em>ΔR<sup>2</sup></em> = .07, <em>ΔF</em> (1,226) = 4.03, <em>p</em> &lt; .05）。誠実さ得点と協調性得点の交互作用効果が有意であった（<em>b*</em> = 0.002, <em>t</em> (226) = 2.01, <em>p</em> &lt; .05）。誠実さ得点の主効果（<em>b*</em> = -0.06, <em>t</em> (226) = 1.72, <em>ns.</em>）は有意ではなかった。協調性得点の主効果が有意であった（<em>b*</em> = -0.08, <em>t</em> (226) = 2.10, <em>p</em> &lt; .05）。共変量の神経症傾向得点の主効果が有意であった（<em>b*</em> = 0.23, <em>t</em> (226) = 8.40, <em>p</em> &lt; .05）。</p>
+</div>
+<div id="単純傾斜分析" class="section level3">
+<h3>単純傾斜分析</h3>
+<p>　交互作用効果が有意であった場合、下位検定として単純傾斜分析を行う。<br>
+　コードは以下の通り。
+　
+　</p>
+<pre class="r"><code># &lt;U+4E0B&gt;&lt;U+4F4D&gt;&lt;U+691C&gt;&lt;U+5B9A&gt;
+# x1&lt;U+304C&gt;+1SD&lt;U+306E&gt;&lt;U+5834&gt;&lt;U+5408&gt;&lt;U+306E&gt;x2&lt;U+306E&gt;&lt;U+52B9&gt;&lt;U+679C&gt;&lt;U+3092&gt;&lt;U+5206&gt;&lt;U+6790&gt;
+x1high &lt;- data$v2 - (mean(data$v2) + sd(data$v2))
+simpleslope1 &lt;- lm(y ~ x1high + x2 + x1high:x2 + c1)
+summary(simpleslope1)
+
+## x1&lt;U+304C&gt;-1SD&lt;U+306E&gt;&lt;U+5834&gt;&lt;U+5408&gt;&lt;U+306E&gt;x2&lt;U+306E&gt;&lt;U+52B9&gt;&lt;U+679C&gt;&lt;U+3092&gt;&lt;U+5206&gt;&lt;U+6790&gt;
+x1low &lt;- data$v2 - (mean(data$v2) - sd(data$v2))
+simpleslope2 &lt;- lm(y ~ x1low + x2 + x1low:x2 + c1)
+summary(simpleslope2)</code></pre>
+<p>　</p>
+<ul>
+<li>x1が+1SDの場合のx2の効果を分析</li>
+</ul>
+<pre class="r"><code>x1high &lt;- data$bfcon - (mean(data$bfcon) + sd(data$bfcon))
+simpleslope1 &lt;- lm(y ~ x1high + x2 + x1high:x2 + c1)
+summary(simpleslope1)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = y ~ x1high + x2 + x1high:x2 + c1)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -20.660  -6.979  -1.415   5.140  28.356 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 38.092154   1.007153  37.822  &lt; 2e-16 ***
+## x1high      -0.056617   0.032994  -1.716   0.0875 .  
+## x2          -0.019799   0.049815  -0.397   0.6914    
+## c1           0.234168   0.027875   8.401 4.94e-15 ***
+## x1high:x2    0.002911   0.001451   2.007   0.0460 *  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 9.742 on 226 degrees of freedom
+## Multiple R-squared:  0.2929, Adjusted R-squared:  0.2804 
+## F-statistic:  23.4 on 4 and 226 DF,  p-value: 3.352e-16</code></pre>
+<ul>
+<li>x1が-1SDの場合のx2の効果を分析</li>
+</ul>
+<pre class="r"><code>x1low &lt;- data$bfcon - (mean(data$bfcon) - sd(data$bfcon))
+simpleslope2 &lt;- lm(y ~ x1low + x2 + x1low:x2 + c1)
+summary(simpleslope2)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = y ~ x1low + x2 + x1low:x2 + c1)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -20.660  -6.979  -1.415   5.140  28.356 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 40.569461   0.991228  40.929  &lt; 2e-16 ***
+## x1low       -0.056617   0.032994  -1.716  0.08754 .  
+## x2          -0.147186   0.051948  -2.833  0.00502 ** 
+## c1           0.234168   0.027875   8.401 4.94e-15 ***
+## x1low:x2     0.002911   0.001451   2.007  0.04595 *  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 9.742 on 226 degrees of freedom
+## Multiple R-squared:  0.2929, Adjusted R-squared:  0.2804 
+## F-statistic:  23.4 on 4 and 226 DF,  p-value: 3.352e-16</code></pre>
+<p><strong>結果の書き方の例</strong><br></p>
+<p>　誠実さ得点と協調性得点の交互作用効果が有意であったため、下位検定として単純傾斜分析を行った。その結果、誠実さ得点を-1SDとした場合、協調性得点の負の効果が確認された（<em>b*</em> = -0.15, <em>t</em> (226) = 2.833, <em>p</em> &lt; .05）。誠実さ得点を+1SDとした場合、協調性得点の有意な効果は認められなかった（<em>b*</em> = -0.02, <em>t</em> (226) = 0.40, <em>ns.</em>）。<br>
+<br>
+　あらら、なんだか変な結果に・・・
+<br></p>
+</div>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="../../../../categories/statistics/">
+                Statistics
+              </a>
+            </div>
+            
+          </div>
+        </div>
+
+        
+        
+
+<div class="releated-content">
+  <h3>Related Posts</h3>
+  <ul>
+    
+    <li><a href="../../../../2020/01/01/%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC%E5%88%86%E6%9E%90/">クラスター分析</a></li>
+    
+    <li><a href="../../../../2020/01/01/%E6%8E%A2%E7%B4%A2%E7%9A%84%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90/">探索的因子分析</a></li>
+    
+  </ul>
+</div>
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://tobayash.github.io/hp2/index.html" target="_blank">Main page</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://twitter.com/tomokoba10" target="_blank">Twitter</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="../../../../js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

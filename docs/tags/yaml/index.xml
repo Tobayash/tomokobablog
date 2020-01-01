@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>yaml on tomokoba website</title>
+    <link>/tags/yaml/</link>
+    <description>Recent content in yaml on tomokoba website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/yaml/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>yamlヘッダ</title>
+      <link>/2020/01/01/yaml%E3%83%98%E3%83%83%E3%83%80/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/01/01/yaml%E3%83%98%E3%83%83%E3%83%80/</guid>
+      <description>@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); Rmarkdownでドキュメントを作るときの全体設定 改行やスペースが重要になるので注意 たとえば・・・ --- title: &amp;quot;Memo&amp;quot; output: html_document: toc: true toc_float: true --- これだとエラ</description>
+    </item>
+    
+  </channel>
+</rss>

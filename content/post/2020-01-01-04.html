@@ -1,0 +1,39 @@
+---
+title: "ロジスティック回帰分析のグラフ"
+author: "tomokoba"
+date: '2020-01-01'
+categories: ["ggplot"]
+tags: ["R","ggplot", "graph", "Logistic Regression Analysis"]
+---
+
+
+
+<style>
+  @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+</style>
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Lato:400,900);
+</style>
+<p>　なんかいい感じのグラフ描きたいなって思いますよね。<br>
+　ローデータがぶわーってプロットされてて、回帰直線・曲線がシューン！なってるやつ。<br>
+　下のコードを使います。
+　</p>
+<pre class="r"><code>library(ggplot2)
+ggplot(data,                                                  　　#データを入れる
+       aes(x=valiable1, y=as.numeric(categolical1)))+　　　　 　　#x軸とy軸の変数を決める
+  geom_point(position=position_jitter(width=0.4,height=0.08), 　　
+             alpha=.4,shape=21,size=1.5)+
+    #ローデータをプロット。ただし、同じ箇所の点が重なってプロットされるので、散らす設定する
+  stat_smooth(method=&quot;glm&quot;,
+              method.args = list(family=&quot;binomial&quot;(link=&quot;logit&quot;)))+  
+    #ロジスティック曲線。ここはきちんと書かないとうまく表示されない。
+  xlab(&quot;X軸の名前&quot;)+ylab(&quot;Y軸の名前&quot;)+    #x軸とy軸の名前を決める
+  coord_cartesian(ylim=c(0,1))+　　　　　　　　　　#y軸の最小と最大の値を決める
+  theme_classic()　　　　　　　　　　　　　　　　　#クラシックなデザインが好き</code></pre>
+<p>　すると、このようなものができます。<br></p>
+<p><img src="/post/2020-01-01-04_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+　
+　<br>
+　なんか違うけど、データがそうならちゃんとS字になるはずなんだ・・・
+　
+　</p>

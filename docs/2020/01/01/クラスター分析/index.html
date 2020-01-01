@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.61.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="" />
+  <meta property="og:url" content="/2020/01/01/%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC%E5%88%86%E6%9E%90/" />
+  <link rel="canonical" href="../../../../2020/01/01/%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC%E5%88%86%E6%9E%90/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "\/"
+      },
+      "articleSection" : "post",
+      "name" : "クラスター分析",
+      "headline" : "クラスター分析",
+      "description" : "@import url(https:\/\/fonts.googleapis.com\/earlyaccess\/notosansjapanese.css); @import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,900); 以下のコードを使う。 clust \x26lt;- XXX #\x26lt;U\x2b5206\x26gt;\x26lt;U\x2b6790\x26gt;\x26lt;U\x2b3057\x26gt;\x26lt;U\x2b305F\x26gt;\x26lt;U\x2b3044\x26gt;\x26lt;U\x2b30C7\x26gt;\x26lt;U\x2b30FC\x26gt;\x26lt;U\x2b30BF\x26gt;\x26lt;U\x2b3092\x26gt;\x26lt;U\x2b5165\x26gt;\x26lt;U\x2b308C\x26gt;\x26lt;U\x2b308B\x26gt; # \x26lt;U\x2b8DDD\x26gt;\x26lt;U\x2b96E2\x26gt;\x26lt;U\x2b306E\x26gt;\x26lt;U\x2b8A08\x26gt;\x26lt;U\x2b7B97\x26gt; uclust \x26lt;- dist(clust)^2 #\x26lt;U\x2b30E6\x26gt;\x26lt;U\x2b30FC\x26gt;\x26lt;U\x2b30AF\x26gt;\x26lt;U\x2b30EA\x26gt;\x26lt;U\x2b30C3\x26gt;\x26lt;U\x2b30C9\x26gt;\x26lt;U\x2b8DDD\x26gt;\x26lt;U\x2b96E2\x26gt;\x26lt;U\x2b306E\x26gt;\x26lt;U\x2b5E73\x26gt;\x26lt;U\x2b65B9\x26gt; result \x26lt;- hclust(uclust, method = \x26quot;ward.D2\x26quot;) #Ward\x26lt;U\x2b6CD5\x26gt; groups \x26lt;- cutree(result, k = 4) #\x26lt;U\x2b30AF\x26gt;\x26lt;U\x2b30E9\x26gt;\x26lt;U\x2b30B9\x26gt;\x26lt;U\x2b30BF\x26gt;\x26lt;U\x2b6570\x26gt;\x26lt;U\x2b3092\x26gt;4\x26lt;U\x2b3064\x26gt;\x26lt;U\x2b3068\x26gt;\x26lt;U\x2b3059\x26gt;\x26lt;U\x2b308B\x26gt; groups \x26lt;- factor(groups) # \x26lt;U\x2b30AF\x26gt;\x26lt;U\x2b30E9\x26gt;\x26lt;U\x2b30B9\x26gt;\x26lt;U\x2b30BF\x26gt;\x26lt;U\x2b306B\x26gt;\x26lt;U\x2b540D\x26gt;\x26lt;U\x2b524D\x26gt;\x26lt;U\x2b3092\x26gt;\x26lt;U\x2b4ED8\x26gt;\x26lt;U\x2b3051\x26gt;\x26lt;U\x2b308B\x26gt; levels(groups)[1] \x26lt;- \x26quot;Group1\x26quot; levels(groups)[2] \x26lt;- \x26quot;Group2\x26quot; levels(groups)[3] \x26lt;- \x26quot;Group3\x26quot; levels(groups)[3] \x26lt;- \x26quot;Group4\x26quot; table(groups) clust$groups \x26lt;- groups aggregate(. ~ groups, data = clust, FUN = mean) クラ",
+      "inLanguage" : "en-US",
+      "author" : "",
+      "creator" : "",
+      "publisher": "",
+      "accountablePerson" : "",
+      "copyrightHolder" : "",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-01-01 00:00:00 \x2b0000 UTC",
+      "dateModified" : "2020-01-01 00:00:00 \x2b0000 UTC",
+      "url" : "\/2020\/01\/01\/%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC%E5%88%86%E6%9E%90\/",
+      "keywords" : [ "Statistics","Analysis","Exploratory Factor Analysis", ]
+  }
+</script>
+<title>クラスター分析 - tomokoba website</title>
+  <meta property="og:title" content="クラスター分析 - tomokoba website" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); 以下のコードを使う。 clust &lt;- XXX #&lt;U&#43;5206&gt;&lt;U&#43;6790&gt;&lt;U&#43;3057&gt;&lt;U&#43;305F&gt;&lt;U&#43;3044&gt;&lt;U&#43;30C7&gt;&lt;U&#43;30FC&gt;&lt;U&#43;30BF&gt;&lt;U&#43;3092&gt;&lt;U&#43;5165&gt;&lt;U&#43;308C&gt;&lt;U&#43;308B&gt; # &lt;U&#43;8DDD&gt;&lt;U&#43;96E2&gt;&lt;U&#43;306E&gt;&lt;U&#43;8A08&gt;&lt;U&#43;7B97&gt; uclust &lt;- dist(clust)^2 #&lt;U&#43;30E6&gt;&lt;U&#43;30FC&gt;&lt;U&#43;30AF&gt;&lt;U&#43;30EA&gt;&lt;U&#43;30C3&gt;&lt;U&#43;30C9&gt;&lt;U&#43;8DDD&gt;&lt;U&#43;96E2&gt;&lt;U&#43;306E&gt;&lt;U&#43;5E73&gt;&lt;U&#43;65B9&gt; result &lt;- hclust(uclust, method = &quot;ward.D2&quot;) #Ward&lt;U&#43;6CD5&gt; groups &lt;- cutree(result, k = 4) #&lt;U&#43;30AF&gt;&lt;U&#43;30E9&gt;&lt;U&#43;30B9&gt;&lt;U&#43;30BF&gt;&lt;U&#43;6570&gt;&lt;U&#43;3092&gt;4&lt;U&#43;3064&gt;&lt;U&#43;3068&gt;&lt;U&#43;3059&gt;&lt;U&#43;308B&gt; groups &lt;- factor(groups) # &lt;U&#43;30AF&gt;&lt;U&#43;30E9&gt;&lt;U&#43;30B9&gt;&lt;U&#43;30BF&gt;&lt;U&#43;306B&gt;&lt;U&#43;540D&gt;&lt;U&#43;524D&gt;&lt;U&#43;3092&gt;&lt;U&#43;4ED8&gt;&lt;U&#43;3051&gt;&lt;U&#43;308B&gt; levels(groups)[1] &lt;- &quot;Group1&quot; levels(groups)[2] &lt;- &quot;Group2&quot; levels(groups)[3] &lt;- &quot;Group3&quot; levels(groups)[3] &lt;- &quot;Group4&quot; table(groups) clust$groups &lt;- groups aggregate(. ~ groups, data = clust, FUN = mean) クラ" />
+
+  <link rel="stylesheet" href="../../../../css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet"
+    href="../../../../css/github-markdown.min.css" />
+  <link rel="stylesheet" href="../../../../css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="../../../../css/index.css">
+  <link href="../../../../index.xml" rel="alternate" type="application/rss+xml" title="tomokoba website">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="../../../../">Tomokoba blog</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">クラスター分析</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-01-01 00:00:00 UTC">
+                01 Jan 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+
+
+<style>
+  @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+</style>
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Lato:400,900);
+</style>
+<p>　以下のコードを使う。
+　</p>
+<pre class="r"><code>clust &lt;- XXX  #&lt;U+5206&gt;&lt;U+6790&gt;&lt;U+3057&gt;&lt;U+305F&gt;&lt;U+3044&gt;&lt;U+30C7&gt;&lt;U+30FC&gt;&lt;U+30BF&gt;&lt;U+3092&gt;&lt;U+5165&gt;&lt;U+308C&gt;&lt;U+308B&gt;
+
+# &lt;U+8DDD&gt;&lt;U+96E2&gt;&lt;U+306E&gt;&lt;U+8A08&gt;&lt;U+7B97&gt;
+uclust &lt;- dist(clust)^2  #&lt;U+30E6&gt;&lt;U+30FC&gt;&lt;U+30AF&gt;&lt;U+30EA&gt;&lt;U+30C3&gt;&lt;U+30C9&gt;&lt;U+8DDD&gt;&lt;U+96E2&gt;&lt;U+306E&gt;&lt;U+5E73&gt;&lt;U+65B9&gt;
+
+result &lt;- hclust(uclust, method = &quot;ward.D2&quot;)  #Ward&lt;U+6CD5&gt;
+
+groups &lt;- cutree(result, k = 4)  #&lt;U+30AF&gt;&lt;U+30E9&gt;&lt;U+30B9&gt;&lt;U+30BF&gt;&lt;U+6570&gt;&lt;U+3092&gt;4&lt;U+3064&gt;&lt;U+3068&gt;&lt;U+3059&gt;&lt;U+308B&gt;
+groups &lt;- factor(groups)
+
+# &lt;U+30AF&gt;&lt;U+30E9&gt;&lt;U+30B9&gt;&lt;U+30BF&gt;&lt;U+306B&gt;&lt;U+540D&gt;&lt;U+524D&gt;&lt;U+3092&gt;&lt;U+4ED8&gt;&lt;U+3051&gt;&lt;U+308B&gt;
+levels(groups)[1] &lt;- &quot;Group1&quot;
+levels(groups)[2] &lt;- &quot;Group2&quot;
+levels(groups)[3] &lt;- &quot;Group3&quot;
+levels(groups)[3] &lt;- &quot;Group4&quot;
+
+table(groups)
+
+clust$groups &lt;- groups
+aggregate(. ~ groups, data = clust, FUN = mean)</code></pre>
+<div id="クラスタ数の分析" class="section level3">
+<h3>クラスタ数の分析</h3>
+<p>　クラスタ数を選定する方法として、The Calinski-Harabasz indexがある。<br>
+　クラスター数ごとに、クラスタ内の距離の2乗の合計値（within sum of squares; WSS）を算出し、その曲線のエルボーを探す。クラスタ数が増加すると、total WSSが減少するのだが、理想的なクラスター数を超えるとWSSの減少割合が落ちるという見込みからエルボー探しをする。<br>
+　また、Calinski-Harabasz基準とは、WSSに対するクラスター間の分散（データセットの重心からすべてのクラスターの重心の分散）の割合である。</p>
+<pre class="r"><code>library(psych)
+clust&lt;-epi.bfi[,6:10]</code></pre>
+<p><img src="../../../../post/2020-01-01-03_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>　エルボー…４…かな？</p>
+</div>
+<div id="クラスタ分析" class="section level3">
+<h3>クラスタ分析</h3>
+<pre class="r"><code># &lt;U+8DDD&gt;&lt;U+96E2&gt;&lt;U+306E&gt;&lt;U+8A08&gt;&lt;U+7B97&gt;
+uclust &lt;- dist(clust)^2  #&lt;U+30E6&gt;&lt;U+30FC&gt;&lt;U+30AF&gt;&lt;U+30EA&gt;&lt;U+30C3&gt;&lt;U+30C9&gt;&lt;U+8DDD&gt;&lt;U+96E2&gt;&lt;U+306E&gt;&lt;U+5E73&gt;&lt;U+65B9&gt;
+
+result &lt;- hclust(uclust, method = &quot;ward.D2&quot;)  #Ward&lt;U+6CD5&gt;
+
+groups &lt;- cutree(result, k = 4)  #&lt;U+30AF&gt;&lt;U+30E9&gt;&lt;U+30B9&gt;&lt;U+30BF&gt;&lt;U+6570&gt;&lt;U+3092&gt;4&lt;U+3064&gt;&lt;U+3068&gt;&lt;U+3059&gt;&lt;U+308B&gt;
+groups &lt;- factor(groups)
+
+# &lt;U+30AF&gt;&lt;U+30E9&gt;&lt;U+30B9&gt;&lt;U+30BF&gt;&lt;U+306B&gt;&lt;U+540D&gt;&lt;U+524D&gt;&lt;U+3092&gt;&lt;U+4ED8&gt;&lt;U+3051&gt;&lt;U+308B&gt;
+levels(groups)[1] &lt;- &quot;Group1&quot;
+levels(groups)[2] &lt;- &quot;Group2&quot;
+levels(groups)[3] &lt;- &quot;Group3&quot;
+levels(groups)[4] &lt;- &quot;Group4&quot;
+
+table(groups)</code></pre>
+<pre><code>## groups
+## Group1 Group2 Group3 Group4 
+##     71     67     35     58</code></pre>
+<pre class="r"><code>clust$groups &lt;- groups
+per &lt;- aggregate(. ~ groups, data = clust, FUN = mean)
+per</code></pre>
+<pre><code>##   groups  bfagree     bfcon     bfext    bfneur   bfopen
+## 1 Group1 126.1408 116.29577 106.46479  62.95775 120.0986
+## 2 Group2 115.0299  96.50746  99.85075  98.94030 123.6119
+## 3 Group3 114.2000 106.20000  62.88571  88.60000 101.1714
+## 4 Group4 141.6207 133.12069 123.32759 105.53448 140.7241</code></pre>
+<pre class="r"><code># &lt;U+56F3&gt;&lt;U+793A&gt;
+library(ggplot2)
+library(reshape2)
+meltd &lt;- melt(per, id.vars = &quot;groups&quot;, variable.names = &quot;items&quot;, value.name = &quot;per&quot;)
+
+ggplot(meltd, aes(x = groups, y = per, fill = variable)) + geom_bar(stat = &quot;identity&quot;, 
+    position = &quot;dodge&quot;, colour = &quot;black&quot;, width = 0.6) + xlab(&quot;Personality&quot;) + ylab(&quot;score&quot;) + 
+    scale_fill_grey(start = 0.1, end = 1) + scale_y_continuous(expand = c(0, 0)) + 
+    theme_classic() + guides(fill = guide_legend(title = NULL)) + guides(fill = guide_legend(nrow = 7)) + 
+    theme(legend.position = &quot;right&quot;) + theme(legend.text = element_text(10))</code></pre>
+<p><img src="../../../../post/2020-01-01-03_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="../../../../categories/statistics/">
+                Statistics
+              </a>
+            </div>
+            
+          </div>
+        </div>
+
+        
+        
+
+<div class="releated-content">
+  <h3>Related Posts</h3>
+  <ul>
+    
+    <li><a href="../../../../2020/01/01/%E6%8E%A2%E7%B4%A2%E7%9A%84%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90/">探索的因子分析</a></li>
+    
+    <li><a href="../../../../2020/01/01/%E9%9A%8E%E5%B1%A4%E7%9A%84%E9%87%8D%E5%9B%9E%E5%B8%B0%E5%88%86%E6%9E%90/">階層的重回帰分析</a></li>
+    
+  </ul>
+</div>
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://tobayash.github.io/hp2/index.html" target="_blank">Main page</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://twitter.com/tomokoba10" target="_blank">Twitter</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="../../../../js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

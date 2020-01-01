@@ -1,0 +1,55 @@
+---
+title: "yamlヘッダ"
+author: "tomokoba"
+date: '2020-01-01'
+categories: ["Rmarkdown"]
+tags: ["R","Rmarkdown", "yaml"]
+---
+
+<style>
+  @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+</style>
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Lato:400,900);
+</style>
+
+
+
+* Rmarkdownでドキュメントを作るときの全体設定<br>
+* 改行やスペースが重要になるので注意<br>
+たとえば・・・
+　
+```{r eval= FALSE, include=TRUE}
+---
+title: "Memo"
+output: html_document:
+  toc: true
+  toc_float: true
+---
+```
+
+　これだとエラーが出るし・・・
+
+```{r eval= FALSE, include=TRUE}
+---
+title: "Memo"
+output: 
+  html_document:
+  toc: true
+  toc_float: true
+---
+```
+
+　これだとtoc: true以下が反映されない。
+
+```{r eval= FALSE, include=TRUE}
+---
+title: "Memo"
+output: 
+  html_document:        <- 改行
+    toc: true           <- 半角2つスペースあける
+    toc_float: true
+---
+```
+
+　これでよし。
