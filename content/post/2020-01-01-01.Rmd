@@ -6,13 +6,11 @@ categories: ["Statistics"]
 tags: ["Statistics", "Analysis", "Hierarchical Regression Analysis"]
 ---
 
-<style type="text/css">
+
+<style>
+  @charset “UTF-8”;
   @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
   @import url(https://fonts.googleapis.com/css?family=Lato:400,900);
-  code.r{ /* Code block */
-    font-size: 12px;
-    encoding: 'Unicode';
-}
 </style>
 
 
