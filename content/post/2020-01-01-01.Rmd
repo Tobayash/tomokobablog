@@ -11,7 +11,7 @@ tags: ["Statistics", "Analysis", "Hierarchical Regression Analysis"]
   @import url(https://fonts.googleapis.com/css?family=Lato:400,900);
   code.r{ /* Code block */
     font-size: 12px;
-    encoding: 'UTF-8';
+    encoding: 'Unicode';
 }
 </style>
 
