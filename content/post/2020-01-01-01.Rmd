@@ -6,11 +6,13 @@ categories: ["Statistics"]
 tags: ["Statistics", "Analysis", "Hierarchical Regression Analysis"]
 ---
 
-<style>
+<style type="text/css">
   @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
-</style>
-<style>
   @import url(https://fonts.googleapis.com/css?family=Lato:400,900);
+  code.r{ /* Code block */
+    font-size: 12px;
+    encoding: 'UTF-8';
+}
 </style>
 
 
@@ -23,7 +25,7 @@ tags: ["Statistics", "Analysis", "Hierarchical Regression Analysis"]
 
 　Rで分析する場合には以下のコードを用いる。<br>
 
-``` {r eval=FALSE, include=TRUE,tidy=TRUE}
+``` {r eval=FALSE, include=TRUE,tidy=TRUE,options(encoding = "utf-8")}
 data <- XXX     　　　　　　　 #分析したいデータを入れる
 y  <- data$v1 　　　　　　　　 #応答変数: 状態不安
 x1 <- data$v2 - mean(data$v2)  #説明変数(中心化): 協調性
