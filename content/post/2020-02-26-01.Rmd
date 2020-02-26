@@ -7,10 +7,13 @@ tags: ["blogdown", "encoding"]
 ---
 
 <meta charset="utf-8" />
-  
+
 <style>
   @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
   @import url(https://fonts.googleapis.com/css?family=Lato:400,900);
+  body {
+  font-size: 100%;
+  }
 </style>
 
 

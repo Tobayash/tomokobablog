@@ -6,12 +6,16 @@ categories: ["ggplot"]
 tags: ["R","ggplot", "graph", "Logistic Regression Analysis"]
 ---
 
+<meta charset="utf-8" />
+
 <style>
   @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
-</style>
-<style>
   @import url(https://fonts.googleapis.com/css?family=Lato:400,900);
+  body {
+  font-size: 100%;
+  }
 </style>
+
 
 
 
