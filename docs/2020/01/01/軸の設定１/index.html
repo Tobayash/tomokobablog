@@ -19,7 +19,7 @@
       "articleSection" : "post",
       "name" : "軸の設定１",
       "headline" : "軸の設定１",
-      "description" : "@import url(https:\/\/fonts.googleapis.com\/earlyaccess\/notosansjapanese.css); @import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,900); ggplotでグラフを作成すると、x軸から棒グラフなんかが浮いてしまう（ラピュタ）。ラピュタを無くすならscale_y_contin",
+      "description" : "@import url(https:\/\/fonts.googleapis.com\/earlyaccess\/notosansjapanese.css); @import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,900); body { font-size: 100%; } ggplotでグラフを作成すると、x軸から棒グラフなんかが浮いてしまう（ラピュタ）。ラピュタを無くすならscale_y_c",
       "inLanguage" : "en-US",
       "author" : "",
       "creator" : "",
@@ -36,7 +36,7 @@
 <title>軸の設定１ - tomokoba website</title>
   <meta property="og:title" content="軸の設定１ - tomokoba website" />
   <meta property="og:type" content="article" />
-  <meta name="description" content="@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); ggplotでグラフを作成すると、x軸から棒グラフなんかが浮いてしまう（ラピュタ）。ラピュタを無くすならscale_y_contin" />
+  <meta name="description" content="@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); body { font-size: 100%; } ggplotでグラフを作成すると、x軸から棒グラフなんかが浮いてしまう（ラピュタ）。ラピュタを無くすならscale_y_c" />
 
   <link rel="stylesheet" href="../../../../css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet"
@@ -95,11 +95,13 @@
 <script src="../../../../rmarkdown-libs/elevate-section-attrs/elevate-section-attrs.js"></script>
 
 
+<meta charset="utf-8" />
 <style>
   @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
-</style>
-<style>
   @import url(https://fonts.googleapis.com/css?family=Lato:400,900);
+  body {
+  font-size: 100%;
+  }
 </style>
 <ul>
 <li>ggplotでグラフを作成すると、x軸から棒グラフなんかが浮いてしまう（ラピュタ）。ラピュタを無くすならscale_y_continuous(expand = c(0,0))を加える<br></li>

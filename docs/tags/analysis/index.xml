@@ -17,7 +17,7 @@
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/01/01/%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC%E5%88%86%E6%9E%90/</guid>
-      <description>@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); 以下のコードを使う。 clust &amp;lt;- XXX #分析したいデータを入れる # 距離の計算 uclust &amp;lt;- dist(clust)^2 #ユークリッド距離の平方 result &amp;lt;- hclust(uclust, method=&amp;quot;ward.D2&amp;quot;) #Ward法 groups &amp;lt;- cutree(result, k=4) #クラスタ</description>
+      <description>@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); body { font-size: 100%; } 以下のコードを使う。 clust &amp;lt;- XXX #分析したいデータを入れる # 距離の計算 uclust &amp;lt;- dist(clust)^2 #ユークリッド距離の平方 result &amp;lt;- hclust(uclust, method=&amp;quot;ward.D2&amp;quot;) #Ward法 groups &amp;lt;- cutree(result, k=4)</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/01/01/%E6%8E%A2%E7%B4%A2%E7%9A%84%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90/</guid>
-      <description>@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); 科学において測定は重要である。心理学においては、目に見えない心の働きを研究するうえで様々な質問項目が利用されてきており、それがお家芸</description>
+      <description>@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); body { font-size: 100%; } 科学において測定は重要である。心理学においては、目に見えない心の働きを研究するうえで様々な質問項目が利用されてきており、そ</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/01/01/%E9%9A%8E%E5%B1%A4%E7%9A%84%E9%87%8D%E5%9B%9E%E5%B8%B0%E5%88%86%E6%9E%90/</guid>
-      <description>@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); 階層的重回帰分析は、ステップ１からステップ２へとステップごとに関心のある変数を投入していき、分散説明率が統計的に有意に増加することを</description>
+      <description>@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); body { font-size: 100%; } 階層的重回帰分析は、ステップ１からステップ２へとステップごとに関心のある変数を投入していき、分散説明率が統計的に有意に増加</description>
     </item>
     
   </channel>

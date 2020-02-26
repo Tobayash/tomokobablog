@@ -19,7 +19,7 @@
       "articleSection" : "post",
       "name" : "yamlヘッダ",
       "headline" : "yamlヘッダ",
-      "description" : "@import url(https:\/\/fonts.googleapis.com\/earlyaccess\/notosansjapanese.css); @import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,900); Rmarkdownでドキュメントを作るときの全体設定 改行やスペースが重要になるので注意 たとえば・・・ --- title: \x26quot;Memo\x26quot; output: html_document: toc: true toc_float: true --- これだとエラ",
+      "description" : "@import url(https:\/\/fonts.googleapis.com\/earlyaccess\/notosansjapanese.css); @import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,900); body { font-size: 100%; } Rmarkdownでドキュメントを作るときの全体設定 改行やスペースが重要になるので注意 たとえば・・・ --- title: \x26quot;Memo\x26quot; output: html_document: toc: true toc_float: true --- こ",
       "inLanguage" : "en-US",
       "author" : "",
       "creator" : "",
@@ -36,7 +36,7 @@
 <title>yamlヘッダ - tomokoba website</title>
   <meta property="og:title" content="yamlヘッダ - tomokoba website" />
   <meta property="og:type" content="article" />
-  <meta name="description" content="@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); Rmarkdownでドキュメントを作るときの全体設定 改行やスペースが重要になるので注意 たとえば・・・ --- title: &quot;Memo&quot; output: html_document: toc: true toc_float: true --- これだとエラ" />
+  <meta name="description" content="@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); body { font-size: 100%; } Rmarkdownでドキュメントを作るときの全体設定 改行やスペースが重要になるので注意 たとえば・・・ --- title: &quot;Memo&quot; output: html_document: toc: true toc_float: true --- こ" />
 
   <link rel="stylesheet" href="../../../../css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet"
@@ -95,11 +95,13 @@
 <script src="../../../../rmarkdown-libs/elevate-section-attrs/elevate-section-attrs.js"></script>
 
 
+<meta charset="utf-8" />
 <style>
   @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
-</style>
-<style>
   @import url(https://fonts.googleapis.com/css?family=Lato:400,900);
+  body {
+  font-size: 100%;
+  }
 </style>
 <ul>
 <li>Rmarkdownでドキュメントを作るときの全体設定<br></li>
