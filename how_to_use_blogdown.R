@@ -44,12 +44,13 @@ blogdownは静的サイトジェネレーターのHugo (https://gohugo.io)に基
 RStudio IDEを使えば簡単に作れるらしい。詳しくは https://bookdown.org/yihui/blogdown/rstudio-ide.html#fn13 をご覧ください。<br>
 ここでは違う方法を書きます。<br>
 
-    1. R markdown documentを作る。最初のTitleは"yy-mm-dd"で記入
+    1. R markdown documentを作る。最初のTitleは"yy-mm-dd-No"で記入
     2. yamlヘッダをブログ用に変える
     3. 書きたいことを書く
     4. content/post/ に保存する
     5. blogdown::build_site() を実行
     6. blogdown::serve_site() を実行
+    7. GitでCommitしてPushする
 
 なお、ブログ用のyamlヘッダは以下の通りです。  
 ---
