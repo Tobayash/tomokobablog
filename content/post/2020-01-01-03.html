@@ -6,6 +6,8 @@ categories: ["Statistics"]
 tags: ["Statistics", "Analysis", "Exploratory Factor Analysis"]
 ---
 
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<script src="/rmarkdown-libs/elevate-section-attrs/elevate-section-attrs.js"></script>
 
 
 <style>
@@ -16,26 +18,26 @@ tags: ["Statistics", "Analysis", "Exploratory Factor Analysis"]
 </style>
 <p>　以下のコードを使う。
 　</p>
-<pre class="r"><code>clust &lt;- XXX  #&lt;U+5206&gt;&lt;U+6790&gt;&lt;U+3057&gt;&lt;U+305F&gt;&lt;U+3044&gt;&lt;U+30C7&gt;&lt;U+30FC&gt;&lt;U+30BF&gt;&lt;U+3092&gt;&lt;U+5165&gt;&lt;U+308C&gt;&lt;U+308B&gt;
+<pre class="r"><code>clust &lt;- XXX  #分析したいデータを入れる
 
-# &lt;U+8DDD&gt;&lt;U+96E2&gt;&lt;U+306E&gt;&lt;U+8A08&gt;&lt;U+7B97&gt;
-uclust &lt;- dist(clust)^2  #&lt;U+30E6&gt;&lt;U+30FC&gt;&lt;U+30AF&gt;&lt;U+30EA&gt;&lt;U+30C3&gt;&lt;U+30C9&gt;&lt;U+8DDD&gt;&lt;U+96E2&gt;&lt;U+306E&gt;&lt;U+5E73&gt;&lt;U+65B9&gt;
+# 距離の計算
+uclust &lt;-  dist(clust)^2   #ユークリッド距離の平方
 
-result &lt;- hclust(uclust, method = &quot;ward.D2&quot;)  #Ward&lt;U+6CD5&gt;
+result &lt;- hclust(uclust, method=&quot;ward.D2&quot;)　#Ward法
 
-groups &lt;- cutree(result, k = 4)  #&lt;U+30AF&gt;&lt;U+30E9&gt;&lt;U+30B9&gt;&lt;U+30BF&gt;&lt;U+6570&gt;&lt;U+3092&gt;4&lt;U+3064&gt;&lt;U+3068&gt;&lt;U+3059&gt;&lt;U+308B&gt;
+groups &lt;- cutree(result, k=4) #クラスタ数を4つとする
 groups &lt;- factor(groups)
 
-# &lt;U+30AF&gt;&lt;U+30E9&gt;&lt;U+30B9&gt;&lt;U+30BF&gt;&lt;U+306B&gt;&lt;U+540D&gt;&lt;U+524D&gt;&lt;U+3092&gt;&lt;U+4ED8&gt;&lt;U+3051&gt;&lt;U+308B&gt;
-levels(groups)[1] &lt;- &quot;Group1&quot;
-levels(groups)[2] &lt;- &quot;Group2&quot;
-levels(groups)[3] &lt;- &quot;Group3&quot;
-levels(groups)[3] &lt;- &quot;Group4&quot;
+#クラスタに名前を付ける
+levels(groups)[1]&lt;-&quot;Group1&quot;
+levels(groups)[2]&lt;-&quot;Group2&quot;
+levels(groups)[3]&lt;-&quot;Group3&quot;
+levels(groups)[3]&lt;-&quot;Group4&quot;
 
 table(groups)
 
-clust$groups &lt;- groups
-aggregate(. ~ groups, data = clust, FUN = mean)</code></pre>
+clust$groups&lt;-groups
+aggregate(.~groups, data=clust, FUN=mean)</code></pre>
 <div id="クラスタ数の分析" class="section level3">
 <h3>クラスタ数の分析</h3>
 <p>　クラスタ数を選定する方法として、The Calinski-Harabasz indexがある。<br>
@@ -48,41 +50,46 @@ clust&lt;-epi.bfi[,6:10]</code></pre>
 </div>
 <div id="クラスタ分析" class="section level3">
 <h3>クラスタ分析</h3>
-<pre class="r"><code># &lt;U+8DDD&gt;&lt;U+96E2&gt;&lt;U+306E&gt;&lt;U+8A08&gt;&lt;U+7B97&gt;
-uclust &lt;- dist(clust)^2  #&lt;U+30E6&gt;&lt;U+30FC&gt;&lt;U+30AF&gt;&lt;U+30EA&gt;&lt;U+30C3&gt;&lt;U+30C9&gt;&lt;U+8DDD&gt;&lt;U+96E2&gt;&lt;U+306E&gt;&lt;U+5E73&gt;&lt;U+65B9&gt;
+<pre class="r"><code># 距離の計算
+uclust &lt;-  dist(clust)^2   #ユークリッド距離の平方
 
-result &lt;- hclust(uclust, method = &quot;ward.D2&quot;)  #Ward&lt;U+6CD5&gt;
+result &lt;- hclust(uclust, method=&quot;ward.D2&quot;)　#Ward法
 
-groups &lt;- cutree(result, k = 4)  #&lt;U+30AF&gt;&lt;U+30E9&gt;&lt;U+30B9&gt;&lt;U+30BF&gt;&lt;U+6570&gt;&lt;U+3092&gt;4&lt;U+3064&gt;&lt;U+3068&gt;&lt;U+3059&gt;&lt;U+308B&gt;
+groups &lt;- cutree(result, k=4) #クラスタ数を4つとする
 groups &lt;- factor(groups)
 
-# &lt;U+30AF&gt;&lt;U+30E9&gt;&lt;U+30B9&gt;&lt;U+30BF&gt;&lt;U+306B&gt;&lt;U+540D&gt;&lt;U+524D&gt;&lt;U+3092&gt;&lt;U+4ED8&gt;&lt;U+3051&gt;&lt;U+308B&gt;
-levels(groups)[1] &lt;- &quot;Group1&quot;
-levels(groups)[2] &lt;- &quot;Group2&quot;
-levels(groups)[3] &lt;- &quot;Group3&quot;
-levels(groups)[4] &lt;- &quot;Group4&quot;
+#クラスタに名前を付ける
+levels(groups)[1]&lt;-&quot;Group1&quot;
+levels(groups)[2]&lt;-&quot;Group2&quot;
+levels(groups)[3]&lt;-&quot;Group3&quot;
+levels(groups)[4]&lt;-&quot;Group4&quot;
 
 table(groups)</code></pre>
 <pre><code>## groups
 ## Group1 Group2 Group3 Group4 
 ##     71     67     35     58</code></pre>
-<pre class="r"><code>clust$groups &lt;- groups
-per &lt;- aggregate(. ~ groups, data = clust, FUN = mean)
+<pre class="r"><code>clust$groups&lt;-groups
+per&lt;-aggregate(.~groups, data=clust, FUN=mean)
 per</code></pre>
 <pre><code>##   groups  bfagree     bfcon     bfext    bfneur   bfopen
 ## 1 Group1 126.1408 116.29577 106.46479  62.95775 120.0986
 ## 2 Group2 115.0299  96.50746  99.85075  98.94030 123.6119
 ## 3 Group3 114.2000 106.20000  62.88571  88.60000 101.1714
 ## 4 Group4 141.6207 133.12069 123.32759 105.53448 140.7241</code></pre>
-<pre class="r"><code># &lt;U+56F3&gt;&lt;U+793A&gt;
+<pre class="r"><code>#図示
 library(ggplot2)
 library(reshape2)
-meltd &lt;- melt(per, id.vars = &quot;groups&quot;, variable.names = &quot;items&quot;, value.name = &quot;per&quot;)
+meltd&lt;-melt(per, id.vars=&quot;groups&quot;,variable.names=&quot;items&quot;,value.name=&quot;per&quot;)
 
-ggplot(meltd, aes(x = groups, y = per, fill = variable)) + geom_bar(stat = &quot;identity&quot;, 
-    position = &quot;dodge&quot;, colour = &quot;black&quot;, width = 0.6) + xlab(&quot;Personality&quot;) + ylab(&quot;score&quot;) + 
-    scale_fill_grey(start = 0.1, end = 1) + scale_y_continuous(expand = c(0, 0)) + 
-    theme_classic() + guides(fill = guide_legend(title = NULL)) + guides(fill = guide_legend(nrow = 7)) + 
-    theme(legend.position = &quot;right&quot;) + theme(legend.text = element_text(10))</code></pre>
+ggplot(meltd,aes(x=groups, y=per, fill=variable))+
+  geom_bar(stat=&quot;identity&quot;,position = &quot;dodge&quot;, colour =&quot;black&quot;,width=0.6)+
+  xlab(&quot;Personality&quot;)+ylab(&quot;score&quot;)+
+  scale_fill_grey(start =0.1, end=1.0)+
+  scale_y_continuous(expand = c(0,0))+
+  theme_classic()+
+  guides(fill=guide_legend(title=NULL))+
+  guides(fill=guide_legend(nrow=7))+
+  theme(legend.position=&quot;right&quot;)+
+  theme(legend.text=element_text(10))</code></pre>
 <p><img src="/post/2020-01-01-03_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>

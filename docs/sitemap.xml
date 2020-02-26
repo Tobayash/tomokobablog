@@ -63,12 +63,12 @@
   </url>
   
   <url>
-    <loc>/categories/statistics/</loc>
+    <loc>/tags/statistics/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/statistics/</loc>
+    <loc>/categories/statistics/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -118,12 +118,12 @@
   </url>
   
   <url>
-    <loc>/categories/advent-calendar/</loc>
+    <loc>/tags/advent-calendar/</loc>
     <lastmod>2019-12-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/advent-calendar/</loc>
+    <loc>/categories/advent-calendar/</loc>
     <lastmod>2019-12-15T00:00:00+00:00</lastmod>
   </url>
   

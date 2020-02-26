@@ -6,19 +6,16 @@ categories: ["Statistics"]
 tags: ["Statistics", "Analysis", "Hierarchical Regression Analysis"]
 ---
 
-
+<meta charset="utf-8" />
+  
 <style>
   @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
   @import url(https://fonts.googleapis.com/css?family=Lato:400,900);
-  pre {
-    @charset “UTF-8”;
-  }
 </style>
 
 
 
 
-　test
 　階層的重回帰分析は、ステップ１からステップ２へとステップごとに関心のある変数を投入していき、分散説明率が統計的に有意に増加することを検定することで、その変数の重要性を分析する手法である。<br>
 　たとえば、大事な人に会うときや人前で話をするとき、誰しも不安を感じやすい（状態不安という）。そのときの不安の程度は、協調性や誠実さといったパーソナリティ特性によることが考えられるが、研究として関心があるのはこれらの交互作用効果だとする（"誠実さが高く協調性が高い人は周囲に合わせようとするため、不安を感じやすい"とか）。その場合は、ステップ１では説明変数として"協調性"と"誠実さ"を入れ、ステップ２ではさらに"協調性"と"誠実さ"の交互作用項を入れて分析する。ただし、各変数と交互作用項の相関による多重共線性の問題が考えられるので中心化処理（平均値を引く）を忘れずに行う。<br>
 
@@ -26,7 +23,7 @@ tags: ["Statistics", "Analysis", "Hierarchical Regression Analysis"]
 
 　Rで分析する場合には以下のコードを用いる。<br>
 
-``` {r eval=FALSE, include=TRUE,tidy=TRUE,options(encoding = "utf-8")}
+``` {r eval=FALSE, include=TRUE}
 data <- XXX     　　　　　　　 #分析したいデータを入れる
 y  <- data$v1 　　　　　　　　 #応答変数: 状態不安
 x1 <- data$v2 - mean(data$v2)  #説明変数(中心化): 協調性
@@ -52,7 +49,7 @@ anova(step1, step2)
 　実際に分析を行う際には、説明変数の数や共変量の有無は適宜調整する。
 
 
-```{r include=TRUE,tidy=TRUE}
+```{r include=TRUE}
 library(psych)
 data <- epi.bfi 　　　　　　　　　　　　#分析したいデータを入れる
 y  <- data$stateanx  　　　　　　　　　 #応答変数: 状態不安
@@ -63,21 +60,21 @@ c1 <- data$bfneur - mean(data$bfneur)　 #共変量(中心化): 神経症傾向
 
 +    第1ステップ
 
-```{r echo=TRUE,tidy=TRUE}
+```{r echo=TRUE}
 step1 <- lm(y ~ x1 + x2 + c1)
 summary(step1)
 ```
 
 +    第2ステップ
 
-```{r echo=TRUE,tidy=TRUE}
+```{r echo=TRUE}
 step2 <- lm(y ~ x1 + x2 + x1:x2 + c1)
 summary(step2)
 ```
 
 +    平方和の変化量の検定
 
-```{r echo=TRUE,tidy=TRUE}
+```{r echo=TRUE}
 anova(step1, step2)
 ```
 
@@ -91,7 +88,7 @@ anova(step1, step2)
 　コードは以下の通り。
 　
 　
-```{r eval=FALSE, include=TRUE,tidy=TRUE}
+```{r eval=FALSE, include=TRUE}
 #下位検定
 ## x1が+1SDの場合のx2の効果を分析
 x1high <- data$v2 - (mean(data$v2) + sd(data$v2))
@@ -108,7 +105,7 @@ summary(simpleslope2)
 
 +    x1が+1SDの場合のx2の効果を分析
 
-```{r echo=TRUE,tidy=TRUE}
+```{r echo=TRUE}
 x1high <- data$bfcon - (mean(data$bfcon) + sd(data$bfcon))
 simpleslope1 <- lm(y ~ x1high + x2 + x1high:x2 + c1) 
 summary(simpleslope1)
@@ -116,7 +113,7 @@ summary(simpleslope1)
 
 +    x1が-1SDの場合のx2の効果を分析
 
-```{r echo=TRUE,tidy=TRUE}
+```{r echo=TRUE}
 x1low <- data$bfcon - (mean(data$bfcon) - sd(data$bfcon))
 simpleslope2 <- lm(y ~ x1low + x2 + x1low:x2 + c1)
 summary(simpleslope2)

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.61.0" />
+  <meta name="generator" content="Hugo 0.65.3" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -91,12 +91,13 @@
 
         <div class="post-content markdown-body">
           
+<script src="../../../../rmarkdown-libs/jquery/jquery.min.js"></script>
+<script src="../../../../rmarkdown-libs/elevate-section-attrs/elevate-section-attrs.js"></script>
 
 
+<meta charset="utf-8" />
 <style>
   @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
-</style>
-<style>
   @import url(https://fonts.googleapis.com/css?family=Lato:400,900);
 </style>
 <p>　階層的重回帰分析は、ステップ１からステップ２へとステップごとに関心のある変数を投入していき、分散説明率が統計的に有意に増加することを検定することで、その変数の重要性を分析する手法である。<br>
@@ -104,32 +105,32 @@
 <div id="分析" class="section level3">
 <h3>分析</h3>
 <p>　Rで分析する場合には以下のコードを用いる。<br></p>
-<pre class="r"><code>data &lt;- XXX  #&lt;U+5206&gt;&lt;U+6790&gt;&lt;U+3057&gt;&lt;U+305F&gt;&lt;U+3044&gt;&lt;U+30C7&gt;&lt;U+30FC&gt;&lt;U+30BF&gt;&lt;U+3092&gt;&lt;U+5165&gt;&lt;U+308C&gt;&lt;U+308B&gt;
-y &lt;- data$v1  #&lt;U+5FDC&gt;&lt;U+7B54&gt;&lt;U+5909&gt;&lt;U+6570&gt;: &lt;U+72B6&gt;&lt;U+614B&gt;&lt;U+4E0D&gt;&lt;U+5B89&gt;
-x1 &lt;- data$v2 - mean(data$v2)  #&lt;U+8AAC&gt;&lt;U+660E&gt;&lt;U+5909&gt;&lt;U+6570&gt;(&lt;U+4E2D&gt;&lt;U+5FC3&gt;&lt;U+5316&gt;): &lt;U+5354&gt;&lt;U+8ABF&gt;&lt;U+6027&gt;
-x2 &lt;- data$v3 - mean(data$v3)  #&lt;U+8AAC&gt;&lt;U+660E&gt;&lt;U+5909&gt;&lt;U+6570&gt;(&lt;U+4E2D&gt;&lt;U+5FC3&gt;&lt;U+5316&gt;): &lt;U+8AA0&gt;&lt;U+5B9F&gt;&lt;U+3055&gt;
-c1 &lt;- data$v4 - mean(data$v4)  #&lt;U+5171&gt;&lt;U+5909&gt;&lt;U+91CF&gt;(&lt;U+4E2D&gt;&lt;U+5FC3&gt;&lt;U+5316&gt;): &lt;U+795E&gt;&lt;U+7D4C&gt;&lt;U+75C7&gt;&lt;U+50BE&gt;&lt;U+5411&gt;
+<pre class="r"><code>data &lt;- XXX     　　　　　　　 #分析したいデータを入れる
+y  &lt;- data$v1 　　　　　　　　 #応答変数: 状態不安
+x1 &lt;- data$v2 - mean(data$v2)  #説明変数(中心化): 協調性
+x2 &lt;- data$v3 - mean(data$v3)  #説明変数(中心化): 誠実さ
+c1 &lt;- data$v4 - mean(data$v4)  #共変量(中心化): 神経症傾向
 
-# &lt;U+7B2C&gt;1&lt;U+30B9&gt;&lt;U+30C6&gt;&lt;U+30C3&gt;&lt;U+30D7&gt;
+#第1ステップ
 step1 &lt;- lm(y ~ x1 + x2 + c1)
 summary(step1)
 
-# &lt;U+7B2C&gt;2&lt;U+30B9&gt;&lt;U+30C6&gt;&lt;U+30C3&gt;&lt;U+30D7&gt;
+#第2ステップ
 step2 &lt;- lm(y ~ x1 + x2 + x1:x2 + c1)
 summary(step2)
 
-# &lt;U+5E73&gt;&lt;U+65B9&gt;&lt;U+548C&gt;&lt;U+306E&gt;&lt;U+5909&gt;&lt;U+5316&gt;&lt;U+91CF&gt;&lt;U+306E&gt;&lt;U+691C&gt;&lt;U+5B9A&gt;
+#平方和の変化量の検定
 anova(step1, step2)</code></pre>
 <p>　
 　今回は、データセットとしてpsychパッケージに入っている“epi.bfi”を使用する。このデータセットにはアイゼンク性格検査（EPI）とBig 5尺度、ベック抑うつ性尺度、特性‐状態不安の得点が231人分入っている。<br>
 　
 　実際に分析を行う際には、説明変数の数や共変量の有無は適宜調整する。</p>
 <pre class="r"><code>library(psych)
-data &lt;- epi.bfi  #&lt;U+5206&gt;&lt;U+6790&gt;&lt;U+3057&gt;&lt;U+305F&gt;&lt;U+3044&gt;&lt;U+30C7&gt;&lt;U+30FC&gt;&lt;U+30BF&gt;&lt;U+3092&gt;&lt;U+5165&gt;&lt;U+308C&gt;&lt;U+308B&gt;
-y &lt;- data$stateanx  #&lt;U+5FDC&gt;&lt;U+7B54&gt;&lt;U+5909&gt;&lt;U+6570&gt;: &lt;U+72B6&gt;&lt;U+614B&gt;&lt;U+4E0D&gt;&lt;U+5B89&gt;
-x1 &lt;- data$bfcon - mean(data$bfcon)  #&lt;U+8AAC&gt;&lt;U+660E&gt;&lt;U+5909&gt;&lt;U+6570&gt;(&lt;U+4E2D&gt;&lt;U+5FC3&gt;&lt;U+5316&gt;): &lt;U+5354&gt;&lt;U+8ABF&gt;&lt;U+6027&gt;
-x2 &lt;- data$bfagree - mean(data$bfagree)  #&lt;U+8AAC&gt;&lt;U+660E&gt;&lt;U+5909&gt;&lt;U+6570&gt;(&lt;U+4E2D&gt;&lt;U+5FC3&gt;&lt;U+5316&gt;): &lt;U+8AA0&gt;&lt;U+5B9F&gt;&lt;U+3055&gt;
-c1 &lt;- data$bfneur - mean(data$bfneur)  #&lt;U+5171&gt;&lt;U+5909&gt;&lt;U+91CF&gt;(&lt;U+4E2D&gt;&lt;U+5FC3&gt;&lt;U+5316&gt;): &lt;U+795E&gt;&lt;U+7D4C&gt;&lt;U+75C7&gt;&lt;U+50BE&gt;&lt;U+5411&gt;</code></pre>
+data &lt;- epi.bfi 　　　　　　　　　　　　#分析したいデータを入れる
+y  &lt;- data$stateanx  　　　　　　　　　 #応答変数: 状態不安
+x1 &lt;- data$bfcon - mean(data$bfcon)     #説明変数(中心化): 協調性
+x2 &lt;- data$bfagree - mean(data$bfagree) #説明変数(中心化): 誠実さ
+c1 &lt;- data$bfneur - mean(data$bfneur)　 #共変量(中心化): 神経症傾向</code></pre>
 <ul>
 <li>第1ステップ</li>
 </ul>
@@ -203,13 +204,13 @@ summary(step2)</code></pre>
 　コードは以下の通り。
 　
 　</p>
-<pre class="r"><code># &lt;U+4E0B&gt;&lt;U+4F4D&gt;&lt;U+691C&gt;&lt;U+5B9A&gt;
-# x1&lt;U+304C&gt;+1SD&lt;U+306E&gt;&lt;U+5834&gt;&lt;U+5408&gt;&lt;U+306E&gt;x2&lt;U+306E&gt;&lt;U+52B9&gt;&lt;U+679C&gt;&lt;U+3092&gt;&lt;U+5206&gt;&lt;U+6790&gt;
+<pre class="r"><code>#下位検定
+## x1が+1SDの場合のx2の効果を分析
 x1high &lt;- data$v2 - (mean(data$v2) + sd(data$v2))
-simpleslope1 &lt;- lm(y ~ x1high + x2 + x1high:x2 + c1)
+simpleslope1 &lt;- lm(y ~ x1high + x2 + x1high:x2 + c1) 
 summary(simpleslope1)
 
-## x1&lt;U+304C&gt;-1SD&lt;U+306E&gt;&lt;U+5834&gt;&lt;U+5408&gt;&lt;U+306E&gt;x2&lt;U+306E&gt;&lt;U+52B9&gt;&lt;U+679C&gt;&lt;U+3092&gt;&lt;U+5206&gt;&lt;U+6790&gt;
+## x1が-1SDの場合のx2の効果を分析
 x1low &lt;- data$v2 - (mean(data$v2) - sd(data$v2))
 simpleslope2 &lt;- lm(y ~ x1low + x2 + x1low:x2 + c1)
 summary(simpleslope2)</code></pre>
@@ -218,7 +219,7 @@ summary(simpleslope2)</code></pre>
 <li>x1が+1SDの場合のx2の効果を分析</li>
 </ul>
 <pre class="r"><code>x1high &lt;- data$bfcon - (mean(data$bfcon) + sd(data$bfcon))
-simpleslope1 &lt;- lm(y ~ x1high + x2 + x1high:x2 + c1)
+simpleslope1 &lt;- lm(y ~ x1high + x2 + x1high:x2 + c1) 
 summary(simpleslope1)</code></pre>
 <pre><code>## 
 ## Call:

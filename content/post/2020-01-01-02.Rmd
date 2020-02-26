@@ -20,7 +20,7 @@ tags: ["Statistics", "Analysis", "Exploratory Factor Analysis"]
 
 　Rで分析する場合には以下のコードを用いる。<br>
 
-```{r eval= FALSE, include=TRUE,tidy=TRUE}
+```{r eval= FALSE, include=TRUE}
 data <- XXX #分析したいデータを入れる
 
 library(psych) #psychパッケージを使う
@@ -48,7 +48,7 @@ print(fa.result, sort = T, digit = 3, cut=0.3) #結果の表示。ソートか�
 　
 　データセットとしてpsychパッケージに入っている"epi.bfi"を使用する。このデータセットにはアイゼンク性格検査（EPI）とBig 5尺度、ベック抑うつ性尺度、特性‐状態不安の得点が231人分入っている。<br>
 
-```{r include=TRUE, warning=FALSE, message=FALSE,tidy=TRUE}
+```{r include=TRUE, warning=FALSE, message=FALSE}
 library(psych) #psychパッケージを使う
 
 va<-epi.bfi #因子分析にかける変数を取り出す。ここではすべての変数を使う。
@@ -56,7 +56,7 @@ va<-epi.bfi #因子分析にかける変数を取り出す。ここではすべ�
 
 +    平行分析
 
-```{r include=TRUE, warning=FALSE, message=FALSE,tidy=TRUE}
+```{r include=TRUE, warning=FALSE, message=FALSE}
 fa.parallel(va) #推定される最大の因子数（平行分析）
 ```
 
@@ -65,7 +65,7 @@ fa.parallel(va) #推定される最大の因子数（平行分析）
 　"The Velicer MAP achieves a minimum of 0.05 with..."のところのfactorsを見る。
 　
 　
-```{r include=TRUE, warning=FALSE, message=FALSE,tidy=TRUE}
+```{r include=TRUE, warning=FALSE, message=FALSE}
 VSS(va,plot=FALSE)　#推定される最小の因子数（最小平均偏相関）
 ```
 
@@ -74,7 +74,7 @@ VSS(va,plot=FALSE)　#推定される最小の因子数（最小平均偏相関�
 
 　因子数は３因子が良さそう。
 
-```{r include=TRUE, warning=FALSE, message=FALSE,tidy=TRUE}
+```{r include=TRUE, warning=FALSE, message=FALSE}
 fa.result <- fa(va, nfactors = 3, fm = "minres", rotate = "promax")　#因子数を3として、最小二乗法のプロマックス、どーん!
 print(fa.result, sort = T, digit = 3, cut=0.3) #結果の表示。ソートかけて、桁数は3、0.3以下の結果はカット
 ```
