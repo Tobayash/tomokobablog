@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.65.3" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="" />
+  <meta property="og:url" content="/2020/02/26/blogdown%E3%82%92%E3%82%B9%E3%83%88%E3%83%AC%E3%82%B9%E3%83%95%E3%83%AA%E3%83%BC%E3%81%AB%E4%BD%BF%E3%81%84%E3%81%9F%E3%81%84/" />
+  <link rel="canonical" href="../../../../2020/02/26/blogdown%E3%82%92%E3%82%B9%E3%83%88%E3%83%AC%E3%82%B9%E3%83%95%E3%83%AA%E3%83%BC%E3%81%AB%E4%BD%BF%E3%81%84%E3%81%9F%E3%81%84/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "\/"
+      },
+      "articleSection" : "post",
+      "name" : "blogdownをストレスフリーに使いたい",
+      "headline" : "blogdownをストレスフリーに使いたい",
+      "description" : "Rのcodeとかいちいち調べるのめんどくさいし、覚えていられるほど記憶力もよくないので、自分のホームページにまとめときたい。しかも、あんま考",
+      "inLanguage" : "en-US",
+      "author" : "",
+      "creator" : "",
+      "publisher": "",
+      "accountablePerson" : "",
+      "copyrightHolder" : "",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-02-26 00:00:00 \x2b0000 UTC",
+      "dateModified" : "2020-02-26 00:00:00 \x2b0000 UTC",
+      "url" : "\/2020\/02\/26\/blogdown%E3%82%92%E3%82%B9%E3%83%88%E3%83%AC%E3%82%B9%E3%83%95%E3%83%AA%E3%83%BC%E3%81%AB%E4%BD%BF%E3%81%84%E3%81%9F%E3%81%84\/",
+      "keywords" : [ "blogdown", ]
+  }
+</script>
+<title>blogdownをストレスフリーに使いたい - tomokoba website</title>
+  <meta property="og:title" content="blogdownをストレスフリーに使いたい - tomokoba website" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="Rのcodeとかいちいち調べるのめんどくさいし、覚えていられるほど記憶力もよくないので、自分のホームページにまとめときたい。しかも、あんま考" />
+
+  <link rel="stylesheet" href="../../../../css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet"
+    href="../../../../css/github-markdown.min.css" />
+  <link rel="stylesheet" href="../../../../css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="../../../../css/index.css">
+  <link href="../../../../index.xml" rel="alternate" type="application/rss+xml" title="tomokoba website">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="../../../../">Tomokoba blog</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">blogdownをストレスフリーに使いたい</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-02-26 00:00:00 UTC">
+                26 Feb 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+<script src="../../../../rmarkdown-libs/jquery/jquery.min.js"></script>
+<script src="../../../../rmarkdown-libs/elevate-section-attrs/elevate-section-attrs.js"></script>
+
+
+<p>Rのcodeとかいちいち調べるのめんどくさいし、覚えていられるほど記憶力もよくないので、自分のホームページにまとめときたい。しかも、あんま考えなくてもタグとかカテゴリーとかで分類してくれてたら嬉しい。<br>
+そんなこと思ってたら、どうやらblogdownとやらがなんかそんな感じらしいと聞きました。でも、いざやってみると正直難しい。<br>
+Notepadにメモするくらい気楽な感じでブログ書きたいのに、このファイルなんだっけ？なんか関数使うんだっけ？といちいちつまずく。<br>
+ストレスだ…<br>
+というわけで、できるだけ頭を使わずにストレスフリーなブログライフを目指し、ここにまとめます。基本的にwindowsユーザー向けです。<br></p>
+<div id="参照したサイト" class="section level2">
+<h2>参照したサイト</h2>
+<pre><code>1. https://bookdown.org/yihui/blogdown/</code></pre>
+</div>
+<div id="インストールとアップデート" class="section level2">
+<h2>インストールとアップデート</h2>
+<p>まずはRにblogdownパッケージをインストールします。CRANかGitHubからインストールできます。</p>
+<pre class="r"><code>## Install from CRAN
+install.packages(&quot;blogdown&quot;)
+## Or, install from GitHub
+if (!requireNamespace(&quot;devtools&quot;)) install.packages(&quot;devtools&quot;)
+devtools::install_github(&quot;rstudio/blogdown&quot;)</code></pre>
+<p>blogdownは静的サイトジェネレーターのHugo (<a href="https://gohugo.io)に基づいているので、Hugoをインストールする必要があります" class="uri">https://gohugo.io)に基づいているので、Hugoをインストールする必要があります</a> (blogdown::install_hugo())。
+自分のRにインストールしているHugoのバージョンは blogdown::hugo_version() で確認できます。<br>
+最新バージョンはhttps://github.com/gohugoio/hugo/releases で見れるので、適宜 blogdown::update_hugo() でアップデートしてください（install_hugo(force=TRUE)でもできる）。<br></p>
+</div>
+<div id="はじまり" class="section level2">
+<h2>はじまり</h2>
+<p>「光あれ」的な感じで blogdown::new_site() を使えば、何もないところにブログサイトを創造することができる。ただし、New Projectにしてね。</p>
+</div>
+<div id="hugoベースサイトの3つの基本概念" class="section level2">
+<h2>Hugoベースサイトの3つの基本概念</h2>
+<div id="config.toml" class="section level3">
+<h3>1. config.toml</h3>
+<p>サイトのグローバル設定をつくるもの。中の設定は自分で自由に決められる。</p>
+</div>
+<div id="contentディレクトリ-content" class="section level3">
+<h3>2. CONTENTディレクトリ (content/)</h3>
+<p>投稿やぺージのR MarkdownやMarkdownをつくるところ。デフォルトでは、 content/ の下に about.md と post/ ディレクトリが置かれる。好みに合わせてファイルやディレクトリはいじいじできる。</p>
+</div>
+<div id="パブリッシュディレクトリ-public" class="section level3">
+<h3>3. パブリッシュディレクトリ (public/)</h3>
+<p>ウェブサイトを生成するためのディレクトリ。作成者はこのディレクトリをいちいち触る必要はなく、 serve_site() や build_site() で自動的に作ってくれる。便利。<br>
+サイトの材料はここに揃っている必王があり、htmlファイルやcssファイル、jsファイルなどが入っているはず。</p>
+</div>
+</div>
+<div id="投稿の仕方" class="section level2">
+<h2>投稿の仕方</h2>
+<p>RStudio IDEを使えば簡単に作れるらしい。詳しくは <a href="https://bookdown.org/yihui/blogdown/rstudio-ide.html#fn13" class="uri">https://bookdown.org/yihui/blogdown/rstudio-ide.html#fn13</a> をご覧ください。<br>
+ここでは違う方法を書きます。<br></p>
+<pre><code>1. R markdown documentを作る。最初のTitleは&quot;yy-mm-dd-No&quot;で記入
+2. yamlヘッダをブログ用に変える
+3. 書きたいことを書く
+4. content/post/ に保存する
+5. blogdown::build_site() を実行
+6. blogdown::serve_site() を実行
+7. GitでCommitしてPushする</code></pre>
+<p>なお、ブログ用のyamlヘッダは以下の通りです。</p>
+<pre><code>---
+title: &quot;ここにタイトルを書く&quot;
+author: &quot;tomokoba&quot;
+date: &#39;2020-02-26&#39;
+categories: [&quot;blogdown&quot;]
+tags: [&quot;blogdown&quot;, &quot;encoding&quot;]</code></pre>
+<hr />
+</div>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="../../../../categories/blogdown/">
+                blogdown
+              </a>
+            </div>
+            
+          </div>
+        </div>
+
+        
+        
+
+<div class="releated-content">
+  <h3>Related Posts</h3>
+  <ul>
+    
+    <li><a href="../../../../2020/02/26/blog%E3%81%AEr-code%E3%81%A7%E6%96%87%E5%AD%97%E5%8C%96%E3%81%91%E3%81%AB%E6%82%A9%E3%82%93%E3%81%A0%E5%B0%8F%E8%A9%B1/">BlogのR codeで文字化けに悩んだ小話</a></li>
+    
+  </ul>
+</div>
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://tobayash.github.io/hp2/index.html" target="_blank">Main page</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://twitter.com/tomokoba10" target="_blank">Twitter</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="../../../../js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

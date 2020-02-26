@@ -1,0 +1,73 @@
+---
+title: "blogdownをストレスフリーに使いたい"
+author: "tomokoba"
+date: '2020-02-26'
+categories: ["blogdown"]
+tags: ["blogdown"]
+---
+
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<script src="/rmarkdown-libs/elevate-section-attrs/elevate-section-attrs.js"></script>
+
+
+<p>Rのcodeとかいちいち調べるのめんどくさいし、覚えていられるほど記憶力もよくないので、自分のホームページにまとめときたい。しかも、あんま考えなくてもタグとかカテゴリーとかで分類してくれてたら嬉しい。<br>
+そんなこと思ってたら、どうやらblogdownとやらがなんかそんな感じらしいと聞きました。でも、いざやってみると正直難しい。<br>
+Notepadにメモするくらい気楽な感じでブログ書きたいのに、このファイルなんだっけ？なんか関数使うんだっけ？といちいちつまずく。<br>
+ストレスだ…<br>
+というわけで、できるだけ頭を使わずにストレスフリーなブログライフを目指し、ここにまとめます。基本的にwindowsユーザー向けです。<br></p>
+<div id="参照したサイト" class="section level2">
+<h2>参照したサイト</h2>
+<pre><code>1. https://bookdown.org/yihui/blogdown/</code></pre>
+</div>
+<div id="インストールとアップデート" class="section level2">
+<h2>インストールとアップデート</h2>
+<p>まずはRにblogdownパッケージをインストールします。CRANかGitHubからインストールできます。</p>
+<pre class="r"><code>## Install from CRAN
+install.packages(&quot;blogdown&quot;)
+## Or, install from GitHub
+if (!requireNamespace(&quot;devtools&quot;)) install.packages(&quot;devtools&quot;)
+devtools::install_github(&quot;rstudio/blogdown&quot;)</code></pre>
+<p>blogdownは静的サイトジェネレーターのHugo (<a href="https://gohugo.io)に基づいているので、Hugoをインストールする必要があります" class="uri">https://gohugo.io)に基づいているので、Hugoをインストールする必要があります</a> (blogdown::install_hugo())。
+自分のRにインストールしているHugoのバージョンは blogdown::hugo_version() で確認できます。<br>
+最新バージョンはhttps://github.com/gohugoio/hugo/releases で見れるので、適宜 blogdown::update_hugo() でアップデートしてください（install_hugo(force=TRUE)でもできる）。<br></p>
+</div>
+<div id="はじまり" class="section level2">
+<h2>はじまり</h2>
+<p>「光あれ」的な感じで blogdown::new_site() を使えば、何もないところにブログサイトを創造することができる。ただし、New Projectにしてね。</p>
+</div>
+<div id="hugoベースサイトの3つの基本概念" class="section level2">
+<h2>Hugoベースサイトの3つの基本概念</h2>
+<div id="config.toml" class="section level3">
+<h3>1. config.toml</h3>
+<p>サイトのグローバル設定をつくるもの。中の設定は自分で自由に決められる。</p>
+</div>
+<div id="contentディレクトリ-content" class="section level3">
+<h3>2. CONTENTディレクトリ (content/)</h3>
+<p>投稿やぺージのR MarkdownやMarkdownをつくるところ。デフォルトでは、 content/ の下に about.md と post/ ディレクトリが置かれる。好みに合わせてファイルやディレクトリはいじいじできる。</p>
+</div>
+<div id="パブリッシュディレクトリ-public" class="section level3">
+<h3>3. パブリッシュディレクトリ (public/)</h3>
+<p>ウェブサイトを生成するためのディレクトリ。作成者はこのディレクトリをいちいち触る必要はなく、 serve_site() や build_site() で自動的に作ってくれる。便利。<br>
+サイトの材料はここに揃っている必王があり、htmlファイルやcssファイル、jsファイルなどが入っているはず。</p>
+</div>
+</div>
+<div id="投稿の仕方" class="section level2">
+<h2>投稿の仕方</h2>
+<p>RStudio IDEを使えば簡単に作れるらしい。詳しくは <a href="https://bookdown.org/yihui/blogdown/rstudio-ide.html#fn13" class="uri">https://bookdown.org/yihui/blogdown/rstudio-ide.html#fn13</a> をご覧ください。<br>
+ここでは違う方法を書きます。<br></p>
+<pre><code>1. R markdown documentを作る。最初のTitleは&quot;yy-mm-dd-No&quot;で記入
+2. yamlヘッダをブログ用に変える
+3. 書きたいことを書く
+4. content/post/ に保存する
+5. blogdown::build_site() を実行
+6. blogdown::serve_site() を実行
+7. GitでCommitしてPushする</code></pre>
+<p>なお、ブログ用のyamlヘッダは以下の通りです。</p>
+<pre><code>---
+title: &quot;ここにタイトルを書く&quot;
+author: &quot;tomokoba&quot;
+date: &#39;2020-02-26&#39;
+categories: [&quot;blogdown&quot;]
+tags: [&quot;blogdown&quot;, &quot;encoding&quot;]</code></pre>
+<hr />
+</div>
