@@ -6,10 +6,19 @@
     <description>Recent content in Posts on tomokoba website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>BlogのR codeで文字化けに悩んだ小話</title>
+      <link>/2020/02/26/blog%E3%81%AEr-code%E3%81%A7%E6%96%87%E5%AD%97%E5%8C%96%E3%81%91%E3%81%AB%E6%82%A9%E3%82%93%E3%81%A0%E5%B0%8F%E8%A9%B1/</link>
+      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/02/26/blog%E3%81%AEr-code%E3%81%A7%E6%96%87%E5%AD%97%E5%8C%96%E3%81%91%E3%81%AB%E6%82%A9%E3%82%93%E3%81%A0%E5%B0%8F%E8%A9%B1/</guid>
+      <description>@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); R codeのもろもろをメモとしてホームページにあげてます。 もっとタグで分類とかできないかなと思ってたらblogdownがいいと聞き、</description>
+    </item>
     
     <item>
       <title>yamlヘッダ</title>

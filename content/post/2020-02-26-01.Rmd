@@ -1,0 +1,22 @@
+---
+title: "BlogのR codeで文字化けに悩んだ小話"
+author: "tomokoba"
+date: '2020-02-26'
+categories: ["blogdown"]
+tags: ["blogdown", "encoding"]
+---
+
+<meta charset="utf-8" />
+  
+<style>
+  @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+  @import url(https://fonts.googleapis.com/css?family=Lato:400,900);
+</style>
+
+
+R codeのもろもろをメモとしてホームページにあげてます。<br>
+もっとタグで分類とかできないかなと思ってたらblogdownがいいと聞き、さっそく変更。<br>
+そしたら、R code内の日本語が文字化けした（゜□゜）<br>
+どうやったら直るんだろうとCSSとかいじってたけど、なかなか直らず悩む日々。。<br>
+そしたらR markdownのチャンクでtidy=TRUEを外すと直りました。<br>
+めでたしめでたし。
