@@ -1,11 +1,9 @@
 ---
 title: "3要因の交互作用項を含む階層的重回帰分析"
 author: "tomokoba"
-date: "10/03/2020"
-tags:
-- statistics
-- regression
-categories: statistics
+date: '2020-03-10'
+categories: ["statistics"]
+tags: ["statistics","regression"]
 ---
 
 <meta charset="utf-8" />
