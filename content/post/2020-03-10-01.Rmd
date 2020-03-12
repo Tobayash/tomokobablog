@@ -1,0 +1,253 @@
+---
+title: "3要因の交互作用項を含む階層的重回帰分析"
+author: "tomokoba"
+date: "10/03/2020"
+tags:
+- statistics
+- regression
+categories: statistics
+---
+
+<meta charset="utf-8" />
+
+<style>
+  @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+  @import url(https://fonts.googleapis.com/css?family=Lato:400,900);
+  body {
+  <!-- font-size: 100%; -->
+  }
+</style>
+
+
+#### 参考文献
+Dawson, J. F. & Richter A. W. (2006). Probing three-way interactions in moderated multiple regression: Development and application of a slope differece test. *Journal of Applied Psychology*, *91*(4), 917-926. https://doi.org/10.1037/0021-9010.91.4.917    
+Aiken, L. S., & West, S. G. (1991). Multiple regression: Testing and interpreting interactions. Sage Publications, Inc.
+
+****
+
+3要因の交互作用項を含む階層的重回帰分析（調整分析）についてのメモです。主な文献はDawson & Richter (2006)。実際のシミュレーションはDawson & Richter (2006)を直接参照すること。    
+
+  + そのレベルによって独立変数Xと従属変数Yの関係の程度を調整するとき、変数Zは**調整変数**となる Baron & Kenny, 1986; James & Brett, 1984; Zedeck, 1971)。
+  + 調整変数Zは連続変数にもカテゴリカル変数にもなり得り、しばしば2つ以上になることもある。調整の基本概念や合理性は2要因交互作用から、より複雑な3要因の交互作用に拡張される (Jaccard & Turrisi, 2003)。
+
+
+### Detecting Interactions
+  + 調整分析 (Moderated multiple regression; MMR)はフィールド研究にて調整効果を検定する際に使用される方法であり、サブグループに基づく相関係数の比較などを得意とする (Stone-Romero & Anderson, 1994)。
+  + Two-way interation
+    + 2要因の交互作用を検討する方法は、従属変数Yに対する独立変数X、調整変数Z、XとZの交互作用項XZ (product/interaction term)の回帰を見ることである。本質的ではないが、交互作用項は異なるステップで入力される。
+    + 有意な交互作用項XZは、調整変数Zの程度によってXがYに及ぼす影響が異なることを示す (Cohen & Cohen, 1975; Peters, O'Connor, & Wise, 1984; Zedeck, 1971)。
+  + Three-way interaction
+    + 3要因の交互作用では、XがYに及ぼす影響が2つの調整変数ZとWに依存するとする。
+    + さきほどと同じように、Yは、変数X,Z,W、2つの変数の組み合わせXZ, XW, ZW、3つ変数の組み合わせXZWから回帰する (それぞれのレベルで異なるステップに入る)。
+
+### Plotting the Interaction
+  + 3要因の交互作用を解釈する方法の一つは、XとYの関係をZとWの高低の組み合わせごとに描画することである (Aiken & West, 1991; Jaccard & Turrisi, 2003)。
+  + これはすばやく視覚的な理解を可能にするし、傾斜の方向は表面的妥当性に基づいて解釈できる。
+  + しかし、有意な3要因の交互作用が変数ZとWの高低のどのような組み合わせによる結果なのか、傾斜間の差は有意なのか、1つの傾斜は従属変数の有意な説明変数になっているのか、は解釈できない。
+  
+### Post Hoc Probing Techniques
+  + 交互作用項についてより検討するもっとも一般的な方法は、*pick-a-point*アプローチである (Aiken & West, 1991; Rogosa, 1980)。
+  + 研究者は通常、Zの条件値 (たとえば高群と低群)におけるXからYへ単純傾斜を算出し、その後、ZとWの高低の組み合わせごとの単純傾斜が従属変数の予測が0のときと有意に異なるかを検定する。
+  + 単純傾斜の信頼区間の算出(Cohen, Cohen, West, & Aiken, 2003)はこの方法の洗練された発展である。
+  + 従来のPost Hocテストの限界点
+    + 条件値では連続変数である調整変数を完全に反映できないかもしれず、恣意的に選ばれている可能性もある (see Aiken & West, 1991; Bauer & Curran, 2005; Rogosa, 1980)。
+    + この指摘を受けて開発されたのがJohnson-Neymanテクニックであるが (Bauer & Curran, 2005)、2要因の交互作用でしか開発されていない。
+    + 傾斜間の差の検定について結論を出すことができない。つまり、単純傾斜の絶対的検定はあったが、相対的検定がなかった。
+  + 代わりとなる方法はサブグループ分析の使用である (see Aiken & West, 1991; Peters et al., 1984)。
+    + 研究者は、2つの調整変数のうち1つWを中央値で分け、Wの高低それぞれのサブグループにおける独立変数Xと調整変数Zの関係を検討する。
+    + サブグループ分析は3の限界点を持つ。
+      1. それぞれの変数の連続的な性質に合わない恣意的な分け方をしてしまう    
+      2. サブグループのサンプルサイズが小さいことにより検定力が損なわれる    
+      3. サブグループ間の境界により、傾斜間の比較ができない    
+
+### Common Strategies in Probing Three-Way Interactions
+  + PsycARTICLES、PsycINFO、Proquestにある論文を見てみると、3要因の交互作用についてだいたい3つの方法が用いられている。
+  + Plotting (e.g., Baker & Cullen, 1993; Schaubroeck, Ganster, & Kemmerer, 1994; Schaubroeck & Merritt, 1997)
+    + 統計的な検定は行わずに、単純な描画による表面的な妥当性に基づいて、傾斜間の違いを検討していた。
+  + Pick-a-point approach (Aiken & West, 1991; Rogosa, 1980)
+    + 単純傾斜が0から有意に異なるかを検討し、交互作用のプロットを見て解釈する (e.g., Janssen, van de Vliert, & Veenstra, 1999)。
+  + Subgorup analysis (e.g., Dickson & Weaver, 1997; Kwong & Leung, 2002; Oldham & Cummings, 1996; Oldham & Fried, 1987)
+    + 調整変数の1つに基づきその高低のサブグループに分け、それぞれのサブグループで別々に回帰分析を行う。
+    + サブグループの間にある潜在的な傾斜の違いを無視している。
+  + いずれの方法も傾斜同士の違いについて検定していない。プロットの見た目での判断は正確ではないし、各傾斜が有意か有意でないかによって傾斜を比べるべきではない。
+
+## The Development of a Significance Test for Slope Differences
+  + 検定の数式の開発は次の4ステップを経る：
+    1. ZとWの高低レベルにおけるXとYの関係の単純傾斜の一般式を計算する (Aiken & West, 1991と同じ)
+    2. 2つの傾斜の差を計算する ($\Delta slope$)。
+    3. 2つの傾斜の差の標準誤差を計算する　($SE/_{\Delta slope}$)。傾斜が互いに異なることを調べるため、傾斜の差の標準誤差を求める必要がある。
+    4. 傾斜の組み合わせの差の比率が0から異なるかを検定する ($\Delta slope/SE _{\Delta slope}$)。
+
+### 1. Generic Formulas for Simple Slopes of X on Y at High and Low of Z and W
+  + 3要因の交互作用を含む回帰式:
+  $$
+  Y=b_{0}+b_{1}X+b_{2}Z+b_{3}W+b_{4}XZ+b_{5}XW+b_{6}ZW+b_{7}XZW+\epsilon
+  $$
+  
+  + 典型的な3要因の交互作用では4本の回帰線が引かれる: (a)Z high, W high; (b)Z high, W low; (c)Z low, W high; (d)Z low, W low
+  + 通常、ZとWの高低の値は変数の平均値から1SDを上か下の値とされる (Aiken & West, 1991)。それぞれ$Z_{H},Z_{L},W_{H},W_{L}$とする。 
+  
+  + 上記の式を下記のように書き直した場合、1つ目のセットはXに対するYのグラフの切片を表し、2つ目のセットのカッコ内は傾きを表す。
+  $$
+  Y=(b_{0}+b_{2}Z+b_{3}W+b_{6}ZW)+(b_{1}+b_{4}Z+b_{5}W+b_{7}ZW)X+\epsilon
+  $$
+  
+  + これにより、4本の回帰線の傾きは次のように表すことができる。
+    1. $b_{1}+b_{4}Z_{H}+b_{5}W_{H}+b_{7}Z_{H}W_{H}$
+    2. $b_{1}+b_{4}Z_{H}+b_{5}W_{L}+b_{7}Z_{H}W_{L}$
+    3. $b_{1}+b_{4}Z_{L}+b_{5}W_{H}+b_{7}Z_{L}W_{H}$
+    4. $b_{1}+b_{4}Z_{L}+b_{5}W_{L}+b_{7}Z_{L}W_{L}$
+    
+### 2. Calculating Differences Between Pairs of Slopes
+  + 関心のある可能性が持つ傾斜の組み合わせは全部で6つある。
+  + それらは、片方の調整変数のみが変わっている組み合わせと、両方の調整変数が変わっている組み合わせと2つのカテゴリーに分けられる。
+  + 下の表においてDifferenceはそれぞれSlope_1からSlope_2を引いたもの。
+  + 式はすこしややこしいが、ZとWを単純な値に置き換えれば、いくらかわかりやすい。
+    + たとえば、交互作用項をつくる前に両方の調整変数を標準化して回帰分析を行い、ZとWの標準化した値で傾斜をプロットすると (i.e., $Z_{H}=W_{H}=1, Z_{L}=W_{L}=-1$)、式を単純化できる (この標準化変数の使用は単純化のために推奨)。
+    
+```{r echo=FALSE, eval=TRUE}
+library(formattable)
+formattable::formattable(data.frame(
+    Slopes = c("1 and 2","1 and 3","2 and 4","3 and 4","1 and 4","2 and 3"),
+    Slopes_1 = c("$b_{1}+b_{4}Z_{H}+b_{5}W_{H}+b_{7}Z_{H}W_{H}$",
+               "$b_{1}+b_{4}Z_{H}+b_{5}W_{H}+b_{7}Z_{H}W_{H}$",
+               "$b_{1}+b_{4}Z_{H}+b_{5}W_{L}+b_{7}Z_{H}W_{L}$",
+               "$b_{1}+b_{4}Z_{L}+b_{5}W_{H}+b_{7}Z_{L}W_{H}$",
+               "$b_{1}+b_{4}Z_{H}+b_{5}W_{H}+b_{7}Z_{H}W_{H}$",
+               "$b_{1}+b_{4}Z_{H}+b_{5}W_{L}+b_{7}Z_{H}W_{L}$"),
+    Slopes_2 = c("$b_{1}+b_{4}Z_{H}+b_{5}W_{L}+b_{7}Z_{H}W_{L}$",
+               "$b_{1}+b_{4}Z_{L}+b_{5}W_{H}+b_{7}Z_{L}W_{H}$",
+               "$b_{1}+b_{4}Z_{L}+b_{5}W_{L}+b_{7}Z_{L}W_{L}$",
+               "$b_{1}+b_{4}Z_{L}+b_{5}W_{L}+b_{7}Z_{L}W_{L}$",
+               "$b_{1}+b_{4}Z_{L}+b_{5}W_{L}+b_{7}Z_{L}W_{L}$",
+               "$b_{1}+b_{4}Z_{L}+b_{5}W_{H}+b_{7}Z_{L}W_{H}$"),
+    Category = c("only one change","only one change","only one change","only one change","both change","both change")
+    ))
+formattable::formattable(data.frame(
+  Slopes = c("1 and 2","1 and 3","2 and 4","3 and 4","1 and 4","2 and 3"),
+  Difference = c(
+    "$b_{5}(W_{H}-W_{L})+b_{7}Z_{H}(W_{H}-W_{L})$",
+    "$b_{4}(Z_{H}-Z_{L})+b_{7}W_{H}(Z_{H}-Z_{L})$",
+    "$b_{4}(Z_{H}-Z_{L})+b_{7}W_{L}(Z_{H}-Z_{L})$",
+    "$b_{5}(W_{H}-W_{L})+b_{7}Z_{L}(W_{H}-W_{L})$",
+    "$b_{4}(Z_{H}-Z_{L})+b_{5}(W_{H}-W_{L})+b_{7}(Z_{H}W_{H}-Z_{L}W_{L})$",
+    "$b_{4}(Z_{H}-Z_{L})+b_{5}(W_{L}-W_{H})+b_{7}(Z_{H}W_{L}-Z_{L}W_{H})$"
+  ),
+  Standardized = c(
+    "$2(b_{5}+b_{7})$",
+    "$2(b_{4}+b_{7})$",
+    "$2(b_{4}-b_{7})$",
+    "$2(b_{5}-b_{7})$",
+    "$2(b_{4}+b_{5})$",
+    "$2(b_{4}-b_{5})$"
+  )
+))
+```
+
+### 3. Calculating the Standard Error of Slope Differences
+  + 傾斜間の差の有意性を検定するため、差の標準誤差を比較する必要がある。
+  + 傾斜間の差の標準誤差を計算するにあたり、$var(aX+bY)=a^{2}var(X)+b^{2}var(Y)+2abcov(X,Y)$の恒等式を利用する。
+  + たとえば、"1 and 2"の傾斜の差では、
+  $$
+  \begin{align}
+  SE_{1_{and}2}&=\sqrt{var[b_{5}(W_{H}-W_{L})+b_{7}Z_{H}(W_{H}-W_{L})]}\\\\
+  &=\sqrt{(W_{H}-W_{L})^{2}var(b_{5})+(W_{H}-W_{L})^{2}Z_{H}^{2}var(b_{7})+2(W_{H}-W_{L})^{2}Z_{H}cov(b_{5},b_{7})}\\\\
+  &=(W_{H}-W_{L})\sqrt{var(b_{5})+Z_{H}^{2}var(b_{7})+2Z_{H}cov(b_{5},b_{7})}
+  \end{align}
+  $$
+  + 右辺1つ目から2つ目は先ほどの恒等式による。2つ目から3つ目はルート内$(W_{H}-W_{L})^{2}$をまとめたもの。
+  + ここでAiken & West (1991)で使われている記法(下の行列)を用いて$var(b_{5})$&rarr;$s_{55}$や$cov(b_{5},b_{7})$&rarr;$s_{57}$と記す。
+  $$
+  S=
+  \left(
+  \begin{array}{ccc}
+  s_{00} & \cdots & s_{07}\\
+  \vdots & \ddots & \vdots\\
+  s_{70} & \cdots & s_{77}\\
+  \end{array}
+  \right)
+  $$
+  + したがって、
+  $$
+  SE_{1_{and}2}=(W_{H}-W_{L})\sqrt{s_{55}+Z^{2}_{H}s_{77}+2Z_{H}s_{57}}
+  $$
+  + Category "only one change"はすべて同じように計算できるので、
+  $$
+  SE_{1_{and}3}=(Z_{H}-Z_{L})\sqrt{s_{44}+W^{2}_{H}s_{77}+2W_{H}s_{47}}\\
+  SE_{2_{and}4}=(Z_{H}-Z_{L})\sqrt{s_{44}+W^{2}_{L}s_{77}+2W_{L}s_{47}}\\
+  SE_{3_{and}4}=(W_{H}-W_{L})\sqrt{s_{55}+Z^{2}_{L}s_{77}+2Z_{L}s_{57}}
+  $$
+  + これらはStandardized (i.e., $Z_{H}=W_{H}=1, Z_{L}=W_{L}=-1$)を用いるともっと簡単になる。
+  $$
+  SE_{1_{and}2}=2\sqrt{s_{55}+s_{77}+2s_{57}}\\
+  SE_{1_{and}3}=2\sqrt{s_{44}+s_{77}+2s_{47}}\\
+  SE_{2_{and}4}=2\sqrt{s_{44}+s_{77}-2s_{47}}\\
+  SE_{3_{and}4}=2\sqrt{s_{55}+s_{77}-2s_{57}}
+  $$
+  + Category "both change"はすこし複雑になる。簡単のため、まずは$var(aX+bY)$を用いて$var(aX+bY+cZ)$を考える。
+    + そもそも$var(aX+bY)$の展開は$(x+y)^2=x^2+y^2+2xy$という恒等式と同じ仕組みによる。
+    + $(x+y+z)^2$では
+    $$
+    \begin{align}
+    (x+y+z)^2&=(x+y+z)(x+y+z)\\
+    &=(x+y+z)x+(x+y+z)y+(x+y+z)z\\
+    &=x^2+xy+xz+xy+y^2+yz+xz+yz+z^2\\
+    &=x^2+y^2+z^2+2xy+2xz+2yz\\
+    &=x^2+y^2+z^2+2(xy+xz+yz)
+    \end{align}
+    $$
+    + 同じ仕組みで
+    $$
+    var(aX+bY+cZ)=a^{2}var(X)+b^{2}var(Y)+c^{2}var(Z)+2[abcov(X,Y)+accov(X,Z)+bccov(Y,Z)]
+    $$
+  + したがって、たとえば、"1 and 4"の傾斜の差では、
+  $$
+  \begin{align}
+  SE_{1_{and}4}&=\sqrt{var[b_{4}(Z_{H}-Z_{L})+b_{5}(W_{H}-W_{L})+b_{7}(Z_{H}W_{H}-Z_{L}W_{L})]}\\\\
+  &=\sqrt{(Z_{H}-Z_{L})^{2}var(b_{4})+(W_{H}-W_{L})^{2}var(b_{5})+(Z_{H}W_{H}-Z_{L}W_{L})^{2}var(b_{7})+
+  2[(Z_{H}-Z_{L})(W_{H}-W_{L})cov(b_{4},b_{5})+(Z_{H}-Z_{L})(Z_{H}W_{H}-Z_{L}W_{L})cov(b_{4},b_{7})+(W_{H}-W_{L})(Z_{H}W_{H}-Z_{L}W_{L}) cov(b_{5},b_{7})]}
+  \end{align}
+  $$
+  + Aiken & West (1991)の記法で、
+  $$
+  SE_{1_{and}4}=\sqrt{(Z_{H}-Z_{L})^{2}s_{44}+(W_{H}-W_{L})^{2}s_{55}+(Z_{H}W_{H}-Z_{L}W_{L})^{2}s_{77}+
+  2[(Z_{H}-Z_{L})(W_{H}-W_{L})s_{45}+(Z_{H}-Z_{L})(Z_{H}W_{H}-Z_{L}W_{L})s_{47}+(W_{H}-W_{L})(Z_{H}W_{H}-Z_{L}W_{L})s_{57}]}
+  $$
+  + 他のCategory "both change"である"2 and 3"も同様で、
+  $$
+  SE_{2_{and}3}=\sqrt{(Z_{H}-Z_{L})^{2}s_{44}+(W_{L}-W_{H})^{2}s_{55}+(Z_{H}W_{L}-Z_{L}W_{H})^{2}s_{77}+2[(Z_{H}-Z_{L})(W_{L}-W_{H})s_{45}+(Z_{H}-Z_{L})(Z_{H}W_{L}-Z_{L}W_{H})]s_{47}+(W_{L}-W_{H})(Z_{H}W_{L}-Z_{L}W_{H})]s_{57}}
+  $$
+  + すごくわかりにくいが、Standardized (i.e., $Z_{H}=W_{H}=1, Z_{L}=W_{L}=-1$)だと簡単で、
+  $$
+  SE_{1_{and}4}=2\sqrt{s_{44}+s_{55}+2s_{45}}\\
+  SE_{2_{and}3}=2\sqrt{s_{44}+s_{55}-2s_{45}}
+  $$
+  
+  + ちなみに$(x+y+z+w)^2$だと
+  $$
+  \begin{align}
+  (x+y+z+w)^2&=(x+y+z+w)(x+y+z+w)\\\\
+  &=x^2+xy+xz+xw+xy+y^2+yz+yw+xz+yz+z^2+zw+xw+yw+zw+w^2\\\\
+  &=x^2+y^2+z^2+w^2+2(xy+xz+xw+yz+yw+zw)\\\\
+  \end{align}
+  $$
+  + 4要因も同じ感じでできるかも
+
+### 4. A Significance Test of Differences Between Pairs of Slopes
+  + 傾斜間の差はYとXの間の関係性を表している (ZとWの少なくとも一方の特定の変化の中で)。
+  + そのため、比率$\frac{(slope)}{(standard error[slope])}$は、傾斜が等しいという仮定のもと、自由度$(n-k-1)$のt分布に従う。
+  + ここでnはサンプルサイズ、kは回帰式の予測変数の数 (交互作用項も含む)
+  + 傾斜の差の有意性検定では次の仮説を検定する：
+  $$
+  \begin{align}
+  t&=\frac{(a)}{SE_a}=\frac{b_{5}(W_{H}-W_{L})+b_{7}Z_{H}(W_{H}-W_{L})}{(W_{H}-W_{L})\sqrt{s_{55}+Z^{2}_{H}s_{77}+2Z_{H}s_{57}}}\\\\
+  &=\frac{b_{5}+b_{7}Z_{H}}{\sqrt{s_{55}+Z^{2}_{H}s_{77}+2Z_{H}s_{57}}}\neq0
+  \end{align}
+  $$
+  + tが自由度$(n-k-1)$のt分布に従うというのは2要因の交互作用の傾斜分析の一般化をAiken & West (1991)が示している (p.16; three-wayはp.54)。
+
+## 最後に
+  + 研究者は仮説検定を行うか探索的な検定を行うだろう。
+  + 2つのケースでは受け入れられる検定力のレベルの条件が異なる。
+  + 研究者が (1つかそれ以上の) 差の仮説をたてたなら、研究者はDawson & Richter (2006)で説明されているように、調整なしの検定ができる。
+  + しかし、探索的に3要因の交互作用効果を調べ、差が有意であることを調べたいなら、post hoc検定の修正を行う必要がある。もっとも一般的なのはボンフェローニ補正だろう。
