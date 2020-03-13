@@ -17,7 +17,7 @@
       <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/03/10/3%E8%A6%81%E5%9B%A0%E3%81%AE%E4%BA%A4%E4%BA%92%E4%BD%9C%E7%94%A8%E9%A0%85%E3%82%92%E5%90%AB%E3%82%80%E9%9A%8E%E5%B1%A4%E7%9A%84%E9%87%8D%E5%9B%9E%E5%B8%B0%E5%88%86%E6%9E%90/</guid>
-      <description>@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); body { } 参考文献 Dawson, J. F. &amp;amp; Richter A. W. (2006). Probing three-way interactions in moderated multiple regression: Development and application of a slope differece test. Journal of Applied Psychology, 91(4), 917-926. https://doi.org/10.1037/0021-9010.91.4.917 Aiken, L. S., &amp;amp; West, S. G. (1991). Multiple regression: Testing and interpreting interactions. Sage Publications, Inc. 3要因の交互作用項を含む</description>
+      <description>@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); body { } MathJax.Hub.Config({ tex2jax: { inlineMath: [ [&#39;$&#39;,&#39;$&#39;], [&#34;\\(&#34;,&#34;\\)&#34;] ], displayMath: [ [&#39;$$&#39;,&#39;$$&#39;], [&#34;\\[&#34;,&#34;\\]&#34;] ], processEscapes: true, processEnvironments: true }, // Center justify equations in code and markdown cells. Elsewhere // we use CSS to left justify single line equations in code cells. displayAlign: &#39;center&#39;, &#34;HTML-CSS&#34;: { styles: {&#39;.MathJax_Display&#39;: {&#34;margin&#34;: 0}}, linebreaks: { automatic: true } } }); 参考文献 Dawson, J. F.</description>
     </item>
     
     <item>
