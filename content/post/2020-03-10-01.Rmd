@@ -143,8 +143,13 @@ Aiken, L. S., & West, S. G. (1991). Multiple regression: Testing and interpretin
     4. 傾斜の組み合わせの差の比率が0から異なるかを検定する ($\Delta slope/SE _{\Delta slope}$)。
 
 ### 1. Generic Formulas for Simple Slopes of X on Y at High and Low of Z and W
-  + 3要因の交互作用を含む回帰式は上述したEq.3。
-  + 典型的な3要因の交互作用では4本の回帰線が引かれる: (a)Z high, W high; (b)Z high, W low; (c)Z low, W high; (d)Z low, W low
+  + 3要因の交互作用を含む回帰式は上述した:
+  $$
+  \begin{equation}
+  Y=(b_{0}+b_{2}Z+b_{3}W+b_{6}ZW)+(b_{1}+b_{4}Z+b_{5}W+b_{7}ZW)X+\epsilon
+  \end{equation}
+  $$
+  + 同様に、典型的な3要因の交互作用では4本の回帰線が引かれる: (a)Z high, W high; (b)Z high, W low; (c)Z low, W high; (d)Z low, W low
   + 通常、ZとWの高低の値は変数の平均値から1SDを上か下の値とされる (Aiken & West, 1991)。それぞれ$Z_{H},Z_{L},W_{H},W_{L}$とする。   + これにより、4本の回帰線の傾きは次のように表すことができる。
     1. $b_{1}+b_{4}Z_{H}+b_{5}W_{H}+b_{7}Z_{H}W_{H}$
     2. $b_{1}+b_{4}Z_{H}+b_{5}W_{L}+b_{7}Z_{H}W_{L}$
