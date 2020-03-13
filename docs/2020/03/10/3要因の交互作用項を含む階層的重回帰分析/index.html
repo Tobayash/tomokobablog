@@ -132,7 +132,7 @@ Aiken, L. S., &amp; West, S. G. (1991). Multiple regression: Testing and interpr
 <hr />
 <p>3要因の交互作用項を含む階層的重回帰分析（調整分析）についてのメモです。主な文献はDawson &amp; Richter (2006)。実際のシミュレーションはDawson &amp; Richter (2006)を直接参照すること。</p>
 <ul>
-<li>そのレベルによって独立変数Xと従属変数Yの関係の程度を調整するとき、変数Zは<strong>調整変数</strong>となる Baron &amp; Kenny, 1986; James &amp; Brett, 1984; Zedeck, 1971)。</li>
+<li>そのレベルによって独立変数Xと従属変数Yの関係の程度を調整するとき、変数Zは<strong>調整変数</strong>となる (Baron &amp; Kenny, 1986; James &amp; Brett, 1984; Zedeck, 1971)。</li>
 <li>調整変数Zは連続変数にもカテゴリカル変数にもなり得り、しばしば2つ以上になることもある。調整の基本概念や合理性は2要因交互作用から、より複雑な3要因の交互作用に拡張される (Jaccard &amp; Turrisi, 2003)。</li>
 </ul>
 </div>
@@ -206,6 +206,53 @@ Aiken, L. S., &amp; West, S. G. (1991). Multiple regression: Testing and interpr
 <li>いずれの方法も傾斜同士の違いについて検定していない。プロットの見た目での判断は正確ではないし、各傾斜が有意か有意でないかによって傾斜を比べるべきではない。</li>
 </ul>
 </div>
+<div id="pick-a-point-approach-for-three-way-interactions-aiken-west-1991" class="section level3">
+<h3>Pick-a-point Approach for Three-Way Interactions (Aiken &amp; West, 1991)</h3>
+<ul>
+<li><p>もっともシンプルな調整分析は以下の式で示される。<br />
+<span class="math display">\[
+  \begin{equation}
+  Y=b_{0}+b_{1}X+b_{2}Z+b_{3}XZ+\epsilon
+  \end{equation}
+  \]</span></p></li>
+<li><p>Aiken &amp; West (1991)では、予測変数XとZはそれぞれ中心化される (各値から平均値を引いたもの)。</p></li>
+<li><p>交互作用項も中心化された値から作る。</p></li>
+<li><p>中心化することの統計学的望ましさについてはAiken &amp; West (1991)のChapter 3を参照。</p></li>
+<li><p>交互作用項を含まない重回帰分析<span class="math inline">\(\hat{Y}=b_{0}+b_{1}X+b_{2}Z\)</span>では、XからYの回帰係数はZの取り得るすべての値で<span class="math inline">\(b_1\)</span>になることを意味するが、交互作用項はXからYの回帰係数がZの値によって変化することを意味する。</p></li>
+<li><p>Eq. 1は次のように書き換えられる。<br />
+<span class="math display">\[
+  \begin{equation}
+  Y=(b_{0}+b_{2}Z)+(b_{1}+b_{3}Z)X+\epsilon
+  \end{equation}
+  \]</span></p></li>
+<li><p>Aiken &amp; West (1991)により示された調整分析では、単純傾斜<span class="math inline">\((b_{1}+b_{3}Z)\)</span>について統計的に有意かを検討する。</p></li>
+<li><p>Zの値が高い場合(a)Z highと低い場合(b)Z low、ときどき中間(c)Z Middleについて有意かを検定する。</p></li>
+<li><p>ここで、単純傾斜<span class="math inline">\((b_{1}+b_{3}Z)\)</span>をその標準誤差<span class="math inline">\(s_{b}=\sqrt{s_{11}+2Zs_{13}+Z^2s_{33}}\)</span>で除して算出される統計値は自由度(n-k-1)のt分布に従う。</p></li>
+<li><p>ここでnはサンプルサイズ、kは回帰式の予測変数の数 (交互作用項も含む)</p></li>
+<li><p><span class="math inline">\(s_{11}\)</span>と<span class="math inline">\(s_{33}\)</span>はそれぞれ<span class="math inline">\(b_{1}\)</span>と<span class="math inline">\(b_{3}\)</span>の分散、<span class="math inline">\(s_{13}\)</span>は<span class="math inline">\(b_{1}\)</span>と<span class="math inline">\(b_{3}\)</span>の共分散</p></li>
+<li><p>3要因の交互作用項を含む場合は以下の式で示される。
+<span class="math display">\[
+  \begin{equation}
+  Y=b_{0}+b_{1}X+b_{2}Z+b_{3}W+b_{4}XZ+b_{5}XW+b_{6}ZW+b_{7}XZW+\epsilon
+  \end{equation}
+  \]</span></p></li>
+<li><p>Eq.3を下記のように書き直した場合、1つ目のセットはXに対するYのグラフの切片を表し、2つ目のセットのカッコ内は傾きを表す。
+<span class="math display">\[
+  \begin{equation}
+  Y=(b_{0}+b_{2}Z+b_{3}W+b_{6}ZW)+(b_{1}+b_{4}Z+b_{5}W+b_{7}ZW)X+\epsilon
+  \end{equation}
+  \]</span></p></li>
+<li><p>ここで単純傾斜<span class="math inline">\((b_{1}+b_{4}Z+b_{5}W+b_{7}ZW)\)</span>の標準誤差は以下で算出される。
+<span class="math display">\[
+  \begin{equation}
+  s_{b}=\sqrt{s_{11}+Z^2s_{44}+W^2s_{55}+Z^2W^2s_{77}+2Zs_{14}+2Ws_{15}+2ZWs_{17}+2ZWs_{45}+2Z^2Ws_{47}++2ZW^2s_{57}}
+  \end{equation}
+  \]</span></p></li>
+<li><p>典型的な3要因の交互作用では4本の回帰線が引かれる: (a)Z high, W high; (b)Z high, W low; (c)Z low, W high; (d)Z low, W low</p></li>
+<li><p>それぞれの回帰線における有意性を検定する。</p></li>
+<li><p>なお、ここでも単純傾斜を標準誤差で除したt値は自由度(n-k-1)のt分布に従う。</p></li>
+</ul>
+</div>
 <div id="the-development-of-a-significance-test-for-slope-differences" class="section level2">
 <h2>The Development of a Significance Test for Slope Differences</h2>
 <ul>
@@ -220,17 +267,9 @@ Aiken, L. S., &amp; West, S. G. (1991). Multiple regression: Testing and interpr
 <div id="generic-formulas-for-simple-slopes-of-x-on-y-at-high-and-low-of-z-and-w" class="section level3">
 <h3>1. Generic Formulas for Simple Slopes of X on Y at High and Low of Z and W</h3>
 <ul>
-<li><p>3要因の交互作用を含む回帰式:
-<span class="math display">\[
-  Y=b_{0}+b_{1}X+b_{2}Z+b_{3}W+b_{4}XZ+b_{5}XW+b_{6}ZW+b_{7}XZW+\epsilon
-  \]</span></p></li>
-<li><p>典型的な3要因の交互作用では4本の回帰線が引かれる: (a)Z high, W high; (b)Z high, W low; (c)Z low, W high; (d)Z low, W low</p></li>
-<li><p>通常、ZとWの高低の値は変数の平均値から1SDを上か下の値とされる (Aiken &amp; West, 1991)。それぞれ<span class="math inline">\(Z_{H},Z_{L},W_{H},W_{L}\)</span>とする。</p></li>
-<li><p>上記の式を下記のように書き直した場合、1つ目のセットはXに対するYのグラフの切片を表し、2つ目のセットのカッコ内は傾きを表す。
-<span class="math display">\[
-  Y=(b_{0}+b_{2}Z+b_{3}W+b_{6}ZW)+(b_{1}+b_{4}Z+b_{5}W+b_{7}ZW)X+\epsilon
-  \]</span></p></li>
-<li><p>これにより、4本の回帰線の傾きは次のように表すことができる。</p>
+<li>3要因の交互作用を含む回帰式は上述したEq.3。</li>
+<li>典型的な3要因の交互作用では4本の回帰線が引かれる: (a)Z high, W high; (b)Z high, W low; (c)Z low, W high; (d)Z low, W low</li>
+<li>通常、ZとWの高低の値は変数の平均値から1SDを上か下の値とされる (Aiken &amp; West, 1991)。それぞれ<span class="math inline">\(Z_{H},Z_{L},W_{H},W_{L}\)</span>とする。 + これにより、4本の回帰線の傾きは次のように表すことができる。
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(b_{1}+b_{4}Z_{H}+b_{5}W_{H}+b_{7}Z_{H}W_{H}\)</span></li>
 <li><span class="math inline">\(b_{1}+b_{4}Z_{H}+b_{5}W_{L}+b_{7}Z_{H}W_{L}\)</span></li>
