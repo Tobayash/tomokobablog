@@ -101,7 +101,7 @@ Aiken, L. S., & West, S. G. (1991). Multiple regression: Testing and interpretin
   + 交互作用項も中心化された値から作る。
   + 中心化することの統計学的望ましさについてはAiken & West (1991)のChapter 3を参照。
   + 交互作用項を含まない重回帰分析$\hat{Y}=b_{0}+b_{1}X+b_{2}Z$では、XからYの回帰係数はZの取り得るすべての値で$b_1$になることを意味するが、交互作用項はXからYの回帰係数がZの値によって変化することを意味する。
-  + Eq. 1は次のように書き換えられる。    
+  + 上の回帰式は次のように書き換えられる。    
   $$
   \begin{equation}
   Y=(b_{0}+b_{2}Z)+(b_{1}+b_{3}Z)X+\epsilon
@@ -119,7 +119,7 @@ Aiken, L. S., & West, S. G. (1991). Multiple regression: Testing and interpretin
   Y=b_{0}+b_{1}X+b_{2}Z+b_{3}W+b_{4}XZ+b_{5}XW+b_{6}ZW+b_{7}XZW+\epsilon
   \end{equation}
   $$
-  + Eq.3を下記のように書き直した場合、1つ目のセットはXに対するYのグラフの切片を表し、2つ目のセットのカッコ内は傾きを表す。
+  + 上の式を下記のように書き直した場合、1つ目のセットはXに対するYのグラフの切片を表し、2つ目のセットのカッコ内は傾きを表す。
   $$
   \begin{equation}
   Y=(b_{0}+b_{2}Z+b_{3}W+b_{6}ZW)+(b_{1}+b_{4}Z+b_{5}W+b_{7}ZW)X+\epsilon
