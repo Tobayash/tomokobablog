@@ -6,10 +6,19 @@
     <description>Recent content in Tags on tomokoba website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 10 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>data Preprocessing</title>
+      <link>/tags/data-preprocessing/</link>
+      <pubDate>Tue, 05 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/data-preprocessing/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>R</title>

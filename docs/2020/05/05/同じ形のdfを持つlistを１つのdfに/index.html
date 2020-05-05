@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.65.3" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="" />
+  <meta property="og:url" content="/2020/05/05/%E5%90%8C%E3%81%98%E5%BD%A2%E3%81%AEdf%E3%82%92%E6%8C%81%E3%81%A4list%E3%82%92%EF%BC%91%E3%81%A4%E3%81%AEdf%E3%81%AB/" />
+  <link rel="canonical" href="../../../../2020/05/05/%E5%90%8C%E3%81%98%E5%BD%A2%E3%81%AEdf%E3%82%92%E6%8C%81%E3%81%A4list%E3%82%92%EF%BC%91%E3%81%A4%E3%81%AEdf%E3%81%AB/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "\/"
+      },
+      "articleSection" : "post",
+      "name" : "同じ形のDFを持つlistを１つのDFに",
+      "headline" : "同じ形のDFを持つlistを１つのDFに",
+      "description" : "@import url(https:\/\/fonts.googleapis.com\/earlyaccess\/notosansjapanese.css); @import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,900); body { font-size: 100%; } 同じ形のデータフレームを持つリストを、リスト番号を持ったまま１つのデータフレームにしたい。 ’qdap’パッケージのlist",
+      "inLanguage" : "en-US",
+      "author" : "",
+      "creator" : "",
+      "publisher": "",
+      "accountablePerson" : "",
+      "copyrightHolder" : "",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-05-05 00:00:00 \x2b0000 UTC",
+      "dateModified" : "2020-05-05 00:00:00 \x2b0000 UTC",
+      "url" : "\/2020\/05\/05\/%E5%90%8C%E3%81%98%E5%BD%A2%E3%81%AEdf%E3%82%92%E6%8C%81%E3%81%A4list%E3%82%92%EF%BC%91%E3%81%A4%E3%81%AEdf%E3%81%AB\/",
+      "keywords" : [ "data Preprocessing", ]
+  }
+</script>
+<title>同じ形のDFを持つlistを１つのDFに - tomokoba website</title>
+  <meta property="og:title" content="同じ形のDFを持つlistを１つのDFに - tomokoba website" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); body { font-size: 100%; } 同じ形のデータフレームを持つリストを、リスト番号を持ったまま１つのデータフレームにしたい。 ’qdap’パッケージのlist" />
+
+  <link rel="stylesheet" href="../../../../css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet"
+    href="../../../../css/github-markdown.min.css" />
+  <link rel="stylesheet" href="../../../../css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="../../../../css/index.css">
+  <link href="../../../../index.xml" rel="alternate" type="application/rss+xml" title="tomokoba website">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="../../../../">Tomokoba blog</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">同じ形のDFを持つlistを１つのDFに</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-05-05 00:00:00 UTC">
+                05 May 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+
+
+<meta charset="utf-8" />
+<style>
+  @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+  @import url(https://fonts.googleapis.com/css?family=Lato:400,900);
+  body {
+  font-size: 100%;
+  }
+</style>
+<p>同じ形のデータフレームを持つリストを、リスト番号を持ったまま１つのデータフレームにしたい。
+’qdap’パッケージのlist_df2dfが使えそうなのでメモ。</p>
+<p>詳しくは以下のリンクより
+<a href="https://www.rdocumentation.org/packages/qdapTools/versions/1.3.5/topics/list2df" class="uri">https://www.rdocumentation.org/packages/qdapTools/versions/1.3.5/topics/list2df</a></p>
+<pre class="r"><code>library(qdapTools)
+
+L &lt;- list()
+for (i in 1:5) {
+  Df &lt;- data.frame(ID = i,
+                   V1 = 1:3)
+  L[[i]] &lt;- Df
+}
+
+
+L</code></pre>
+<pre><code>## [[1]]
+##   ID V1
+## 1  1  1
+## 2  1  2
+## 3  1  3
+## 
+## [[2]]
+##   ID V1
+## 1  2  1
+## 2  2  2
+## 3  2  3
+## 
+## [[3]]
+##   ID V1
+## 1  3  1
+## 2  3  2
+## 3  3  3
+## 
+## [[4]]
+##   ID V1
+## 1  4  1
+## 2  4  2
+## 3  4  3
+## 
+## [[5]]
+##   ID V1
+## 1  5  1
+## 2  5  2
+## 3  5  3</code></pre>
+<pre class="r"><code>list_df2df(L)</code></pre>
+<pre><code>##    X1 ID V1
+## 1  L1  1  1
+## 2  L1  1  2
+## 3  L1  1  3
+## 4  L2  2  1
+## 5  L2  2  2
+## 6  L2  2  3
+## 7  L3  3  1
+## 8  L3  3  2
+## 9  L3  3  3
+## 10 L4  4  1
+## 11 L4  4  2
+## 12 L4  4  3
+## 13 L5  5  1
+## 14 L5  5  2
+## 15 L5  5  3</code></pre>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="../../../../categories/data%20frame/">
+                data frame
+              </a>
+            </div>
+            
+          </div>
+        </div>
+
+        
+        
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://tobayash.github.io/hp2/index.html" target="_blank">Main page</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://twitter.com/tomokoba10" target="_blank">Twitter</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="../../../../js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

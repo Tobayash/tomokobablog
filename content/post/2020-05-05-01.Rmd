@@ -1,0 +1,40 @@
+---
+title: "同じ形のDFを持つlistを１つのDFに"
+author: "tomokoba"
+date: '2020-05-05'
+categories: ["data frame"]
+tags: ["data Preprocessing"]
+---
+
+<meta charset="utf-8" />
+
+<style>
+  @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+  @import url(https://fonts.googleapis.com/css?family=Lato:400,900);
+  body {
+  font-size: 100%;
+  }
+</style>
+
+同じ形のデータフレームを持つリストを、リスト番号を持ったまま１つのデータフレームにしたい。
+'qdap'パッケージのlist_df2dfが使えそうなのでメモ。
+
+詳しくは以下のリンクより
+https://www.rdocumentation.org/packages/qdapTools/versions/1.3.5/topics/list2df
+
+``` {r eval=TRUE, include=TRUE}
+library(qdapTools)
+
+L <- list()
+for (i in 1:5) {
+  Df <- data.frame(ID = i,
+                   V1 = 1:3)
+  L[[i]] <- Df
+}
+
+
+L
+
+list_df2df(L)
+
+```

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>data frame on tomokoba website</title>
+    <link>/categories/data-frame/</link>
+    <description>Recent content in data frame on tomokoba website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Tue, 05 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/data-frame/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>同じ形のDFを持つlistを１つのDFに</title>
+      <link>/2020/05/05/%E5%90%8C%E3%81%98%E5%BD%A2%E3%81%AEdf%E3%82%92%E6%8C%81%E3%81%A4list%E3%82%92%EF%BC%91%E3%81%A4%E3%81%AEdf%E3%81%AB/</link>
+      <pubDate>Tue, 05 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/05/05/%E5%90%8C%E3%81%98%E5%BD%A2%E3%81%AEdf%E3%82%92%E6%8C%81%E3%81%A4list%E3%82%92%EF%BC%91%E3%81%A4%E3%81%AEdf%E3%81%AB/</guid>
+      <description>@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); body { font-size: 100%; } 同じ形のデータフレームを持つリストを、リスト番号を持ったまま１つのデータフレームにしたい。 ’qdap’パッケージのlist</description>
+    </item>
+    
+  </channel>
+</rss>
