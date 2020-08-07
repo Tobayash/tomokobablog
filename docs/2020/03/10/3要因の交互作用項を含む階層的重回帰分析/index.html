@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.65.3" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "post",
       "name" : "3要因の交互作用項を含む階層的重回帰分析",
       "headline" : "3要因の交互作用項を含む階層的重回帰分析",
-      "description" : "@import url(https:\/\/fonts.googleapis.com\/earlyaccess\/notosansjapanese.css); @import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,900); body { } MathJax.Hub.Config({ tex2jax: { inlineMath: [ [\x27$\x27,\x27$\x27], [\x22\\\\(\x22,\x22\\\\)\x22] ], displayMath: [ [\x27$$\x27,\x27$$\x27], [\x22\\\\[\x22,\x22\\\\]\x22] ], processEscapes: true, processEnvironments: true }, \/\/ Center justify equations in code and markdown cells. Elsewhere \/\/ we use CSS to left justify single line equations in code cells. displayAlign: \x27center\x27, \x22HTML-CSS\x22: { styles: {\x27.MathJax_Display\x27: {\x22margin\x22: 0}}, linebreaks: { automatic: true } } }); 参考文献 Dawson, J. F.",
+      "description" : "@import url(https:\/\/fonts.googleapis.com\/earlyaccess\/notosansjapanese.css); @import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,900); body { } MathJax.Hub.Config({ tex2jax: { inlineMath: [ [\u0027$\u0027,\u0027$\u0027], [\u0022\\\\(\u0022,\u0022\\\\)\u0022] ], displayMath: [ [\u0027$$\u0027,\u0027$$\u0027], [\u0022\\\\[\u0022,\u0022\\\\]\u0022] ], processEscapes: true, processEnvironments: true }, \/\/ Center justify equations in code and markdown cells. Elsewhere \/\/ we use CSS to left justify single line equations in code cells. displayAlign: \u0027center\u0027, \u0022HTML-CSS\u0022: { styles: {\u0027.MathJax_Display\u0027: {\u0022margin\u0022: 0}}, linebreaks: { automatic: true } } }); 参考文献 Dawson, J. F.",
       "inLanguage" : "en-US",
       "author" : "",
       "creator" : "",
@@ -27,8 +27,8 @@
       "accountablePerson" : "",
       "copyrightHolder" : "",
       "copyrightYear" : "2020",
-      "datePublished": "2020-03-10 00:00:00 \x2b0000 UTC",
-      "dateModified" : "2020-03-10 00:00:00 \x2b0000 UTC",
+      "datePublished": "2020-03-10 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2020-03-10 00:00:00 \u002b0000 UTC",
       "url" : "\/2020\/03\/10\/3%E8%A6%81%E5%9B%A0%E3%81%AE%E4%BA%A4%E4%BA%92%E4%BD%9C%E7%94%A8%E9%A0%85%E3%82%92%E5%90%AB%E3%82%80%E9%9A%8E%E5%B1%A4%E7%9A%84%E9%87%8D%E5%9B%9E%E5%B8%B0%E5%88%86%E6%9E%90\/",
       "keywords" : [ "statistics","regression", ]
   }
@@ -91,8 +91,6 @@
 
         <div class="post-content markdown-body">
           
-<script src="../../../../rmarkdown-libs/jquery/jquery.min.js"></script>
-<script src="../../../../rmarkdown-libs/elevate-section-attrs/elevate-section-attrs.js"></script>
 
 
 <meta charset="utf-8" />
@@ -485,45 +483,46 @@ Standardized
 <div id="calculating-the-standard-error-of-slope-differences" class="section level3">
 <h3>3. Calculating the Standard Error of Slope Differences</h3>
 <ul>
-<li><p>傾斜間の差の有意性を検定するため、差の標準誤差を比較する必要がある。</p></li>
+<li>傾斜間の差の有意性を検定するため、差の標準誤差を比較する必要がある。
+<ul>
 <li><p>傾斜間の差の標準誤差を計算するにあたり、<span class="math inline">\(var(aX+bY)=a^{2}var(X)+b^{2}var(Y)+2abcov(X,Y)\)</span>の恒等式を利用する。</p></li>
 <li><p>たとえば、“1 and 2”の傾斜の差では、
 <span class="math display">\[
-  \begin{align}
-  SE_{1_{and}2}&amp;=\sqrt{var[b_{5}(W_{H}-W_{L})+b_{7}Z_{H}(W_{H}-W_{L})]}\\\\
-  &amp;=\sqrt{(W_{H}-W_{L})^{2}var(b_{5})+(W_{H}-W_{L})^{2}Z_{H}^{2}var(b_{7})+2(W_{H}-W_{L})^{2}Z_{H}cov(b_{5},b_{7})}\\\\
-  &amp;=(W_{H}-W_{L})\sqrt{var(b_{5})+Z_{H}^{2}var(b_{7})+2Z_{H}cov(b_{5},b_{7})}
-  \end{align}
-  \]</span></p></li>
+\begin{align}
+SE_{1_{and}2}&amp;=\sqrt{var[b_{5}(W_{H}-W_{L})+b_{7}Z_{H}(W_{H}-W_{L})]}\\\\
+&amp;=\sqrt{(W_{H}-W_{L})^{2}var(b_{5})+(W_{H}-W_{L})^{2}Z_{H}^{2}var(b_{7})+2(W_{H}-W_{L})^{2}Z_{H}cov(b_{5},b_{7})}\\\\
+&amp;=(W_{H}-W_{L})\sqrt{var(b_{5})+Z_{H}^{2}var(b_{7})+2Z_{H}cov(b_{5},b_{7})}
+\end{align}
+\]</span></p></li>
 <li><p>右辺1つ目から2つ目は先ほどの恒等式による。2つ目から3つ目はルート内<span class="math inline">\((W_{H}-W_{L})^{2}\)</span>をまとめたもの。</p></li>
 <li><p>ここでAiken &amp; West (1991)で使われている記法(下の行列)を用いて<span class="math inline">\(var(b_{5})\)</span>→<span class="math inline">\(s_{55}\)</span>や<span class="math inline">\(cov(b_{5},b_{7})\)</span>→<span class="math inline">\(s_{57}\)</span>と記す。
 <span class="math display">\[
-  S=
-  \left(
-  \begin{array}{ccc}
-  s_{00} &amp; \cdots &amp; s_{07}\\
-  \vdots &amp; \ddots &amp; \vdots\\
-  s_{70} &amp; \cdots &amp; s_{77}\\
-  \end{array}
-  \right)
-  \]</span></p></li>
+S=
+\left(
+\begin{array}{ccc}
+s_{00} &amp; \cdots &amp; s_{07}\\
+\vdots &amp; \ddots &amp; \vdots\\
+s_{70} &amp; \cdots &amp; s_{77}\\
+\end{array}
+\right)
+\]</span></p></li>
 <li><p>したがって、
 <span class="math display">\[
-  SE_{1_{and}2}=(W_{H}-W_{L})\sqrt{s_{55}+Z^{2}_{H}s_{77}+2Z_{H}s_{57}}
-  \]</span></p></li>
+SE_{1_{and}2}=(W_{H}-W_{L})\sqrt{s_{55}+Z^{2}_{H}s_{77}+2Z_{H}s_{57}}
+\]</span></p></li>
 <li><p>Category “only one change”はすべて同じように計算できるので、
 <span class="math display">\[
-  SE_{1_{and}3}=(Z_{H}-Z_{L})\sqrt{s_{44}+W^{2}_{H}s_{77}+2W_{H}s_{47}}\\
-  SE_{2_{and}4}=(Z_{H}-Z_{L})\sqrt{s_{44}+W^{2}_{L}s_{77}+2W_{L}s_{47}}\\
-  SE_{3_{and}4}=(W_{H}-W_{L})\sqrt{s_{55}+Z^{2}_{L}s_{77}+2Z_{L}s_{57}}
-  \]</span></p></li>
+SE_{1_{and}3}=(Z_{H}-Z_{L})\sqrt{s_{44}+W^{2}_{H}s_{77}+2W_{H}s_{47}}\\
+SE_{2_{and}4}=(Z_{H}-Z_{L})\sqrt{s_{44}+W^{2}_{L}s_{77}+2W_{L}s_{47}}\\
+SE_{3_{and}4}=(W_{H}-W_{L})\sqrt{s_{55}+Z^{2}_{L}s_{77}+2Z_{L}s_{57}}
+\]</span></p></li>
 <li><p>これらはStandardized (i.e., <span class="math inline">\(Z_{H}=W_{H}=1, Z_{L}=W_{L}=-1\)</span>)を用いるともっと簡単になる。
 <span class="math display">\[
-  SE_{1_{and}2}=2\sqrt{s_{55}+s_{77}+2s_{57}}\\
-  SE_{1_{and}3}=2\sqrt{s_{44}+s_{77}+2s_{47}}\\
-  SE_{2_{and}4}=2\sqrt{s_{44}+s_{77}-2s_{47}}\\
-  SE_{3_{and}4}=2\sqrt{s_{55}+s_{77}-2s_{57}}
-  \]</span></p></li>
+SE_{1_{and}2}=2\sqrt{s_{55}+s_{77}+2s_{57}}\\
+SE_{1_{and}3}=2\sqrt{s_{44}+s_{77}+2s_{47}}\\
+SE_{2_{and}4}=2\sqrt{s_{44}+s_{77}-2s_{47}}\\
+SE_{3_{and}4}=2\sqrt{s_{55}+s_{77}-2s_{57}}
+\]</span></p></li>
 <li><p>Category “both change”はすこし複雑になる。簡単のため、まずは<span class="math inline">\(var(aX+bY)\)</span>を用いて<span class="math inline">\(var(aX+bY+cZ)\)</span>を考える。</p>
 <ul>
 <li>そもそも<span class="math inline">\(var(aX+bY)\)</span>の展開は<span class="math inline">\((x+y)^2=x^2+y^2+2xy\)</span>という恒等式と同じ仕組みによる。</li>
@@ -544,61 +543,66 @@ var(aX+bY+cZ)=a^{2}var(X)+b^{2}var(Y)+c^{2}var(Z)+2[abcov(X,Y)+accov(X,Z)+bccov(
 </ul></li>
 <li><p>したがって、たとえば、“1 and 4”の傾斜の差では、
 <span class="math display">\[
-  \begin{align}
-  SE_{1_{and}4}&amp;=\sqrt{var[b_{4}(Z_{H}-Z_{L})+b_{5}(W_{H}-W_{L})+b_{7}(Z_{H}W_{H}-Z_{L}W_{L})]}\\\\
-  &amp;=\sqrt{(Z_{H}-Z_{L})^{2}var(b_{4})+(W_{H}-W_{L})^{2}var(b_{5})+(Z_{H}W_{H}-Z_{L}W_{L})^{2}var(b_{7})+
-  2[(Z_{H}-Z_{L})(W_{H}-W_{L})cov(b_{4},b_{5})+(Z_{H}-Z_{L})(Z_{H}W_{H}-Z_{L}W_{L})cov(b_{4},b_{7})+(W_{H}-W_{L})(Z_{H}W_{H}-Z_{L}W_{L}) cov(b_{5},b_{7})]}
-  \end{align}
-  \]</span></p></li>
+\begin{align}
+SE_{1_{and}4}&amp;=\sqrt{var[b_{4}(Z_{H}-Z_{L})+b_{5}(W_{H}-W_{L})+b_{7}(Z_{H}W_{H}-Z_{L}W_{L})]}\\\\
+&amp;=\sqrt{(Z_{H}-Z_{L})^{2}var(b_{4})+(W_{H}-W_{L})^{2}var(b_{5})+(Z_{H}W_{H}-Z_{L}W_{L})^{2}var(b_{7})+
+2[(Z_{H}-Z_{L})(W_{H}-W_{L})cov(b_{4},b_{5})+(Z_{H}-Z_{L})(Z_{H}W_{H}-Z_{L}W_{L})cov(b_{4},b_{7})+(W_{H}-W_{L})(Z_{H}W_{H}-Z_{L}W_{L}) cov(b_{5},b_{7})]}
+\end{align}
+\]</span></p></li>
 <li><p>Aiken &amp; West (1991)の記法で、
 <span class="math display">\[
-  SE_{1_{and}4}=\sqrt{(Z_{H}-Z_{L})^{2}s_{44}+(W_{H}-W_{L})^{2}s_{55}+(Z_{H}W_{H}-Z_{L}W_{L})^{2}s_{77}+
-  2[(Z_{H}-Z_{L})(W_{H}-W_{L})s_{45}+(Z_{H}-Z_{L})(Z_{H}W_{H}-Z_{L}W_{L})s_{47}+(W_{H}-W_{L})(Z_{H}W_{H}-Z_{L}W_{L})s_{57}]}
-  \]</span></p></li>
+SE_{1_{and}4}=\sqrt{(Z_{H}-Z_{L})^{2}s_{44}+(W_{H}-W_{L})^{2}s_{55}+(Z_{H}W_{H}-Z_{L}W_{L})^{2}s_{77}+
+2[(Z_{H}-Z_{L})(W_{H}-W_{L})s_{45}+(Z_{H}-Z_{L})(Z_{H}W_{H}-Z_{L}W_{L})s_{47}+(W_{H}-W_{L})(Z_{H}W_{H}-Z_{L}W_{L})s_{57}]}
+\]</span></p></li>
 <li><p>他のCategory “both change”である“2 and 3”も同様で、
 <span class="math display">\[
-  SE_{2_{and}3}=\sqrt{(Z_{H}-Z_{L})^{2}s_{44}+(W_{L}-W_{H})^{2}s_{55}+(Z_{H}W_{L}-Z_{L}W_{H})^{2}s_{77}+2[(Z_{H}-Z_{L})(W_{L}-W_{H})s_{45}+(Z_{H}-Z_{L})(Z_{H}W_{L}-Z_{L}W_{H})]s_{47}+(W_{L}-W_{H})(Z_{H}W_{L}-Z_{L}W_{H})]s_{57}}
-  \]</span></p></li>
+SE_{2_{and}3}=\sqrt{(Z_{H}-Z_{L})^{2}s_{44}+(W_{L}-W_{H})^{2}s_{55}+(Z_{H}W_{L}-Z_{L}W_{H})^{2}s_{77}+2[(Z_{H}-Z_{L})(W_{L}-W_{H})s_{45}+(Z_{H}-Z_{L})(Z_{H}W_{L}-Z_{L}W_{H})]s_{47}+(W_{L}-W_{H})(Z_{H}W_{L}-Z_{L}W_{H})]s_{57}}
+\]</span></p></li>
 <li><p>すごくわかりにくいが、Standardized (i.e., <span class="math inline">\(Z_{H}=W_{H}=1, Z_{L}=W_{L}=-1\)</span>)だと簡単で、
 <span class="math display">\[
-  SE_{1_{and}4}=2\sqrt{s_{44}+s_{55}+2s_{45}}\\
-  SE_{2_{and}3}=2\sqrt{s_{44}+s_{55}-2s_{45}}
-  \]</span></p></li>
+SE_{1_{and}4}=2\sqrt{s_{44}+s_{55}+2s_{45}}\\
+SE_{2_{and}3}=2\sqrt{s_{44}+s_{55}-2s_{45}}
+\]</span></p></li>
 <li><p>ちなみに<span class="math inline">\((x+y+z+w)^2\)</span>だと
 <span class="math display">\[
-  \begin{align}
-  (x+y+z+w)^2&amp;=(x+y+z+w)(x+y+z+w)\\\\
-  &amp;=x^2+xy+xz+xw+xy+y^2+yz+yw+xz+yz+z^2+zw+xw+yw+zw+w^2\\\\
-  &amp;=x^2+y^2+z^2+w^2+2(xy+xz+xw+yz+yw+zw)\\\\
-  \end{align}
-  \]</span></p></li>
+\begin{align}
+(x+y+z+w)^2&amp;=(x+y+z+w)(x+y+z+w)\\\\
+&amp;=x^2+xy+xz+xw+xy+y^2+yz+yw+xz+yz+z^2+zw+xw+yw+zw+w^2\\\\
+&amp;=x^2+y^2+z^2+w^2+2(xy+xz+xw+yz+yw+zw)\\\\
+\end{align}
+\]</span></p></li>
 <li><p>4要因も同じ感じでできるかも</p></li>
+</ul></li>
 </ul>
 </div>
 <div id="a-significance-test-of-differences-between-pairs-of-slopes" class="section level3">
 <h3>4. A Significance Test of Differences Between Pairs of Slopes</h3>
 <ul>
-<li>傾斜間の差はYとXの間の関係性を表している (ZとWの少なくとも一方の特定の変化の中で)。</li>
+<li>傾斜間の差はYとXの間の関係性を表している (ZとWの少なくとも一方の特定の変化の中で)。
+<ul>
 <li>そのため、比率<span class="math inline">\(\frac{(slope)}{(standard error[slope])}\)</span>は、傾斜が等しいという仮定のもと、自由度<span class="math inline">\((n-k-1)\)</span>のt分布に従う。</li>
 <li>ここでnはサンプルサイズ、kは回帰式の予測変数の数 (交互作用項も含む)</li>
 <li>傾斜の差の有意性検定では次の仮説を検定する：
 <span class="math display">\[
-  \begin{align}
-  t&amp;=\frac{(a)}{SE_a}=\frac{b_{5}(W_{H}-W_{L})+b_{7}Z_{H}(W_{H}-W_{L})}{(W_{H}-W_{L})\sqrt{s_{55}+Z^{2}_{H}s_{77}+2Z_{H}s_{57}}}\\\\
-  &amp;=\frac{b_{5}+b_{7}Z_{H}}{\sqrt{s_{55}+Z^{2}_{H}s_{77}+2Z_{H}s_{57}}}\neq0
-  \end{align}
-  \]</span></li>
+\begin{align}
+t&amp;=\frac{(a)}{SE_a}=\frac{b_{5}(W_{H}-W_{L})+b_{7}Z_{H}(W_{H}-W_{L})}{(W_{H}-W_{L})\sqrt{s_{55}+Z^{2}_{H}s_{77}+2Z_{H}s_{57}}}\\\\
+&amp;=\frac{b_{5}+b_{7}Z_{H}}{\sqrt{s_{55}+Z^{2}_{H}s_{77}+2Z_{H}s_{57}}}\neq0
+\end{align}
+\]</span></li>
 <li>tが自由度<span class="math inline">\((n-k-1)\)</span>のt分布に従うというのは2要因の交互作用の傾斜分析の一般化をAiken &amp; West (1991)が示している (p.16; three-wayはp.54)。</li>
+</ul></li>
 </ul>
 </div>
 </div>
 <div id="最後に" class="section level2">
 <h2>最後に</h2>
 <ul>
-<li>研究者は仮説検定を行うか探索的な検定を行うだろう。</li>
+<li>研究者は仮説検定を行うか探索的な検定を行うだろう。
+<ul>
 <li>2つのケースでは受け入れられる検定力のレベルの条件が異なる。</li>
 <li>研究者が (1つかそれ以上の) 差の仮説をたてたなら、研究者はDawson &amp; Richter (2006)で説明されているように、調整なしの検定ができる。</li>
 <li>しかし、探索的に3要因の交互作用効果を調べ、差が有意であることを調べたいなら、post hoc検定の修正を行う必要がある。もっとも一般的なのはボンフェローニ補正だろう。</li>
+</ul></li>
 </ul>
 </div>
 
