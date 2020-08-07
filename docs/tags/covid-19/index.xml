@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>COVID-19 on tomokoba website</title>
+    <link>/tags/covid-19/</link>
+    <description>Recent content in COVID-19 on tomokoba website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Fri, 07 Aug 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/covid-19/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>COVID-19対応者ガイドの紹介資料まとめ</title>
+      <link>/2020/08/07/covid-19%E5%AF%BE%E5%BF%9C%E8%80%85%E3%82%AC%E3%82%A4%E3%83%89%E3%81%AE%E7%B4%B9%E4%BB%8B%E8%B3%87%E6%96%99%E3%81%BE%E3%81%A8%E3%82%81/</link>
+      <pubDate>Fri, 07 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/08/07/covid-19%E5%AF%BE%E5%BF%9C%E8%80%85%E3%82%AC%E3%82%A4%E3%83%89%E3%81%AE%E7%B4%B9%E4%BB%8B%E8%B3%87%E6%96%99%E3%81%BE%E3%81%A8%E3%82%81/</guid>
+      <description>@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css); @import url(https://fonts.googleapis.com/css?family=Lato:400,900); body { } MathJax.Hub.Config({ tex2jax: { inlineMath: [ [&#39;$&#39;,&#39;$&#39;], [&#34;\\(&#34;,&#34;\\)&#34;] ], displayMath: [ [&#39;$$&#39;,&#39;$$&#39;], [&#34;\\[&#34;,&#34;\\]&#34;] ], processEscapes: true, processEnvironments: true }, // Center justify equations in code and markdown cells. Elsewhere // we use CSS to left justify single line equations in code cells. displayAlign: &#39;center&#39;, &#34;HTML-CSS&#34;: { styles: {&#39;.MathJax_Display&#39;: {&#34;margin&#34;: 0}}, linebreaks: { automatic: true } } }); COVID-1</description>
+    </item>
+    
+  </channel>
+</rss>
